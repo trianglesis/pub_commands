@@ -1,0 +1,11 @@
+doors_open_rest:
+  url: !secret pl_url
+  method: POST
+  content_type: "application/x-www-form-urlencoded"
+  variables:
+    pl_nonce: !secret pl_nonce
+    pl_obj: !secret pl_obj
+    pl_gate: !secret pl_gate
+    pl_mode: !secret pl_mode
+    url_q: "dom={{ pl_obj }}&gate={{ pl_gate }}&mode={{ pl_mode }}&nonce={{ pl_nonce }}"
+  payload: url_q
