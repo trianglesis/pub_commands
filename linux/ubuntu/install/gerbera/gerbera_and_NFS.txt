@@ -1,0 +1,143 @@
+https://docs.gerbera.io/en/stable/compile.html#build-on-ubuntu-18-04
+
+UpnP!!!
+
+wget "https://github.com/pupnp/pupnp/releases/download/release-1.14.10/libupnp-1.14.10.tar.bz2" -O libupnp-1.14.10.tar.bz2
+tar -xf libupnp-1.14.10.tar.bz2
+cd libupnp-1.14.10
+./configure --enable-ipv6 --enable-reuseaddr --disable-blocking-tcp-connections
+make
+sudo make install
+cd ..
+git clone https://github.com/fmtlib/fmt
+cd fmt
+cmake .
+make
+sudo make install
+cd ../..
+
+
+Install taglib!!!
+taglib
+WITH_TAGLIB
+sudo ln -s /usr/local/include/taglib /usr/include/taglib
+
+
+Install latest FFMPEg!!!
+https://linuxhint.com/install-ffmpeg-ubuntu/
+https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu
+
+$ ./configure --enable-nonfree --enable-gpl --enable-libx264 --enable-x11grab --enable-zlib
+
+cd ~/ffmpeg_sources && \
+wget -O ffmpeg-snapshot.tar.bz2 https://ffmpeg.org/releases/ffmpeg-snapshot.tar.bz2 && \
+tar xjvf ffmpeg-snapshot.tar.bz2 && \
+cd ffmpeg && \
+PATH="$HOME/bin:$PATH" PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" ./configure \
+  --prefix="$HOME/ffmpeg_build" \
+  --pkg-config-flags="--static" \
+  --extra-cflags="-I$HOME/ffmpeg_build/include" \
+  --extra-ldflags="-L$HOME/ffmpeg_build/lib" \
+  --extra-libs="-lpthread -lm" \
+  --ld="g++" \
+  --bindir="$HOME/bin" \
+  --enable-gpl \
+  --enable-gnutls \
+  --enable-libaom \
+  --enable-libass \
+  --enable-libfdk-aac \
+  --enable-libfreetype \
+  --enable-libmp3lame \
+  --enable-libopus \
+  --enable-libdav1d \
+  --enable-libvorbis \
+  --enable-libvpx \
+  --enable-libx264 \
+  --enable-libx265 \
+  --enable-nonfree && \
+PATH="$HOME/bin:$PATH" make && \
+make install && \
+hash -r
+
+
+
+ffmpegthumbnailer!!!
+https://github.com/dirkvdb/ffmpegthumbnailer/blob/master/INSTALL
+
+
+
+cmake ../gerbera -DWITH_MAGIC=1 -DWITH_MYSQL=1 -DWITH_CURL=1 -DWITH_JS=1 -DWITH_TAGLIB=1 -DWITH_AVCODEC=1 -DWITH_FFMPEGTHUMBNAILER=1 -DWITH_EXIF=1 -DWITH_LASTFM=0
+cmake ../gerbera -DWITH_MAGIC=1 -DWITH_MYSQL=1 -DWITH_CURL=1 -DWITH_JS=1 -DWITH_TAGLIB=1 -DWITH_AVCODEC=1 -DWITH_FFMPEGTHUMBNAILER=1 -DWITH_EXIF=1 -DWITH_LASTFM=0
+cmake ../gerbera -DWITH_MAGIC=1 -DWITH_MYSQL=1 -DWITH_CURL=1 -DWITH_JS=1 -DWITH_TAGLIB=1 -DWITH_AVCODEC=1 -DWITH_EXIF=1 -DWITH_FFMPEGTHUMBNAILER=1
+cmake ../gerbera -DWITH_MAGIC=1 -DWITH_MYSQL=1 -DWITH_CURL=1 -DWITH_JS=1 -DWITH_TAGLIB=1 -DWITH_AVCODEC=1 -DWITH_EXIF=1
+
+cmake -DWITH_MAGIC=1 -DWITH_MYSQL=1 -DWITH_CURL=1 -DWITH_JS=1 -DWITH_TAGLIB=1 -DWITH_AVCODEC=1 -DWITH_EXIF=1 -DWITH_FFMPEGTHUMBNAILER=1 -DWITH_LASTFM=0 -DWITH_SYSTEMD=0 ../gerbera
+
+
+make -j4
+sudo make install
+
+
+gerbera --create-config | sudo tee /etc/gerbera/config.xml
+sudo cp /etc/gerbera/config.xml /home/home-mb/
+
+
+sudo nano /etc/gerbera/config.xml
+sudo nano /etc/systemd/system/gerbera.service
+sudo nano /lib/systemd/system/gerbera.service
+
+==================================================================================================================================
+[Unit]
+Description=Gerbera Media Server with MySQL
+After=mysql.target network-online.target
+
+[Service]
+Type=simple
+User=gerbera
+Group=gerbera
+ExecStart=/usr/local/bin/gerbera -c /etc/gerbera/config.xml --logfile=/var/log/gerbera/gerbera.log
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+==================================================================================================================================
+sudo systemctl daemon-reload
+
+sudo /usr/bin/gerbera -c /etc/gerbera/config.xml --logfile=/var/log/gerbera/gerbera.log --debug
+sudo /usr/local/bin/gerbera -c /etc/gerbera/config.xml --user=gerbera --logfile=/var/log/gerbera/gerbera.log --debug
+
+
+sudo systemctl restart gerbera.service && sudo systemctl status gerbera.service
+sudo systemctl stop gerbera.service && sudo systemctl status gerbera.service
+
+
+sudo chown -Rv gerbera:gerbera /etc/gerbera
+sudo chown -Rv gerbera:gerbera /usr/local/share/gerbera
+sudo chown -Rv gerbera:gerbera /usr/local/share/gerbera/js
+
+
+https://ostechnix.com/how-to-reset-root-password-in-mysql-8-on-ubuntu-linux/
+mysql -u root -h 192.168.1.9 -p
+
+GRANT ALL ON *.* TO 'root'@'localhost';
+GRANT ALL ON *.* TO 'root'@'127.0.0.1';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'127.0.0.1' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
+
+
+sudo apt install -y libavresample-dev
+
+sudo apt install -y libmagic-dev libexif-dev libcurl4-openssl-dev libspdlog-dev libpugixml-dev libavutil-dev libavcodec-dev libavformat-dev libavdevice-dev libavfilter-dev libswscale-dev libswresample-dev libpostproc-dev duktape-dev libmatroska-dev libsystemd-dev libtag1-dev ffmpeg
+
+sudo apt install -y uuid-dev libsqlite3-dev libmysqlclient-dev libmagic-dev \
+libexif-dev libcurl4-openssl-dev libspdlog-dev libpugixml-dev libavutil-dev \
+libavcodec-dev libavformat-dev libavdevice-dev libavfilter-dev \
+libswscale-dev libswresample-dev libpostproc-dev duktape-dev libmatroska-dev \
+libsystemd-dev libtag1-dev ffmpeg
+
+
+sudo docker images
+6aaf6bf08bcf
+docker run --name another-gerbera --network=host -v /some/files:/content:ro -v /some/path/config.xml:/var/run/gerbera/config.xml gerbera/gerbera:vX.X.X

@@ -1,0 +1,32 @@
+# DISM 
+
+- https://answers.microsoft.com/en-us/windows/forum/all/dismexe-online-cleanup-image-startcomponentcleanup/313d177b-d70b-4ecb-bd0d-3c141203664a
+- https://www.windowscentral.com/how-use-dism-command-line-utility-repair-windows-10-image
+- https://winitpro.ru/index.php/2019/07/08/dism-cleanup-image-restorehealth/
+
+
+## Lewftowers clean
+
+DISM.exe /online /cleanup-image /AnalyzeComponentStore
+DISM.exe /online /cleanup-image /startcomponentcleanup
+
+## Full
+
+Dism /Online /Cleanup-Image /CheckHealth
+Dism /Online /Cleanup-Image /ScanHealth
+Dism /Online /Cleanup-Image /RestoreHealth
+DISM.exe /online /cleanup-image /AnalyzeComponentStore
+DISM.exe /online /cleanup-image /startcomponentcleanup
+
+
+## Else clean WISXS
+
+Dism.exe /online /Cleanup-Image /StartComponentCleanup /ResetBase
+
+
+
+## Errors fix
+sfc/scannow
+
+## Else:
+go to Windows\PS_Packages_List_or_delete.txt

@@ -1,0 +1,27 @@
+# List all packages
+
+Get-AppxPackage -AllUsers -PackageTypeFilter Bundle  | Where-Object {$_.NonRemovable -eq $False} | Select-Object Name, PackageFullName
+
+# LONG:
+Get-AppxPackage -AllUsers
+
+# Short but with all
+Get-AppxPackage -AllUsers | Select-Object Name, PackageFullName
+
+
+Get-AppxProvisionedPackage -Online | Format-Table DisplayName, PackageName
+
+# Remove:
+Remove-AppxPackage Microsoft.YourPhone_1.24041.108.0_neutral_~_8wekyb3d8bbwe
+Remove-AppxPackage Microsoft.Todos_2.114.7122.0_neutral_~_8wekyb3d8bbwe
+
+# Remove alt
+Remove-AppxProvisionedPackage -PackageName Microsoft.YourPhone -AllUsers
+
+Remove-AppxProvisionedPackage -Online -PackageName Microsoft.YourPhone_1.24041.108.0_neutral_~_8wekyb3d8bbwe
+
+
+# Other
+
+winget list
+winget uninstall "Phone Link"

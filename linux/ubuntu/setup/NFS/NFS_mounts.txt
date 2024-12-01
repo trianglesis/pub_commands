@@ -1,0 +1,55 @@
+#/media/home-mb/Data2Tb/            *(rw,sync,fsid=0,crossmnt,no_subtree_check)
+#/media/home-mb/Data2Tb/            gss/krb5i(rw,sync,fsid=0,crossmnt,no_subtree_check)
+/media/home-mb/Data2Tb/             *(rw,wdelay,root_squash,no_subtree_check,sec=sys,rw,secure,root_squash,no_all_squash)
+
+# Single dirs each
+/media/home-mb/Data2Tb/Downloads/    *(rw,wdelay,root_squash,no_subtree_check,sec=sys,rw,secure,root_squash,no_all_squash)
+/media/home-mb/Data2Tb/Torrents/     *(rw,wdelay,root_squash,no_subtree_check,sec=sys,rw,secure,root_squash,no_all_squash)
+
+# Pron
+/media/home-mb/Data2Tb/Pron          *(rw,wdelay,root_squash,no_subtree_check,sec=sys,rw,secure,root_squash,no_all_squash)
+
+sudo mkdir -p /srv/nfs4/Data2Tb 
+sudo mkdir -p /srv/nfs4/Downloads 
+sudo mkdir -p /srv/nfs4/Torrents 
+sudo mkdir -p /srv/nfs4/Pron
+
+
+sudo mount --bind /media/home-mb/Data2Tb/ /srv/nfs4/Data2Tb  
+sudo mount --bind /media/home-mb/Data2Tb/Downloads/ /srv/nfs4/Downloads  
+sudo mount --bind /media/home-mb/Data2Tb/Torrents/ /srv/nfs4/Torrents  
+sudo mount --bind /media/home-mb/Data2Tb/Pron/ /srv/nfs4/Pron
+
+
+sudo vi /etc/fstab
+
+
+/media/Data2TB/             /srv/nfs4/Data2Tb    none   bind   0   0
+
+
+//127.0.0.1/Data2TB     /media/Data2TB/            cifs  guest,uid=1000,iocharset=utf8  0  0
+//127.0.0.1/Downloads   /media/Data2TB/Downloads/  cifs  guest,uid=1000,iocharset=utf8  0  0
+//127.0.0.1/Torrents    /media/Data2TB/Torrents/   cifs  guest,uid=1000,iocharset=utf8  0  0
+//127.0.0.1/Pron        /media/Data2TB/Pron/       cifs  guest,uid=1000,iocharset=utf8  0  0
+//127.0.0.1/Pron        /media/Data2TB/Pron/       cifs  guest,uid=1000,iocharset=utf8  0  0
+
+
+# Additional shorter path
+# /home/ubuntu/stuff /home/bob/things auto  defaults,nofail,nobootwait,bind 0 2
+/mnt/Data2TB/Torrents               /Torrents  auto  defaults,nofail,nobootwait,bind 0 2
+/mnt/Data2TB/Pron/Yes_This_is_pron  /Pron      auto  defaults,nofail,nobootwait,bind 0 2
+
+
+https://www.makeuseof.com/set-up-network-shared-folder-ubuntu-with-samba/
+
+[sambashare]
+comment= Home Media Box /media/Data2TB/
+path = /media/Data2TB/
+force user = smbuser
+force group = smbgroup
+create mask = 0664
+force create mode = 0664
+directory mask = 0775
+force directory mode = 0775
+public = yes
+read only = no

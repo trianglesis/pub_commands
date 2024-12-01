@@ -1,0 +1,19 @@
+Setup WSL Centos8
+
+
+wsl --set-default-version 2
+wsl --set-default-version 1
+
+wsl --list --verbose
+
+
+wsl --set-version CentOS9-stream 1
+wsl --set-version CentOS9-stream 2
+
+wsl --setdefault CentOS9-stream
+
+
+wsl --shutdown
+
+
+wsl --unregister CentOS9-stream
