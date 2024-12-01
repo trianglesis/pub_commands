@@ -1,0 +1,1983 @@
+Package: kmod-usb-storage
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-scsi-core, kmod-usb-core
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670512725
+
+Package: terminfo
+Version: 6.3-2
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670513445
+Auto-Installed: yes
+
+Package: kmod-sched-connmark
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-sched-core, kmod-ipt-core, kmod-ipt-conntrack-extra
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670527509
+Auto-Installed: yes
+
+Package: iwinfo
+Version: 2022-08-19-0dad3e66-1
+Depends: libc, libiwinfo20210430
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: luci-app-statistics
+Version: git-22.115.68420-46794ea
+Depends: libc, luci-base, luci-lib-jsonc, collectd, rrdtool1, collectd-mod-rrdtool, collectd-mod-iwinfo, collectd-mod-cpu, collectd-mod-memory, collectd-mod-interface, collectd-mod-load, collectd-mod-network
+Status: install user installed
+Architecture: all
+Conffiles:
+ /etc/config/luci_statistics 426fdb8b1d4d942294b4f49c558d59d75b98eef072532feaeba24d9fce80e7e6
+Installed-Time: 1670516327
+
+Package: liblucihttp0
+ABIVersion: 0
+Version: 2022-07-08-6e68a106-1
+Depends: libc
+Provides: liblucihttp
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: tcpdump-mini
+Version: 4.9.3-4
+Depends: libc, libpcap1
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1717701486
+
+Package: cgi-io
+Version: 2022-08-10-901b0f04-21
+Depends: libc, libubox20220515, libubus20220601
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: luci-lib-base
+Version: git-20.232.39649-1f6dc29
+Depends: libc, lua, luci-lib-nixio, luci-lib-ip, luci-lib-jsonc, liblucihttp-lua
+Status: install user installed
+Architecture: all
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: libc
+Version: 1.2.3-4
+Depends: libgcc
+Status: install hold installed
+Essential: yes
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: kmod-crypto-gf128
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab)
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: opkg
+Version: 2022-02-24-d038e5b6-1
+Depends: libc, uclient-fetch, libpthread, libubox20220515
+Status: install user installed
+Essential: yes
+Architecture: mips_24kc
+Conffiles:
+ /etc/opkg.conf f38c19f696ea87c0b30eb5bfeb8657237f4625e1a749c58b99f01595edfb6446
+ /etc/opkg/customfeeds.conf 61d1f3aa62fe977614ed0c2f0ad3b2ee2f7b451bfb34812071d86d31a4d43d4a
+Installed-Time: 1665787481
+
+Package: libevdev
+Version: 1.13.0-1
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670512754
+Auto-Installed: yes
+
+Package: kmod-usb-core
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-nls-base
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: luci-app-opkg
+Version: git-22.273.29004-9f6876b
+Depends: libc, opkg
+Status: install user installed
+Architecture: all
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: libpthread
+Version: 1.2.3-4
+Depends: libgcc1
+Status: install hold installed
+Essential: yes
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: ubus
+Version: 2022-06-01-2bebf93c-1
+Depends: libc, libubus20220601, libblobmsg-json20220515, ubusd
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: iw
+Version: 5.16-1
+Depends: libc, libnl-tiny1
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: kmod-crypto-manager
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-crypto-aead, kmod-crypto-hash
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: libuci20130104
+ABIVersion: 20130104
+Version: 2021-10-22-f84f49f0-6
+Depends: libc, libubox20220515
+Provides: libuci
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: simple-adblock
+Version: 1.9.5-5
+Depends: libc, jshn, wget
+Status: install user installed
+Architecture: all
+Conffiles:
+ /etc/config/simple-adblock 2c3d6ad34c9402d894242574c9d7efe6e3e0091302c0b41a872cc6be7a5f4494
+Installed-Time: 1717705740
+
+Package: rpcd
+Version: 2022-09-21-8c852b65-1
+Depends: libc, libubus20220601, libubox20220515, libuci20130104, libblobmsg-json20220515, libjson-c5
+Status: install user installed
+Architecture: mips_24kc
+Conffiles:
+ /etc/config/rpcd 1a40da0ebe45b1afd131dfc4650592913e38445e7fe42f96d3b95ad5151ac0e6
+Installed-Time: 1665787481
+
+Package: busybox
+Version: 1.35.0-4
+Depends: libc
+Conflicts: busybox-selinux
+Status: install user installed
+Essential: yes
+Architecture: mips_24kc
+Conffiles:
+ /etc/syslog.conf e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+Installed-Time: 1665787481
+
+Package: kmod-crypto-ctr
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-crypto-manager, kmod-crypto-seqiv
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: luci-lib-ip
+Version: git-20.250.76529-62505bd
+Depends: libc, liblua5.1.5, libnl-tiny1
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: kmod-nft-fib
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-nft-core
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: kmod-nfnetlink
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab)
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: libubus-lua
+Version: 2022-06-01-2bebf93c-1
+Depends: libc, libubus20220601, liblua5.1.5
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: kmod-crypto-hash
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab)
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: kmod-nf-reject6
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab)
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: kmod-crypto-aead
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-crypto-null
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: libiwinfo-lua
+Version: 2022-08-19-0dad3e66-1
+Depends: libc, libiwinfo20210430, liblua5.1.5
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: collectd-mod-powerdns
+Version: 5.12.0-33
+Depends: libc, collectd
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670516353
+
+Package: swconfig
+Version: 12
+Depends: libc, libuci20130104, libnl-tiny1
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: luci-mod-system
+Version: git-22.264.46172-b6b7da4
+Depends: libc, luci-base
+Status: install user installed
+Architecture: all
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: kmod-nf-flow
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-nf-conntrack
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: collectd-mod-ping
+Version: 5.12.0-33
+Depends: libc, collectd, liboping
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670516351
+
+Package: libnl-tiny1
+ABIVersion: 1
+Version: 2021-11-21-8e0555fb-1
+Depends: libc
+Provides: libnl-tiny
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: libustream-wolfssl20201210
+ABIVersion: 20201210
+Version: 2022-01-16-868fd881-2
+Depends: libc, libubox20220515, libwolfssl5.5.1.ee39414e
+Provides: libustream-wolfssl
+Conflicts: libustream-openssl
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: kmod-lib-crc-ccitt
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab)
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: getrandom
+Version: 2021-08-03-205defb5-2
+Depends: libc
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: libiptext0
+ABIVersion: 0
+Version: 1.8.7-7
+Depends: libc, libxtables12
+Provides: libiptext
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670527514
+Auto-Installed: yes
+
+Package: ucode-mod-ubus
+Version: 2022-10-07-4ae70721-1
+Depends: libc, ucode, libubus20220601, libblobmsg-json20220515
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: collectd-mod-disk
+Version: 5.12.0-33
+Depends: libc, collectd, libudev
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670516538
+
+Package: luci-theme-bootstrap
+Version: git-22.288.45147-96ec0cd
+Depends: libc
+Status: install user installed
+Architecture: all
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: libusb-1.0-0
+ABIVersion: -0
+Version: 1.0.24-5
+Depends: libc, libpthread, librt
+Provides: libusb-1.0
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670512751
+Auto-Installed: yes
+
+Package: kmod-pppoe
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-ppp, kmod-pppox
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: libuuid1
+ABIVersion: 1
+Version: 2.37.4-1
+Depends: libc, librt
+Provides: libuuid
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670513049
+Auto-Installed: yes
+
+Package: sysfsutils
+Version: 2.1.0-3
+Depends: libc, libsysfs2
+Status: install ok installed
+Architecture: mips_24kc
+Conffiles:
+ /etc/sysfs.conf 9d2d02e513dbd87141ae92692bf1bda9d2bf1b9b765ecbbf0eca6e1210131664
+ /etc/sysfs.d/local.conf 43cedc0217825c00cb1a3d49e7be43c06f70257593fb4d6d393f645e04d512de
+Installed-Time: 1670516549
+Auto-Installed: yes
+
+Package: kmod-pppox
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-ppp
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: collectd-mod-sensors
+Version: 5.12.0-33
+Depends: libc, collectd, lm-sensors
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670516553
+
+Package: wpad-basic-wolfssl
+Version: 2022-01-16-cff80b4f-13.1
+Depends: hostapd-common (= 2022-01-16-cff80b4f-13.1), libc, libnl-tiny1, hostapd-common, libubus20220601, libwolfssl5.5.1.ee39414e
+Provides: hostapd, wpa-supplicant
+Conflicts: hostapd, hostapd-basic, hostapd-basic-openssl, hostapd-basic-wolfssl, hostapd-mini, hostapd-openssl, hostapd-wolfssl, wpad, wpad-mesh-openssl, wpad-mesh-wolfssl, wpad-basic, wpad-basic-openssl, wpad, wpad-mesh-openssl, wpad-mesh-wolfssl, wpad-basic, wpad-basic-openssl
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: kmod-ipt-conntrack
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-ipt-core, kmod-nf-conntrack
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670527507
+Auto-Installed: yes
+
+Package: kmod-nf-reject
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab)
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: procd-ujail
+Version: 2022-06-01-7a009685-1
+Depends: libc, libubox20220515, libubus20220601, libuci20130104, libblobmsg-json20220515
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: kmod-lib-crc16
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab)
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670513063
+Auto-Installed: yes
+
+Package: base-files
+Version: 1494-r19803-9a599fee93
+Depends: libc, netifd, jsonfilter, usign, openwrt-keyring, fstools, fwtool
+Status: install user installed
+Architecture: mips_24kc
+Conffiles:
+ /etc/ethers 56bda09b0aa3d1e88107bfa8a1c6e4449d5c1f47245dc1c4037ff9b5db163b7c
+ /etc/group 45e8cab268d4a2254d48ccb1f889630047e81758de54a614cad5449fdbebe19c
+ /etc/hosts c1a978d90673437b35fa9494e0a54294062c152bb653d490b718052ab88447fd
+ /etc/inittab 8b395f7d827753e1e92d4a1c369d9fe16caa23bf742b3f78e4599c4dd9b1b6e3
+ /etc/iproute2/rt_protos a0712b1771c8d5f3e0dcf9a6314880e71aa3498ea1ae873535bdfcf70d814061
+ /etc/iproute2/rt_tables f771e2b81741f70e3faf658dc504f0dc048672fc8caaadea15e46c35da3de8f8
+ /etc/passwd 6a451aa33393f47ade89b8bce4d9711818c2630394c3967265ffed276bb25a55
+ /etc/profile 73a6177caf76a76d178111e57eb6ee95c3ba06ce2fc6864c7fb89cacf433c66d
+ /etc/protocols 7d551355d5540b07b9d86e623cbbc4abecbb94d2a662b3afcc917940eb0e3d52
+ /etc/rc.local 515018aa94eb4937dade12dc0d69890b352af35a5ab5fb8203f9ed10990ac06f
+ /etc/services 754ccc71ca347bc79ac4c45139d416b7cf1e65a919dad1db15613a216cd6b9cc
+ /etc/shadow 9000a74fcbf027301e784909e74e2cfff1b879707432090fadedc8527858873e
+ /etc/shells 8b35ce73c18161a7d7ed16fa244410993bd031515260e3e0c11749047df48d0a
+ /etc/shinit f633939cdda16a3116225a578f457295b2a0da824c47d5f0e90a58806c059321
+ /etc/sysctl.conf c02fe88dc055a1eaee9e7cb631760a3a5a9cea55610b42aa45196838c6f1a55e
+ /etc/sysupgrade.conf 9e87b05fe2f12c84d1c465b396322748479f64bc40e5bab061887f0bd95020a6
+Installed-Time: 1665787481
+
+Package: kmod-nf-nat
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-nf-conntrack
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: kmod-crypto-crc32c
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-crypto-hash
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: ucode-mod-uci
+Version: 2022-10-07-4ae70721-1
+Depends: libc, ucode, libuci20130104
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: netifd
+Version: 2022-08-25-76d2d41b-1
+Depends: libc, libuci20130104, libnl-tiny1, libubus20220601, ubus, ubusd, jshn, libubox20220515
+Status: install user installed
+Architecture: mips_24kc
+Conffiles:
+ /etc/udhcpc.user 4dabffbc2110a29e01babc63d9b8db94da49efd3ed784d35b49a559ac8ce7035
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: libwolfssl5.5.1.ee39414e
+ABIVersion: 5.5.1.ee39414e
+Version: 5.5.1-stable-3
+Depends: libc
+Provides: libcyassl, libwolfssl, libcyassl5.5.1.ee39414e
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: kmod-ipt-raw
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-ipt-core
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670527521
+Auto-Installed: yes
+
+Package: libsmartcols1
+ABIVersion: 1
+Version: 2.37.4-1
+Depends: libc, librt
+Provides: libsmartcols
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670517269
+Auto-Installed: yes
+
+Package: libubus20220601
+ABIVersion: 20220601
+Version: 2022-06-01-2bebf93c-1
+Depends: libc, libubox20220515
+Provides: libubus
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: firewall4
+Version: 2022-10-14-4fbf6d75-1
+Depends: ucode (>= 2022-03-22), libc, kmod-nft-core, kmod-nft-fib, kmod-nft-offload, kmod-nft-nat, nftables-json, ucode, ucode-mod-fs, ucode-mod-ubus, ucode-mod-uci
+Provides: uci-firewall
+Status: install user installed
+Architecture: mips_24kc
+Conffiles:
+ /etc/config/firewall 5c4e275dc6d40ac8215a568debb19d9d62dfada91d5746372d0cb0ec71a3d306
+ /etc/nftables.d/10-custom-filter-chains.nft af5cbfeb3e3b61d32ce134ae33d15330ee27da838e6f4fb9c717f034923b8b16
+ /etc/nftables.d/README 0656d83221c1d000f6b9655757c412f328e332b5bdf25efbfa88611d8104490d
+Installed-Time: 1665787481
+
+Package: uboot-envtools
+Version: 2022.01-32
+Depends: libc
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: kmod-mii
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab)
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670512797
+Auto-Installed: yes
+
+Package: kmod-usb-xhci-hcd
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-usb-core
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670513070
+Auto-Installed: yes
+
+Package: dnsmasq
+Version: 2.86-14
+Depends: libc, libubus20220601
+Status: install user installed
+Architecture: mips_24kc
+Conffiles:
+ /etc/config/dhcp ddd520eb24451a892c9c666d83c10c9ea4fc944efbc34a149bc962c56bd8812f
+ /etc/dnsmasq.conf 1e6ab19c1ae5e70d609ac7b6246541d52042e4dee1892f825266507ef52d7dfd
+Installed-Time: 1665787481
+
+Package: procd
+Version: 2022-06-01-7a009685-1
+Depends: libc, ubusd, ubus, libjson-script20220515, ubox, libubox20220515, libubus20220601, libblobmsg-json20220515, libjson-c5, jshn
+Conflicts: procd-selinux
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: libudev-zero
+Version: 1.0.1-1
+Depends: libc, libevdev
+Provides: libudev
+Conflicts: libudev, eudev, udev
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670512756
+Auto-Installed: yes
+
+Package: kmod-phy-ath79-usb
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-usb-core
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: usbutils
+Version: 014-1
+Depends: libc, libusb-1.0-0, libudev, librt, libpthread
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670512757
+
+Package: kmod-crypto-hmac
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-crypto-hash, kmod-crypto-manager
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: kmod-crypto-sha256
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-crypto-hash
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: ubusd
+Version: 2022-06-01-2bebf93c-1
+Depends: libc, libubox20220515, libblobmsg-json20220515
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: px5g-wolfssl
+Version: 5.1
+Depends: libc, libwolfssl5.5.1.ee39414e
+Provides: px5g
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: kmod-lib-crc32c
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-crypto-crc32c
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: kmod-usb-ehci
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-usb-core
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: luci-mod-status
+Version: git-22.189.48501-6731190
+Depends: libc, luci-base, libiwinfo20210430, libiwinfo-lua
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: libxtables12
+ABIVersion: 12
+Version: 1.8.7-7
+Depends: libc
+Provides: libxtables
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670527513
+Auto-Installed: yes
+
+Package: liboping
+Version: 1.10.0-3
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670516351
+Auto-Installed: yes
+
+Package: collectd-mod-users
+Version: 5.12.0-33
+Depends: libc, collectd
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670516560
+
+Package: kmod-usb-net-rndis
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-usb-net, kmod-usb-net-cdc-ether
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670512800
+
+Package: libjson-script20220515
+ABIVersion: 20220515
+Version: 2022-05-15-d2223ef9-1
+Depends: libc, libubox20220515
+Provides: libjson-script
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: block-mount
+Version: 2022-06-02-93369be0-2
+Depends: libc, ubox, libubox20220515, libuci20130104, libblobmsg-json20220515, libjson-c5
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670513047
+
+Package: kmod-crypto-seqiv
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-crypto-aead, kmod-crypto-rng
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: kmod-nft-nat
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-nft-core, kmod-nf-nat
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: kmod-usb2
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-phy-ath79-usb, kmod-usb-ehci, kmod-usb-core
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: collectd-mod-interface
+Version: 5.12.0-33
+Depends: libc, collectd
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670516323
+Auto-Installed: yes
+
+Package: kmod-usb3
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-usb-xhci-hcd, kmod-usb-core
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670513070
+
+Package: luci-app-firewall
+Version: git-22.089.67563-7e3c1b4
+Depends: libc, uci-firewall
+Status: install user installed
+Architecture: all
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: kmod-ipt-conntrack-extra
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-ipt-core, kmod-ipt-conntrack
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670527508
+Auto-Installed: yes
+
+Package: kmod-nf-ipt
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab)
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670527504
+Auto-Installed: yes
+
+Package: libblkid1
+ABIVersion: 1
+Version: 2.37.4-1
+Depends: libc, libuuid1
+Provides: libblkid
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670513052
+Auto-Installed: yes
+
+Package: libmnl0
+ABIVersion: 0
+Version: 1.0.5-1
+Depends: libc
+Provides: libmnl
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: collectd-mod-network
+Version: 5.12.0-33
+Depends: libc, collectd
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670516327
+Auto-Installed: yes
+
+Package: jansson4
+ABIVersion: 4
+Version: 2.13.1-2
+Depends: libc
+Provides: jansson
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: collectd-mod-irq
+Version: 5.12.0-33
+Depends: libc, collectd
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670516348
+
+Package: collectd-mod-wireless
+Version: 5.12.0-33
+Depends: libc, collectd
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670516361
+
+Package: odhcp6c
+Version: 2022-08-05-7d21e8d8-18
+Depends: libc, libubox20220515
+Status: install user installed
+Architecture: mips_24kc
+Conffiles:
+ /etc/odhcp6c.user 6d2b77cbb3ff311ea6e7237fe150bf272bf0b3a6c0b4e9e00c6423fd6b637557
+Installed-Time: 1665787481
+
+Package: fstools
+Version: 2022-06-02-93369be0-2
+Depends: libc, ubox
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: uclient-fetch
+Version: 2023-04-13-007d9454-1
+Depends: libc, libuclient20201210
+Provides: wget
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1717702653
+Alternatives: 200:/usr/bin/wget:/bin/uclient-fetch
+
+Package: kmod-crypto-ghash
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-crypto-gf128, kmod-crypto-hash
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: kmod-ath9k
+Version: 5.10.146+5.15.58-1-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-ath9k-common
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: iptables-mod-ipopt
+Version: 1.8.7-7
+Depends: libc, libxtables12, kmod-ipt-ipopt
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670527520
+Auto-Installed: yes
+
+Package: uci
+Version: 2021-10-22-f84f49f0-6
+Depends: libc, libuci20130104
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: lua
+Version: 5.1.5-10
+Depends: libc, liblua5.1.5
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: ucode-mod-fs
+Version: 2022-10-07-4ae70721-1
+Depends: libc, ucode
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: kmod-fs-ext4
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-lib-crc16, kmod-crypto-hash, kmod-crypto-crc32c
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670513067
+
+Package: collectd
+Version: 5.12.0-33
+Depends: libc, libpthread, zlib, libltdl7, jshn, liblua5.1.5
+Status: install ok installed
+Architecture: mips_24kc
+Conffiles:
+ /etc/config/collectd cda0744d4895bf60ad375cd12aafb01bbb3ffd37339866af16a6dae348e6f705
+Installed-Time: 1670515998
+Auto-Installed: yes
+
+Package: luci-ssl
+Version: git-20.244.36115-e10f954
+Depends: libc, luci, libustream-wolfssl20201210, px5g-wolfssl
+Status: install user installed
+Architecture: all
+Installed-Time: 1665787481
+
+Package: libip4tc2
+ABIVersion: 2
+Version: 1.8.7-7
+Depends: libc
+Provides: libip4tc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670527511
+Auto-Installed: yes
+
+Package: dropbear
+Version: 2022.82-2
+Depends: libc
+Status: install user installed
+Architecture: mips_24kc
+Conffiles:
+ /etc/config/dropbear 0198dbc97b5a9aac76a5c6233684571ccdcc91fcb735e91c36d2b06a98158589
+ /etc/dropbear/dropbear_ed25519_host_key e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+ /etc/dropbear/dropbear_rsa_host_key e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+Installed-Time: 1665787481
+Alternatives: 100:/usr/bin/scp:/usr/sbin/dropbear, 100:/usr/bin/ssh:/usr/sbin/dropbear
+
+Package: kmod-hwmon-core
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab)
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670516114
+Auto-Installed: yes
+
+Package: rrdtool1
+Version: 1.0.50-5
+Depends: libc, librrd1
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670516314
+Auto-Installed: yes
+
+Package: libnftnl11
+ABIVersion: 11
+Version: 1.2.1-1
+Depends: libc, libmnl0
+Provides: libnftnl
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: rpcd-mod-file
+Version: 2022-09-21-8c852b65-1
+Depends: libc, libubus20220601, libubox20220515, rpcd
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: mtd
+Version: 26
+Depends: libc, libubox20220515
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: odhcpd-ipv6only
+Version: 2022-03-22-860ca900-1
+Depends: libc, libubox20220515, libuci20130104, libubus20220601, libnl-tiny1
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: collectd-mod-ipstatistics
+Version: 5.12.0-33
+Depends: libc, collectd
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670516346
+
+Package: procd-seccomp
+Version: 2022-06-01-7a009685-1
+Depends: libc, libubox20220515, libblobmsg-json20220515
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: libiwinfo-data
+Version: 2022-08-19-0dad3e66-1
+Depends: libc
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: ucode
+Version: 2022-10-07-4ae70721-1
+Depends: libc, libucode20220812
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: rpcd-mod-luci
+Version: 20210614
+Depends: libc, rpcd, libubox20220515, libubus20220601, libnl-tiny1
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: kmod-crypto-ccm
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-crypto-ctr, kmod-crypto-aead
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: kmod-nf-log
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab)
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: parted
+Version: 3.4-2
+Depends: libc, libparted, libreadline8, libncurses6
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670513453
+
+Package: urandom-seed
+Version: 3
+Depends: libc, getrandom
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: collectd-mod-syslog
+Version: 5.12.0-33
+Depends: libc, collectd
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670516556
+
+Package: lscpu
+Version: 2.37.4-1
+Depends: libc, libsmartcols1
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670517269
+
+Package: luci-proto-ppp
+Version: git-21.158.38888-88b9d84
+Depends: libc
+Status: install user installed
+Architecture: all
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: libcomerr0
+ABIVersion: 0
+Version: 1.46.5-2
+Depends: libc, libuuid1
+Provides: libcomerr
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670513053
+Auto-Installed: yes
+
+Package: luci-mod-admin-full
+Version: git-19.253.48496-3f93650
+Depends: libc, luci-base, luci-mod-status, luci-mod-system, luci-mod-network
+Status: install user installed
+Architecture: all
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: ppp
+Version: 2.4.9.git-2021-01-04-3
+Depends: libc, kmod-ppp
+Status: install user installed
+Architecture: mips_24kc
+Conffiles:
+ /etc/ppp/chap-secrets 6981fa176a79f8c12be5826c421b16253a616747018ba7e76752a9d36d1d51d4
+ /etc/ppp/filter 579583b318e0cff706ffc134620b42d3fbce8fc31aeb0ad7eea1cc859868e902
+ /etc/ppp/options 01f7358a5528be037dde329a2ecfb7a63382aababf21d4f5bc085f5acef95133
+Installed-Time: 1665787481
+
+Package: luci-base
+Version: git-22.288.45147-96ec0cd
+Depends: libc, lua, luci-lib-nixio, luci-lib-ip, rpcd, libubus-lua, luci-lib-jsonc, liblucihttp-lua, luci-lib-base, rpcd-mod-file, rpcd-mod-luci, cgi-io
+Status: install user installed
+Architecture: mips_24kc
+Conffiles:
+ /etc/config/luci 60078f7c02ed91d23092c9b75cb9ea5c8ee39f7727def813c8201f8e48a296f4
+ /etc/config/ucitrack f51366117a6456038cfa0d753ff7fe8a9fb5636f561b7bef8718939c6f9a3566
+ /etc/luci-uploads/.placeholder e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: collectd-mod-uptime
+Version: 5.12.0-33
+Depends: libc, collectd
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670515998
+
+Package: kmod-gpio-button-hotplug
+Version: 5.10.146-3
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab)
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: logd
+Version: 2021-08-03-205defb5-2
+Depends: libc, libubox20220515, libubus20220601, libblobmsg-json20220515
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: luci-app-simple-adblock
+Version: 1.9.5-3
+Depends: libc, luci-base, simple-adblock, jsonfilter
+Status: install user installed
+Architecture: all
+Installed-Time: 1717705820
+
+Package: kmod-nf-log6
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-nf-log
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: libreadline8
+ABIVersion: 8
+Version: 8.1-1
+Depends: libc, libncursesw6
+Provides: libreadline
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670513452
+Auto-Installed: yes
+
+Package: xtables-legacy
+Version: 1.8.7-7
+Depends: libc, kmod-ipt-core, libip4tc2, libip6tc2, libiptext0, libiptext6-0, libxtables12
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670527517
+Auto-Installed: yes
+
+Package: kmod-usb-net
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-mii, kmod-usb-core
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670512799
+Auto-Installed: yes
+
+Package: librt
+Version: 1.2.3-4
+Depends: libpthread
+Status: install hold installed
+Essential: yes
+Architecture: mips_24kc
+Installed-Time: 1670512750
+Auto-Installed: yes
+
+Package: kmod-mac80211
+Version: 5.10.146+5.15.58-1-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-cfg80211, kmod-crypto-cmac, kmod-crypto-ccm, kmod-crypto-gcm, hostapd-common
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: collectd-mod-filecount
+Version: 5.12.0-33
+Depends: libc, collectd
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670516540
+
+Package: collectd-mod-iwinfo
+Version: 5.12.0-33
+Depends: libc, collectd, libiwinfo20210430
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670516318
+Auto-Installed: yes
+
+Package: libblobmsg-json20220515
+ABIVersion: 20220515
+Version: 2022-05-15-d2223ef9-1
+Depends: libc, libjson-c5, libubox20220515
+Provides: libblobmsg-json
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: kmod-usb-net-cdc-ncm
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-usb-net, kmod-usb-net-cdc-ether
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670512830
+
+Package: luci-proto-ipv6
+Version: git-21.148.48881-79947af
+Depends: libc
+Status: install user installed
+Architecture: all
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: libip6tc2
+ABIVersion: 2
+Version: 1.8.7-7
+Depends: libc
+Provides: libip6tc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670527512
+Auto-Installed: yes
+
+Package: kmod-hwmon-vid
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-hwmon-core
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670516114
+
+Package: openwrt-keyring
+Version: 2022-03-25-62471e69-3
+Depends: libc
+Provides: lede-keyring
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: libparted
+Version: 3.4-2
+Depends: libc, libblkid1, libuuid1
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670513443
+Auto-Installed: yes
+
+Package: luci-app-attendedsysupgrade
+Version: git-23.093.42303-58b861d
+Depends: libc, luci-base, attendedsysupgrade-common, cgi-io
+Status: install user installed
+Architecture: all
+Installed-Time: 1717504998
+
+Package: libsensors5
+ABIVersion: 5
+Version: 3.6.0-1
+Depends: libc, sysfsutils
+Provides: libsensors
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670516551
+Auto-Installed: yes
+
+Package: collectd-mod-dhcpleases
+Version: 5.12.0-33
+Depends: libc, collectd
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670516537
+
+Package: collectd-mod-ted
+Version: 5.12.0-33
+Depends: libc, collectd
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670516558
+
+Package: libext2fs2
+ABIVersion: 2
+Version: 1.46.5-2
+Depends: libc, libuuid1, libblkid1, libss2, libcomerr0
+Provides: libext2fs
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670513058
+Auto-Installed: yes
+
+Package: libiptext6-0
+ABIVersion: -0
+Version: 1.8.7-7
+Depends: libc, libxtables12
+Provides: libiptext6
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670527515
+Auto-Installed: yes
+
+Package: jshn
+Version: 2022-05-15-d2223ef9-1
+Depends: libc, libjson-c5, libubox20220515, libblobmsg-json20220515
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: lm-sensors
+Version: 3.6.0-1
+Depends: libc, sysfsutils, libsensors5
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670516553
+Auto-Installed: yes
+
+Package: nftables-json
+Version: 1.0.2-2.1
+Depends: libc, kmod-nft-core, libnftnl11, jansson4
+Provides: nftables
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: collectd-mod-vmem
+Version: 5.12.0-33
+Depends: libc, collectd
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670516562
+
+Package: kmod-ipt-core
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-nf-reject, kmod-nf-ipt, kmod-nf-log
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670527506
+Auto-Installed: yes
+
+Package: e2fsprogs
+Version: 1.46.5-2
+Depends: libc, libuuid1, libext2fs2
+Status: install user installed
+Architecture: mips_24kc
+Conffiles:
+ /etc/e2fsck.conf dece11e2b15f487d7d2bf9f96abe2eaaf9cd33f02d7b9725b9116023d7786cac
+Installed-Time: 1670513060
+
+Package: attendedsysupgrade-common
+Version: 7
+Depends: libc, rpcd, rpcd-mod-rpcsys
+Status: install ok installed
+Architecture: all
+Installed-Time: 1717504970
+Auto-Installed: yes
+
+Package: kmod-ppp
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-lib-crc-ccitt, kmod-slhc
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: kmod-nft-offload
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-nf-flow, kmod-nft-nat
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: libncurses6
+ABIVersion: 6
+Version: 6.3-2
+Depends: libc, terminfo
+Provides: libncursesw, libncurses, libncursesw6
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670513448
+Auto-Installed: yes
+
+Package: kmod-crypto-null
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-crypto-hash
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: collectd-mod-load
+Version: 5.12.0-33
+Depends: libc, collectd
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670516325
+Auto-Installed: yes
+
+Package: libpcap1
+ABIVersion: 1
+Version: 1.10.1-3
+Depends: libc
+Provides: libpcap
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670516281
+Auto-Installed: yes
+
+Package: libiwinfo20210430
+ABIVersion: 20210430
+Version: 2022-08-19-0dad3e66-1
+Depends: libc, libnl-tiny1, libuci20130104, libubus20220601, libiwinfo-data
+Provides: libiwinfo
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: libss2
+ABIVersion: 2
+Version: 1.46.5-2
+Depends: libc, libcomerr0
+Provides: libss
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670513054
+Auto-Installed: yes
+
+Package: libjson-c5
+ABIVersion: 5
+Version: 0.15-2
+Depends: libc
+Provides: libjson-c
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: uhttpd
+Version: 2022-08-12-e3395cd9-1
+Depends: libc, libubox20220515, libblobmsg-json20220515, libjson-script20220515, libjson-c5
+Status: install user installed
+Architecture: mips_24kc
+Conffiles:
+ /etc/config/uhttpd bcf5f1c5e714cdc46e7855da53ba4c427c37735267ea17eebf958f24efd7d247
+Installed-Time: 1665787481
+
+Package: auc
+Version: 0.3.1-1
+Depends: libc, attendedsysupgrade-common, libblobmsg-json20220515, libubox20220515, libubus20220601, libuci20130104, libuclient20201210, rpcd-mod-rpcsys
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1717504970
+
+Package: kmod-nf-conntrack
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab)
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: libsysfs2
+ABIVersion: 2
+Version: 2.1.0-3
+Depends: libc
+Provides: libsysfs
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670516548
+Auto-Installed: yes
+
+Package: iptables-mod-conntrack-extra
+Version: 1.8.7-7
+Depends: libc, libxtables12, kmod-ipt-conntrack-extra, kmod-ipt-raw
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670527522
+Auto-Installed: yes
+
+Package: usign
+Version: 2020-05-23-f1f65026-1
+Depends: libc, libubox20220515
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: tc-tiny
+Version: 5.15.0-3
+Depends: libc, kmod-sched-core, libmnl0
+Provides: tc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670527503
+Auto-Installed: yes
+Alternatives: 200:/sbin/tc:/usr/libexec/tc-tiny
+
+Package: collectd-mod-exec
+Version: 5.12.0-33
+Depends: libc, collectd
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670516357
+Auto-Installed: yes
+
+Package: liblua5.1.5
+ABIVersion: 5.1.5
+Version: 5.1.5-10
+Depends: libc
+Provides: liblua
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: zlib
+Version: 1.2.11-6
+Depends: libc
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670515995
+Auto-Installed: yes
+
+Package: collectd-mod-fscache
+Version: 5.12.0-33
+Depends: libc, collectd
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670516542
+
+Package: kmod-crypto-gcm
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-crypto-ctr, kmod-crypto-ghash, kmod-crypto-null
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: luci-lib-nixio
+Version: git-20.234.06894-c4a4e43
+Depends: libc, liblua5.1.5
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: libubox20220515
+ABIVersion: 20220515
+Version: 2022-05-15-d2223ef9-1
+Depends: libc
+Provides: libubox
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: rpcd-mod-rpcsys
+Version: 2022-12-15-7de4820c-1
+Depends: libc, libubus20220601, libubox20220515, rpcd
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1717504965
+Auto-Installed: yes
+
+Package: collectd-mod-rrdtool
+Version: 5.12.0-33
+Depends: libc, collectd, librrd1
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670516316
+Auto-Installed: yes
+
+Package: ca-bundle
+Version: 20211016-1
+Depends: libc
+Provides: ca-certs
+Status: install user installed
+Architecture: all
+Installed-Time: 1665787481
+
+Package: libuclient20201210
+ABIVersion: 20201210
+Version: 2021-05-14-6a6011df-1
+Depends: libc, libubox20220515
+Provides: libuclient
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: liblucihttp-lua
+Version: 2022-07-08-6e68a106-1
+Depends: libc, liblucihttp0, liblua5.1.5
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: kmod-crypto-cmac
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-crypto-hash
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: luci-lib-jsonc
+Version: git-22.097.61921-7513345
+Depends: libc, liblua5.1.5, libjson-c5
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: collectd-mod-memory
+Version: 5.12.0-33
+Depends: libc, collectd
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670516321
+Auto-Installed: yes
+
+Package: kmod-ipt-ipopt
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-ipt-core
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670527519
+Auto-Installed: yes
+
+Package: kmod-crypto-rng
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-crypto-hash, kmod-crypto-hmac, kmod-crypto-sha256
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: luci
+Version: git-20.074.84698-ead5e81
+Depends: libc, uhttpd, uhttpd-mod-ubus, luci-mod-admin-full, luci-theme-bootstrap, luci-app-firewall, luci-app-opkg, luci-proto-ppp, libiwinfo-lua, luci-proto-ipv6, rpcd-mod-rrdns
+Status: install user installed
+Architecture: all
+Installed-Time: 1665787481
+
+Package: kmod-nf-conntrack6
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-nf-conntrack
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: libgcc1
+ABIVersion: 1
+Version: 11.2.0-4
+Provides: libgcc
+Status: install hold installed
+Essential: yes
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: kmod-usb-ledtrig-usbport
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-usb-core
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: libucode20220812
+ABIVersion: 20220812
+Version: 2022-10-07-4ae70721-1
+Depends: libc, libjson-c5
+Provides: libucode
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: librrd1
+Version: 1.0.50-5
+Depends: libc, zlib
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670516313
+Auto-Installed: yes
+
+Package: kmod-ath
+Version: 5.10.146+5.15.58-1-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-mac80211
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: ubox
+Version: 2021-08-03-205defb5-2
+Depends: libc, libubox20220515, ubusd, ubus, libubus20220601, libuci20130104
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+Alternatives: 100:/sbin/rmmod:/sbin/kmodloader, 100:/sbin/insmod:/sbin/kmodloader, 100:/sbin/lsmod:/sbin/kmodloader, 100:/sbin/modinfo:/sbin/kmodloader, 100:/sbin/modprobe:/sbin/kmodloader
+
+Package: kernel
+Version: 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab
+Depends: libc
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: rpcd-mod-iwinfo
+Version: 2022-09-21-8c852b65-1
+Depends: libc, libubus20220601, libubox20220515, rpcd, libiwinfo20210430
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: luci-mod-network
+Version: git-22.244.54818-b13d8c7
+Depends: libc, luci-base, libiwinfo-lua, rpcd-mod-iwinfo
+Status: install user installed
+Architecture: all
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: kmod-nft-core
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-nfnetlink, kmod-nf-reject, kmod-nf-reject6, kmod-nf-conntrack6, kmod-nf-nat, kmod-nf-log, kmod-nf-log6, kmod-lib-crc32c
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: libltdl7
+ABIVersion: 7
+Version: 2.4.6-2
+Depends: libc
+Provides: libltdl
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670515996
+Auto-Installed: yes
+
+Package: collectd-mod-swap
+Version: 5.12.0-33
+Depends: libc, collectd
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670516555
+
+Package: kmod-ifb
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab)
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670527510
+Auto-Installed: yes
+
+Package: kmod-nls-base
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab)
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: uhttpd-mod-ubus
+Version: 2022-08-12-e3395cd9-1
+Depends: libc, uhttpd, libubus20220601, libblobmsg-json20220515
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: fwtool
+Version: 2019-11-12-8f7fe925-1
+Depends: libc
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: jsonfilter
+Version: 2018-02-04-c7e938d6-1
+Depends: libc, libubox20220515, libjson-c5
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: collectd-mod-ethstat
+Version: 5.12.0-33
+Depends: libc, collectd
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670516344
+
+Package: hostapd-common
+Version: 2022-01-16-cff80b4f-13.1
+Depends: libc
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: collectd-mod-protocols
+Version: 5.12.0-33
+Depends: libc, collectd
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670516546
+
+Package: collectd-mod-openvpn
+Version: 5.12.0-33
+Depends: libc, collectd
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670516544
+
+Package: collectd-mod-cpu
+Version: 5.12.0-33
+Depends: libc, collectd
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670516320
+Auto-Installed: yes
+
+Package: kmod-ath9k-common
+Version: 5.10.146+5.15.58-1-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-ath
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: collectd-mod-thermal
+Version: 5.12.0-33
+Depends: libc, collectd
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670516359
+
+Package: kmod-usb-net-cdc-ether
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-usb-net
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670512800
+Auto-Installed: yes
+
+Package: wireless-regdb
+Version: 2022.08.12-1
+Depends: libc
+Status: install user installed
+Architecture: all
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: kmod-scsi-core
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab)
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670512725
+Auto-Installed: yes
+
+Package: urngd
+Version: 2020-01-21-c7f7b6b6-1
+Depends: libc, libubox20220515
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: kmod-slhc
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), kmod-lib-crc-ccitt
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: iftop
+Version: 2018-10-03-77901c8c-2
+Depends: libc, libpcap1, libncurses6, libpthread
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670516281
+
+Package: kmod-cfg80211
+Version: 5.10.146+5.15.58-1-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab), iw, iwinfo, wireless-regdb
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: qos-scripts
+Version: 1.3.1-31
+Depends: libc, tc, kmod-sched-core, kmod-sched-connmark, kmod-ifb, iptables, iptables-mod-ipopt, iptables-mod-conntrack-extra
+Status: install user installed
+Architecture: all
+Conffiles:
+ /etc/config/qos 4eb1db98deeb8341f9307ffa2cefb44eda03c88d1950e659036410cf3e3fa8c0
+Installed-Time: 1670527522
+
+Package: rpcd-mod-rrdns
+Version: 20170710
+Depends: libc, rpcd, libubox20220515, libubus20220601
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+Auto-Installed: yes
+
+Package: ppp-mod-pppoe
+Version: 2.4.9.git-2021-01-04-3
+Depends: libc, kmod-pppoe
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1665787481
+
+Package: collectd-mod-df
+Version: 5.12.0-33
+Depends: libc, collectd
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670516535
+
+Package: kmod-sched-core
+Version: 5.10.146-1
+Depends: kernel (= 5.10.146-1-72e39b50629eaf33fc9600ab703ee2ab)
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670527502
+Auto-Installed: yes
+
+Package: collectd-mod-sqm
+Version: 5.12.0-33
+Depends: libc, collectd-mod-exec
+Status: install user installed
+Architecture: mips_24kc
+Installed-Time: 1670516357
+
+Package: iptables-zz-legacy
+Version: 1.8.7-7
+Depends: libc, xtables-legacy
+Provides: iptables, iptables-legacy
+Status: install ok installed
+Architecture: mips_24kc
+Installed-Time: 1670527518
+Auto-Installed: yes
+Alternatives: 200:/usr/sbin/iptables:/usr/sbin/xtables-legacy-multi, 200:/usr/sbin/iptables-restore:/usr/sbin/xtables-legacy-multi, 200:/usr/sbin/iptables-save:/usr/sbin/xtables-legacy-multi
+

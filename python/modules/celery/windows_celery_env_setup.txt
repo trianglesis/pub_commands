@@ -1,0 +1,9 @@
+###windows_celery_env_setup
+
+win_venv\Scripts\celery.exe -A octo.octo_celery:app beat --schedule=django_celery_beat.schedulers:DatabaseScheduler
+
+win_venv\Scripts\activate.bat && celery -A octo.octo_celery:app beat --schedule=django_celery_beat.schedulers:DatabaseScheduler
+
+win_venv\Scripts\activate.bat && celery -A octo.octo_celery:app worker --loglevel=ERROR --concurrency=1 -E -n alpha@tentacle
+
+win_venv\Scripts\activate.bat && celery -A octo.octo_celery:app worker --pool=eventlet --loglevel=ERROR --concurrency=1 -E -n alpha@tentacle

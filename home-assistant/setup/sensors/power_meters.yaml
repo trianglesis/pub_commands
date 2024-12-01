@@ -1,0 +1,17 @@
+# Save power station charge W
+sensor:
+  - platform: template
+    name: "AGM Power Station Input Watt Sensor"
+    unique_id: agm_power_station_in_watt
+    state: "{{ states('sensor.agm_in_watt') }}"
+    unit_of_measurement: 'W'
+    icon: mdi:currency-gbp
+    state_class: measurement
+  - platform: statistics
+    name: "AGM Power Station Input Watt Stats"
+    entity_id: sensor.agm_in_watt
+    state_characteristic: count
+    max_age:
+      days: 30
+#
+#
