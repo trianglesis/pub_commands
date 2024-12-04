@@ -61,7 +61,6 @@ Count the power consumption of the inverter in three instances:
 
 #### 1. Invertor meters
 
-
 ```yaml
 sensor:
   # Invertor Battery power Increase\Decrease
@@ -119,10 +118,12 @@ sensor:
 
   # Make able to consume battery counters
   # See packages/sensors/easun_in_out.yaml
+  # https://community.home-assistant.io/t/home-battery-on-energy-dashboard/463059/6
   - platform: integration
     name: "EASUN Battery In kWh"
     source: sensor.easun_battery_in
     unique_id: invertor_battery_charging_kwh
+    method: left
     unit_prefix: k
     unit_time: h
     round: 2
@@ -133,6 +134,7 @@ sensor:
     name: "EASUN Battery Out kWh"
     source: sensor.easun_battery_out
     unique_id: invertor_battery_discharging_kwh
+    method: left
     unit_prefix: k
     unit_time: h
     round: 2
@@ -408,6 +410,10 @@ Read:
 - https://developers.home-assistant.io/docs/core/entity/sensor/#available-state-classes
 - https://www.home-assistant.io/integrations/sensor#device-class
 - https://www.home-assistant.io/docs/energy/faq/#troubleshooting-missing-entities
+- https://community.home-assistant.io/t/home-battery-on-energy-dashboard/463059/2
+
+Seems OK:
+- https://community.home-assistant.io/t/home-battery-on-energy-dashboard/463059/6
 
 Preprequisits:
 1. Make a template sensor to filter out negative float numbers and other cleaning (below)
@@ -424,9 +430,7 @@ Report charge sensor for convinience by sorting out any negative float by report
 
 
 ```yaml
-# https://www.home-assistant.io/integrations/template/#sensor
-# https://developers.home-assistant.io/docs/core/entity/sensor/#available-state-classes
-# https://www.home-assistant.io/docs/energy/faq/#troubleshooting-missing-entities
+# https://community.home-assistant.io/t/home-battery-on-energy-dashboard/463059/6
 template:
   - sensor:
       # If positive int - report, show 0 for a negative int
@@ -434,15 +438,13 @@ template:
       - name: EASUN Battery In
         unique_id: easun_battery_in
         icon: mdi:battery-charging
-        state_class: total_increasing
-        device_class: energy
+        state_class: measurement
+        device_class: power
         unit_of_measurement: W
         state: >
           {% if states('sensor.easun_easun_battery_average_power')|float >= 0 %}
-          {{ states('sensor.easun_easun_battery_average_power') }}
-          {% else %}
-          0
-          {% endif %}
+          {{ states('sensor.easun_easun_battery_average_power')|float }}
+          {% else %}0{% endif %}
         availability: >
           {{ states('sensor.easun_easun_battery_average_power')|is_number}}
 
@@ -451,16 +453,15 @@ template:
       - name: EASUN Battery Out
         unique_id: easun_battery_out
         icon: mdi:battery-arrow-down
-        state_class: total_increasing
-        device_class: energy
+        state_class: measurement
+        device_class: power
         unit_of_measurement: W
         state: >
           {% if states('sensor.easun_easun_battery_average_power')|float < 0 %}
-          {{ abs(states('sensor.easun_easun_battery_average_power')) }}
-          {% else %}
-          0
-          {% endif %}
+          {{ states('sensor.easun_easun_battery_average_power')|float|abs }}
+          {% else %}0{% endif %}
         availability: >
           {{ states('sensor.easun_easun_battery_average_power')|is_number}}
 
 ```
+
