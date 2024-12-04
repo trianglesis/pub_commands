@@ -249,6 +249,31 @@ sensor:
     round: 2
     max_sub_interval:
       minutes: 1
+
+  # Counter only for Fridge without dishwasher
+  # packages/sensors/fridge_without_dishwasher.yaml
+  - platform: integration
+    source: sensor.fridge_power
+    unique_id: fridge_power_kwh
+    name: "Fridge kWh"
+    unit_prefix: k
+    unit_time: h
+    round: 2
+    max_sub_interval:
+      minutes: 1
+
+  # Counter for SUM of all power
+  # packages/sensors/total_consumption_sum.yaml
+  - platform: integration
+    source: sensor.total_consumption
+    unique_id: total_consumption
+    name: "Total Consumption kWh"
+    unit_prefix: k
+    unit_time: h
+    round: 2
+    max_sub_interval:
+      minutes: 1
+
 ```
 
 ### Meters
@@ -363,19 +388,45 @@ template:
           {% endif %}
 ```
 
+### Template sensor to count diff
+
+Dishwasher and Fridge both are metered at DIN rail.
+Dishwasher is also metered by smart socket.
+Substract Dishwasher wattage from DIN rail to show Frigdge wattage only
+
+```yaml
+# packages/sensors/integration.yaml
+template:
+  - sensor:
+      # Substract total power if dishwasher from dishwashwer+fridge DIN counter
+      - name: Fridge power
+        unique_id: fridge_without_dishwasher
+        icon: mdi:counter
+        device_class: power
+        state_class: measurement
+        unit_of_measurement: W
+        state: >
+          {% if states('sensor.dishwasher_fridge_power')|float >= 0 and states('sensor.tuya_cloud_dishwasher_power')|float >=0 %}
+          {{ states('sensor.dishwasher_fridge_power')|float - states('sensor.tuya_cloud_dishwasher_power')|float }}
+          {% else %}0{% endif %}
+        availability: >
+          {{ states('sensor.dishwasher_fridge_power')|is_number}}
+```
 
 ### Total of all
 
 Collect all actual power meter devices into one
 
 ```yaml
+# packages/sensors/integration.yaml
+# Include invertor MAINS power when charging and when inverter is on
 template:
   - sensor:
       - name: Total Consumption
-        unit_of_measurement: "kWh"
         icon: mdi:counter
-        state_class: total_increasing
-        device_class: energy
+        device_class: power
+        state_class: measurement
+        unit_of_measurement: W
         state: >
           {{  states('sensor.easun_easun_average_mains_power')|float(0) + 
               states('sensor.washing_machine_tuya_din_power')|float(0) + 
