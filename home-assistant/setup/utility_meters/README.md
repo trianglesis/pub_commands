@@ -310,6 +310,7 @@ utility_meter:
     source: sensor.invertor_battery_average_power_kwh
     name: Invertor Batteries Charge Net kWh
     unique_id: invertor_battery_charge_net_kwh
+    periodically_resetting: true
     net_consumption: true
 
   # DISCHARGE
@@ -367,6 +368,7 @@ utility_meter:
     name: Invertor Main Power Consumption (all)
     unique_id: invertor_main_power_all
     periodically_resetting: true
+
 
 ```
 
