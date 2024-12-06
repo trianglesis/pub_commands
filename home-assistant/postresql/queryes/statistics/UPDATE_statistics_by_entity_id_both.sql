@@ -1,0 +1,28 @@
+-- UPDATE value
+UPDATE STATISTICS_SHORT_TERM
+SET
+	-- sum=sum-92.87
+	SUM = -12.23
+WHERE
+	STATISTICS_SHORT_TERM.METADATA_ID IN (
+		SELECT
+			ID
+		FROM
+			PUBLIC.STATISTICS_META
+		WHERE
+			STATISTICS_META.STATISTIC_ID = 'sensor.invertor_battery_charging_power_kwh'
+	);
+-- UPDATE value
+UPDATE STATISTICS
+SET
+	-- sum=sum-92.87
+	SUM = -12.23
+WHERE
+	STATISTICS.METADATA_ID IN (
+		SELECT
+			ID
+		FROM
+			PUBLIC.STATISTICS_META
+		WHERE
+			STATISTICS_META.STATISTIC_ID = 'sensor.invertor_battery_charging_power_kwh'
+	);

@@ -52,6 +52,10 @@ Compose a full query to select state and attrs, or just states:
 - With attr
 [Full](states/SELECT_states_by_entity_id_FULL.sql)
 
+As described at HA docs with extra steps:
+
+- [Example from doc](states/SELECT_states_example.sql)
+
 ### DELETE
 
 [Delete by entity id](states/DELETE_states_by_entity_id.sql)
@@ -102,10 +106,40 @@ Better to set to null
 
 - https://community.home-assistant.io/t/how-to-completely-wipe-sensor-history/441945/2
 
+- Select to verify
+
+1. Short
+
 ```sql
-UPDATE STATISTICS 
-SET sum=sum-6.5299 
-WHERE STATISTICS.METADATA_ID IN 
+SELECT
+	*
+FROM
+	PUBLIC.STATISTICS_META
+	LEFT JOIN STATISTICS_SHORT_TERM ON STATISTICS_META.ID = STATISTICS_SHORT_TERM.METADATA_ID
+WHERE
+	STATISTICS_META.STATISTIC_ID = 'sensor.invertor_battery_charging_power_kwh'
+```
+
+2. Long
+
+```sql
+SELECT
+	*
+FROM
+	PUBLIC.STATISTICS_META
+	LEFT JOIN STATISTICS ON STATISTICS_META.ID = STATISTICS.METADATA_ID
+WHERE
+	STATISTICS_META.STATISTIC_ID = 'sensor.invertor_battery_charging_power_kwh'
+```
+
+Update SUM
+
+1. Short
+
+```sql
+UPDATE STATISTICS_SHORT_TERM 
+SET sum=sum-12.23
+WHERE STATISTICS_SHORT_TERM.METADATA_ID IN 
 (
     SELECT
         ID
@@ -116,9 +150,11 @@ WHERE STATISTICS.METADATA_ID IN
 );
 ```
 
+2. Long
+
 ```sql
-UPDATE STATISTICS_SHORT_TERM 
-SET sum=sum-6.5299 
+UPDATE STATISTICS 
+SET sum=sum-12.23
 WHERE STATISTICS.METADATA_ID IN 
 (
     SELECT
