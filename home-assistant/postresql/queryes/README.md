@@ -99,12 +99,39 @@ WHERE
 
 [Delete](statistics/DELETE_statistics_by_entity_id.sql)
 
+See Update to get rid of old values
 
 ### Update
 
+- https://community.home-assistant.io/t/how-to-completely-wipe-sensor-history/441945/2
+
 Better to set to null
 
-- https://community.home-assistant.io/t/how-to-completely-wipe-sensor-history/441945/2
+Go to: `.storage/core.restore_state`
+Find by `"state": {"entity_id":"sensor.invertor_batteries_charging_monthly_kwh"`
+
+Check possible values for all with re: 
+- `,"state":"[a-zA-Z0-9^"]+"`
+- `"last_valid_state":\s{0,1}`
+
+Change as below:
+
+- "state":"0"
+- "native_value": null,
+- "last_valid_state": null
+
+```json
+{
+    "state": {"entity_id":"sensor.invertor_battery_charging_power_kwh","state":"0","attributes":{"state_class":"total","source":"sensor.easun_easun_inverter_charging_power","unit_of_measurement":"kWh","device_class":"energy","friendly_name":"Invertor Battery Charging Power kWh"},"last_changed":"2024-12-06T14:31:05.847613+00:00","last_reported":"2024-12-06T14:31:05.847405+00:00","last_updated":"2024-12-06T14:31:05.847613+00:00","context":{"id":"01JEE639VQNYP6SPXG1H9K00TC","parent_id":null,"user_id":null}},
+    "extra_data": {
+    "native_value": null,
+    "native_unit_of_measurement": "kWh",
+    "source_entity": "sensor.easun_easun_inverter_charging_power",
+    "last_valid_state": null
+    },
+    "last_seen": "2024-12-06T14:46:14.476792+00:00"
+},
+```
 
 - Select to verify
 
