@@ -52,6 +52,11 @@ Compose a full query to select state and attrs, or just states:
 - With attr
 [Full](states/SELECT_states_by_entity_id_FULL.sql)
 
+- With state_attribues:
+Use this example to delete attributes
+
+[Select states with state_attribues](states/SELECT_states_with_state_attributes.sql)
+
 As described at HA docs with extra steps:
 
 - [Example from doc](states/SELECT_states_example.sql)
@@ -97,7 +102,9 @@ WHERE
 
 - Use sort selects as a refference:
 
-[Delete](statistics/DELETE_statistics_by_entity_id.sql)
+1. [Delete statistics](statistics/DELETE_statistics_by_entity_id.sql)
+2. [Delete states with state attributes](states/DELETE_states_with_state_attributes.sql)
+3. [Delete states](states/DELETE_states_with_state_attributes.sql)
 
 See Update to get rid of old values
 
