@@ -16,3 +16,10 @@ Or more specific by the product itself
 - /python/setup/compilation/howto.md
 
 
+# Home Assistant
+
+- [Config extras](home-assistant/setup/config/README.md)
+- [PostgreSQL and querying](home-assistant/postresql/queryes/README.md)
+- [Utility Meters and energy](home-assistant/setup/utility_meters/README.md)
+- [REST Call from HA](home-assistant/setup/REST/buttons/home_Assistant_REST_Buttons.md)
+- [More graphs](home-assistant/setup/plotly/plotty-graph.md)
