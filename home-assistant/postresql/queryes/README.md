@@ -1,5 +1,26 @@
 # Home Assistant PostreSQL
 
+- https://www.home-assistant.io/docs/backend/database/#query
+
+```sql
+SELECT
+	STATES_META.ENTITY_ID,
+	COUNT(*) AS COUNT
+FROM
+	STATES
+	INNER JOIN STATES_META ON STATES.METADATA_ID = STATES_META.METADATA_ID
+WHERE
+	STATES_META.ENTITY_ID IN (
+		'sensor.invertor_battery_charging_power_kwh',
+		'sensor.invertor_batteries_charging_monthly_kwh'
+	)
+GROUP BY
+	STATES_META.ENTITY_ID
+ORDER BY
+	ENTITY_ID DESC
+```
+
+
 ## States
 
 - Select states by entity ID (name), then id:
