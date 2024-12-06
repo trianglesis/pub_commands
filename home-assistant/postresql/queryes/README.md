@@ -94,3 +94,38 @@ WHERE
 - Use sort selects as a refference:
 
 [Delete](statistics/DELETE_statistics_by_entity_id.sql)
+
+
+### Update
+
+Better to set to null
+
+- https://community.home-assistant.io/t/how-to-completely-wipe-sensor-history/441945/2
+
+```sql
+UPDATE STATISTICS 
+SET sum=sum-6.5299 
+WHERE STATISTICS.METADATA_ID IN 
+(
+    SELECT
+        ID
+    FROM
+        PUBLIC.STATISTICS_META
+    WHERE
+        STATISTICS_META.STATISTIC_ID = 'sensor.invertor_battery_charging_power_kwh'
+);
+```
+
+```sql
+UPDATE STATISTICS_SHORT_TERM 
+SET sum=sum-6.5299 
+WHERE STATISTICS.METADATA_ID IN 
+(
+    SELECT
+        ID
+    FROM
+        PUBLIC.STATISTICS_META
+    WHERE
+        STATISTICS_META.STATISTIC_ID = 'sensor.invertor_battery_charging_power_kwh'
+);
+```
