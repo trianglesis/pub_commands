@@ -66,6 +66,13 @@ Example path: `Artist\Album\Album Type\track.mp3`
 Album and Album type if exist
 .\<Artist>\<Album> [<Year>] $if(<Album type>,<Album type>)\<Track #:2> <Title>
 
+- Album with Album type, if true, else Album
+
+O:\sanek\Music\Foreign\$First(<Artist>)\$if(<Album type>,<Album>[<Album type>], <Album>)\<Track #:2> <Title>
+
+- Same as above, but put bonus into the initial album folder in subdir
+
+O:\sanek\Music\Foreign\$First(<Artist>)\<Album>\$if(<Album type>,<Album type>,)\<Track #:2> <Title>
 
 # Hints:
 
