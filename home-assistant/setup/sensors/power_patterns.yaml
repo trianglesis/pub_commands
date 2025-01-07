@@ -1,0 +1,63 @@
+# https://community.home-assistant.io/t/get-the-value-of-a-sensor-at-a-specific-time/207101/16
+
+template:
+
+  # Washing machine
+  - trigger:
+      - platform: time_pattern
+        minutes: "/1"
+    sensor:
+      - name: Washing Machine Power Usage history
+        state: "{{ states('sensor.washing_machine_power') }}"
+        attributes:
+          min0: "{{ states('sensor.washing_machine_power')|float(0) }}"
+          min1: "{{ this.attributes['min0'] }}"
+          min2: "{{ this.attributes['min1'] }}"
+          min3: "{{ this.attributes['min2'] }}"
+          min4: "{{ this.attributes['min3'] }}"
+          min5: "{{ this.attributes['min4'] }}"
+          min6: "{{ this.attributes['min5'] }}"
+          min7: "{{ this.attributes['min6'] }}"
+          min8: "{{ this.attributes['min7'] }}"
+          min9: "{{ this.attributes['min8'] }}"
+          min10: "{{ this.attributes['min9'] }}"
+  
+  # Dishwasher
+  - trigger:
+      - platform: time_pattern
+        minutes: "/1"
+    sensor:
+      - name: Dishwacher Power Usage history
+        state: "{{ states('sensor.2_power_2') }}"
+        attributes:
+          min0: "{{ states('sensor.2_power_2')|float(0) }}"
+          min1: "{{ this.attributes['min0'] }}"
+          min2: "{{ this.attributes['min1'] }}"
+          min3: "{{ this.attributes['min2'] }}"
+          min4: "{{ this.attributes['min3'] }}"
+          min5: "{{ this.attributes['min4'] }}"
+          min6: "{{ this.attributes['min5'] }}"
+          min7: "{{ this.attributes['min6'] }}"
+          min8: "{{ this.attributes['min7'] }}"
+          min9: "{{ this.attributes['min8'] }}"
+          min10: "{{ this.attributes['min9'] }}"
+  
+  # Boiler
+  - trigger:
+      - platform: time_pattern
+        minutes: "/1"
+    sensor:
+      - name: Dishwacher Power Usage history
+        state: "{{ states('sensor.14_power_2') }}"
+        attributes:
+          min0: "{{ states('sensor.14_power_2')|float(0) }}"
+          min1: "{{ this.attributes['min0'] }}"
+          min2: "{{ this.attributes['min1'] }}"
+          min3: "{{ this.attributes['min2'] }}"
+          min4: "{{ this.attributes['min3'] }}"
+          min5: "{{ this.attributes['min4'] }}"
+          min6: "{{ this.attributes['min5'] }}"
+          min7: "{{ this.attributes['min6'] }}"
+          min8: "{{ this.attributes['min7'] }}"
+          min9: "{{ this.attributes['min8'] }}"
+          min10: "{{ this.attributes['min9'] }}"
