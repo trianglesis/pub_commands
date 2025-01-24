@@ -1,0 +1,17 @@
+substitutions:
+  name: athom-3gang-switch-89c3bb
+  friendly_name: 3Gang Switch 89c3bb
+packages:
+  Athom Technology.3Gang Switch: github://athom-tech/athom-configs/athom-sw03.yaml
+esphome:
+  name: ${name}
+  name_add_mac_suffix: false
+  friendly_name: ${friendly_name}
+api:
+  encryption:
+    key: KEEEEY
+
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
