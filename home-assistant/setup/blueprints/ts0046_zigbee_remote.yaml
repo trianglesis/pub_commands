@@ -1,0 +1,352 @@
+# Based on https://raw.githubusercontent.com/zpriddy/Home-Assistant/bf77a3ac86da181d5583074f5fc0b10d2601e8ad/blueprints/ts0046_zigbee_remote.yaml
+blueprint:
+  name: TS0046 Zigbee Remote
+  description: Configure actions for TS0046
+  domain: automation
+  # source_url: https://raw.githubusercontent.com/zpriddy/Home-Assistant-Blueprints/main/ts0046_zigbee_remote.yaml
+  author: trianglesis
+  input:
+    ts0046_device:
+      name: TS0046 Remote
+      selector:
+        device:
+          filter:
+            model: TS0046
+
+    # Actions
+    button_1_press:
+      name: Actions for Button 1 Pressed
+      default:
+      selector:
+        action:
+
+    button_1_double_press:
+      name: Actions for Button 1 Double Pressed
+      default:
+      selector:
+        action:
+
+    button_1_held:
+      name: Actions for Button 1 Held
+      default:
+      selector:
+        action:
+
+    button_2_press:
+      name: Actions for Button 2 Pressed
+      default:
+      selector:
+        action:
+
+    button_2_double_press:
+      name: Actions for Button 2 Double Pressed
+      default:
+      selector:
+        action:
+
+    button_2_held:
+      name: Actions for Button 2 Held
+      default:
+      selector:
+        action:
+
+    button_3_press:
+      name: Actions for Button 3 Pressed
+      default:
+      selector:
+        action:
+
+    button_3_double_press:
+      name: Actions for Button 3 Double Pressed
+      default:
+      selector:
+        action:
+
+    button_3_held:
+      name: Actions for Button 3 Held
+      default:
+      selector:
+        action:
+
+    button_4_press:
+      name: Actions for Button 4 Pressed
+      default:
+      selector:
+        action:
+
+    button_4_double_press:
+      name: Actions for Button 4 Double Pressed
+      default:
+      selector:
+        action:
+
+    button_4_held:
+      name: Actions for Button 4 Held
+      default:
+      selector:
+        action:
+
+    button_5_press:
+      name: Actions for Button 5 Pressed
+      default:
+      selector:
+        action:
+
+    button_5_double_press:
+      name: Actions for Button 5 Double Pressed
+      default:
+      selector:
+        action:
+
+    button_5_held:
+      name: Actions for Button 5 Held
+      default:
+      selector:
+        action:
+
+    button_6_press:
+      name: Actions for Button 6 Pressed
+      default:
+      selector:
+        action:
+
+    button_6_double_press:
+      name: Actions for Button 6 Double Pressed
+      default:
+      selector:
+        action:
+
+    button_6_held:
+      name: Actions for Button 6 Held
+      default:
+      selector:
+        action:
+
+mode: parallel
+max: 10
+
+trigger:
+
+  # Button 1
+  - device_id: !input ts0046_device
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: button_1
+    id: b1-1
+  - device_id: !input ts0046_device
+    domain: zha
+    platform: device
+    type: remote_button_double_press
+    subtype: button_1
+    id: b1-2
+  - device_id: !input ts0046_device
+    domain: zha
+    platform: device
+    type: remote_button_long_press
+    subtype: button_1
+    id: b1-h
+    
+    # Button 2
+  - device_id: !input ts0046_device
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: button_2
+    id: b2-1
+  - device_id: !input ts0046_device
+    domain: zha
+    platform: device
+    type: remote_button_double_press
+    subtype: button_2
+    id: b2-2
+  - device_id: !input ts0046_device
+    domain: zha
+    platform: device
+    type: remote_button_long_press
+    subtype: button_2
+    id: b2-h
+
+    # Button 3
+  - device_id: !input ts0046_device
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: button_3
+    id: b3-1
+  - device_id: !input ts0046_device
+    domain: zha
+    platform: device
+    type: remote_button_double_press
+    subtype: button_3
+    id: b3-2
+  - device_id: !input ts0046_device
+    domain: zha
+    platform: device
+    type: remote_button_long_press
+    subtype: button_3
+    id: b3-h
+
+    # Button 4
+  - device_id: !input ts0046_device
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: button_4
+    id: b4-1
+  - device_id: !input ts0046_device
+    domain: zha
+    platform: device
+    type: remote_button_double_press
+    subtype: button_4
+    id: b4-2
+  - device_id: !input ts0046_device
+    domain: zha
+    platform: device
+    type: remote_button_long_press
+    subtype: button_4
+    id: b4-h
+
+    # Button 5
+  - device_id: !input ts0046_device
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: button_5
+    id: b5-1
+  - device_id: !input ts0046_device
+    domain: zha
+    platform: device
+    type: remote_button_double_press
+    subtype: button_5
+    id: b5-2
+  - device_id: !input ts0046_device
+    domain: zha
+    platform: device
+    type: remote_button_long_press
+    subtype: button_5
+    id: b5-h
+
+    # Button 6
+  - device_id: !input ts0046_device
+    domain: zha
+    platform: device
+    type: remote_button_short_press
+    subtype: button_6
+    id: b6-1
+  - device_id: !input ts0046_device
+    domain: zha
+    platform: device
+    type: remote_button_double_press
+    subtype: button_6
+    id: b6-2
+  - device_id: !input ts0046_device
+    domain: zha
+    platform: device
+    type: remote_button_long_press
+    subtype: button_6
+    id: b6-h
+
+action:
+  - choose:
+      # Button 1
+      - conditions:
+          - condition: trigger
+            id:
+              - b1-1
+        sequence: !input button_1_press
+      - conditions:
+          - condition: trigger
+            id:
+              - b1-2
+        sequence: !input button_1_double_press
+      - conditions:
+          - condition: trigger
+            id:
+              - b1-h
+        sequence: !input button_1_held
+      
+      # Button 2
+      - conditions:
+          - condition: trigger
+            id:
+              - b1-1
+        sequence: !input button_2_press
+      - conditions:
+          - condition: trigger
+            id:
+              - b2-2
+        sequence: !input button_2_double_press
+      - conditions:
+          - condition: trigger
+            id:
+              - b2-h
+        sequence: !input button_2_held
+
+      # Button 3
+      - conditions:
+          - condition: trigger
+            id:
+              - b3-1
+        sequence: !input button_3_press
+      - conditions:
+          - condition: trigger
+            id:
+              - b3-2
+        sequence: !input button_3_double_press
+      - conditions:
+          - condition: trigger
+            id:
+              - b3-h
+        sequence: !input button_3_held
+
+      # Button 4
+      - conditions:
+          - condition: trigger
+            id:
+              - b4-1
+        sequence: !input button_4_press
+      - conditions:
+          - condition: trigger
+            id:
+              - b4-2
+        sequence: !input button_4_double_press
+      - conditions:
+          - condition: trigger
+            id:
+              - b4-h
+        sequence: !input button_4_held
+
+      # Button 5
+      - conditions:
+          - condition: trigger
+            id:
+              - b5-1
+        sequence: !input button_5_press
+      - conditions:
+          - condition: trigger
+            id:
+              - b5-2
+        sequence: !input button_5_double_press
+      - conditions:
+          - condition: trigger
+            id:
+              - b5-h
+        sequence: !input button_5_held
+
+      # Button 6
+      - conditions:
+          - condition: trigger
+            id:
+              - b6-1
+        sequence: !input button_6_press
+      - conditions:
+          - condition: trigger
+            id:
+              - b6-2
+        sequence: !input button_6_double_press
+      - conditions:
+          - condition: trigger
+            id:
+              - b6-h
+        sequence: !input button_6_held
