@@ -3,7 +3,7 @@ blueprint:
   name: TS0046 Zigbee Remote
   description: Configure actions for TS0046
   domain: automation
-  source_url: https://raw.githubusercontent.com/trianglesis/pub_commands/e791515c8ee4ad95b3ef6a525a84d718afe35a94/home-assistant/setup/blueprints/ts0046_zigbee_remote.yaml
+  source_url: https://github.com/zpriddy/Home-Assistant/blob/main/blueprints/ts0044_zigbee_remote.yaml
   author: trianglesis
   input:
     ts0046_device:
