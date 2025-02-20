@@ -34,7 +34,7 @@ wifi:
   password: !secret wifi_password
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
-    ssid: "EASUN"
+    ssid: "${friendly_name}"
     password: !secret fall_back_wifi_password
   reboot_timeout: 900s
   fast_connect: true
