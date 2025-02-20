@@ -1,0 +1,210 @@
+# https://esphome.io/components/remote_receiver.html#configuration-variables
+substitutions:
+  name: "home-infrared2"
+  friendly_name: "Athom IR 2"
+
+esphome:
+  name: athom-ar01-ir-2
+  friendly_name: Athom AR01 IR 2
+
+esp8266:
+  board: esp8285
+  restore_from_flash: true
+
+logger:
+  level: INFO
+api:
+  encryption:
+    key: !secret api_key
+ota:
+  - platform: esphome
+    password: !secret ota_password
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "${friendly_name}"
+    password: !secret fall_back_wifi_password
+  reboot_timeout: 900s
+  fast_connect: true
+
+captive_portal:
+
+web_server:
+  port: 80
+  version: 3
+  sorting_groups:
+  - id: sorting_group_controls
+    name: "Controls"
+    sorting_weight: 10
+  - id: sorting_group_diagnostic
+    name: "Diagnostic info"
+    sorting_weight: 60
+  - id: sorting_group_service
+    name: "Service"
+    sorting_weight: 90
+    
+remote_receiver:
+  pin:
+    number: GPIO5
+    inverted: true
+  # Dump: https://community.home-assistant.io/t/esphome-ir-blaster-example/453159/23
+  # dump: 
+  #   - raw
+  #   - lg
+  # dump: all # Dumps received codes to logs.
+  dump: raw
+  idle: 100ms
+
+remote_transmitter:
+  pin:
+    number: GPIO4
+  carrier_duty_percent: 50%
+
+output:
+  - platform: gpio
+    pin: GPIO12
+    id: gpio_12
+  - platform: gpio
+    pin: GPIO13
+    id: gpio_13
+
+switch:
+  - name: "Top LED"
+    id: led_top
+    platform: output
+    output: gpio_12
+    web_server:
+      sorting_group_id: sorting_group_controls
+  - name: "Middle LED"
+    id: led_middle
+    platform: output
+    output: gpio_13
+    web_server:
+      sorting_group_id: sorting_group_controls
+
+sensor:
+  - platform: wifi_signal
+    name: "${friendly_name} WiFi Signal"
+    update_interval: 60s
+    web_server:
+      sorting_group_id: sorting_group_diagnostic
+
+  - platform: uptime
+    name: "${friendly_name} Uptime"
+    update_interval: 60s
+    web_server:
+      sorting_group_id: sorting_group_diagnostic
+
+binary_sensor:
+  - platform: status
+    name: "${friendly_name} IR Status"
+    web_server:
+      sorting_group_id: sorting_group_diagnostic
+  - platform: gpio
+    pin:
+      number: GPIO0
+      mode:
+        input: true
+      inverted: true
+    name: Bottom Button
+    on_press:
+      then:
+        - switch.toggle:
+            id: led_middle
+        - delay: 2s
+        - switch.toggle:
+            id: led_top
+    web_server:
+      sorting_group_id: sorting_group_diagnostic
+
+text_sensor:
+  - platform: wifi_info
+    ip_address:
+      name: "${friendly_name} IP Address"
+      web_server:
+        sorting_group_id: sorting_group_diagnostic
+    ssid:
+      name: "${friendly_name} SSID"
+      web_server:
+        sorting_group_id: sorting_group_diagnostic
+    bssid:
+      name: "${friendly_name} BSSID"
+      web_server:
+        sorting_group_id: sorting_group_diagnostic
+    mac_address:
+      name: "${friendly_name} Mac Wifi Address"
+      web_server:
+        sorting_group_id: sorting_group_diagnostic
+
+# Services
+# PRONTO https://community.home-assistant.io/t/esp32-ir-remote-pronto-inconsistent-data-not-sending/504681/13
+button:
+  # Soundbar Volume
+  - platform: template
+    name: "SoundBar Volume UP"
+    on_press:
+      - remote_transmitter.transmit_raw:
+          carrier_frequency: 38kHz
+          code: [9007, -4499, 589, -545, 591, -543, 591, -544, 591, -544, 590, -548, 587, -544, 591, -544, 591, -544, 590, -1676, 542, -1701, 541, -1702, 542, -1701, 541, -1702, 541, -1702, 542, -569, 590, -1676, 542, -569, 590, -1676, 542, -569, 591, -1676, 541, -1701, 542, -569, 591, -544, 591, -543, 591, -1676, 542, -569, 591, -1676, 542, -569, 590, -544, 591, -1675, 543, -1700, 543, -1701, 542, -40916, 9015, -2253, 566]
+    web_server:
+      sorting_group_id: sorting_group_controls
+
+  - platform: template
+    name: "SoundBar Volume DOWN"
+    on_press:
+      - remote_transmitter.transmit_raw:
+          carrier_frequency: 38kHz
+          code: [8992, -4518, 549, -586, 552, -581, 549, -588, 548, -586, 553, -581, 549, -585, 550, -586, 550, -585, 549, -1720, 522, -1720, 524, -1719, 522, -1721, 523, -1720, 522, -1722, 521, -586, 549, -1718, 524, -1719, 546, -563, 572, -1696, 524, -585, 550, -585, 549, -585, 551, -1718, 546, -564, 573, -560, 572, -1697, 531, -578, 573, -1696, 546, -1696, 547, -1696, 548, -562, 573, -1695, 548, -40901, 9016, -2250, 573]
+    web_server:
+      sorting_group_id: sorting_group_controls
+
+  - platform: template
+    name: "SoundBar MUTE"
+    on_press:
+      - remote_transmitter.transmit_raw:
+          carrier_frequency: 38kHz
+          code: [9065, -4442, 634, -525, 599, -535, 599, -536, 599, -537, 597, -536, 598, -536, 598, -537, 598, -537, 597, -1644, 600, -1643, 597, -1645, 599, -1644, 598, -1644, 599, -1644, 598, -540, 593, -1646, 597, -536, 598, -1646, 597, -1646, 595, -538, 597, -538, 596, -539, 595, -1647, 597, -538, 597, -1645, 596, -539, 620, -514, 596, -1647, 594, -1648, 595, -1647, 595, -542, 591, -1648, 594, -40856, 9040, -2252, 569]
+    web_server:
+      sorting_group_id: sorting_group_controls
+
+  - platform: template
+    name: "SoundBar Optical"
+    on_press:
+      - remote_transmitter.transmit_raw:
+          carrier_frequency: 38kHz
+          code: [9009, -4497, 568, -565, 565, -569, 564, -570, 566, -569, 566, -567, 567, -567, 565, -569, 566, -567, 565, -1707, 539, -1699, 546, -1696, 543, -1699, 540, -1701, 542, -1700, 543, -565, 564, -1703, 542, -567, 568, -565, 565, -1703, 535, -573, 564, -570, 545, -589, 545, -1721, 541, -568, 566, -1700, 541, -1702, 519, -589, 546, -1720, 522, -1720, 521, -1721, 543, -564, 570, -1701, 517, -40914, 8994, -2272, 547]
+    web_server:
+      sorting_group_id: sorting_group_controls
+
+  # Deshman Light
+  - platform: template
+    name: "Dasha Light On"
+    on_press:
+      - remote_transmitter.transmit_raw:
+          carrier_frequency: 38kHz
+          code: [9086, -4493, 590, -550, 587, -545, 588, -577, 558, -550, 586, -548, 587, -576, 561, -574, 560, -575, 560, -1680, 560, -1680, 564, -1676, 584, -1657, 584, -551, 560, -1680, 560, -1681, 585, -1654, 586, -1655, 584, -1656, 562, -575, 585, -524, 587, -575, 583, -551, 584, -551, 585, -551, 585, -550, 585, -550, 584, -1655, 586, -1655, 586, -1655, 588, -1653, 586, -1655, 586, -1633, 607]
+    web_server:
+      sorting_group_id: sorting_group_controls
+
+  - platform: template
+    name: "Dasha Light Off"
+    on_press:
+      - remote_transmitter.transmit_raw:
+          carrier_frequency: 38kHz
+          code: [9055, -4520, 569, -565, 570, -563, 568, -568, 569, -566, 569, -567, 570, -564, 575, -561, 573, -563, 573, -1668, 570, -1671, 573, -1669, 570, -1672, 567, -568, 565, -1675, 570, -1672, 572, -1669, 570, -566, 571, -1671, 565, -568, 566, -570, 568, -568, 568, -568, 566, -568, 568, -566, 569, -1671, 570, -565, 572, -1670, 571, -1670, 572, -1669, 601, -1640, 574, -1668, 574, -1668, 569, -41048, 9090, -2223, 573]
+    web_server:
+      sorting_group_id: sorting_group_controls
+  
+  # LG TV
+  - platform: template
+    name: "LG On&Off"
+    on_press:
+      - remote_transmitter.transmit_raw:
+          carrier_frequency: 38kHz
+          code: [9071, -4433, 603, -562, 598, -536, 599, -1669, 599, -535, 604, -530, 599, -535, 600, -535, 575, -563, 594, -1670, 626, -1642, 598, -536, 600, -1668, 600, -1669, 600, -1668, 599, -1669, 599, -1669, 600, -534, 600, -534, 600, -535, 599, -1669, 574, -560, 601, -533, 600, -534, 601, -534, 598, -1669, 601, -1668, 575, -1693, 600, -534, 576, -1692, 600, -1669, 598, -1670, 575, -1693, 574, -39987, 9020, -2271, 576]
+    web_server:
+      sorting_group_id: sorting_group_controls
+
+### END
