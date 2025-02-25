@@ -126,7 +126,6 @@ api:
                       int i;
                       sscanf( command.c_str(), "%x", &i );
                       return i;
-                    
         - if:
             condition: # --=[ *** PANASONIC *** ]=--
               lambda: 'return protocol == "PANASONIC";'

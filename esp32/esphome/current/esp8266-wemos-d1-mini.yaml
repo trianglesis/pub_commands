@@ -29,6 +29,10 @@ wifi:
 
 captive_portal:
 
+time:
+  - platform: homeassistant
+    id: esptime
+
 # https://esphome.io/components/web_server.html#sensor-value-graph
 web_server:
   version: 3
@@ -61,13 +65,14 @@ globals:
   - id: RZERO
     type: float
     restore_value: no
-    initial_value: '30.930'
+    initial_value: '21.926'
 
 #Atmospheric CO2 level for calibration purposes. Outdoor CO2 level during calibration. Usually 450, but it's better to clarify.
+# https://www.co2.earth/daily-co2
   - id: ATMOCO2
     type: float
     restore_value: no
-    initial_value: '450'
+    initial_value: '427'
 
 #Parameters for calculating ppm of CO2 from sensor resistance
 #  Exponential regression:
@@ -169,7 +174,7 @@ sensor:
       - lambda: if ((id(dht_temperature).state)>=0) {return (id(dht_humidity).raw_state + (25.0 - id(dht_temperature).state) * (-0.15));} else {return id(dht_humidity).raw_state;}
       web_server:
         sorting_group_id: sorting_group_co2
-    update_interval: 60s
+    update_interval: 5s
     
     
   - platform: adc
