@@ -1,11 +1,21 @@
 # Dev Tools
 Pre-Requisits:
 ```shell
-yum groupinstall "Development Tools"
-yum install openssl-devel
-yum install libffi-devel
-yum install perl-IPC-Cmd
-dnf install perl-FindBin
+sudo yum groupinstall "Development Tools"
+sudo yum install openssl-devel libffi-devel perl-IPC-Cmd perl-FindBin libbz2-dev -y
+
+# Extras
+sudo dnf install -y zlib-devel
+sudo dnf install -y readline-devel
+sudo dnf install -y libuuid-devel
+sudo dnf install -y lzip.x86_64
+sudo dnf install -y sqlite-devel
+sudo dnf install -y bzip2-devel
+sudo dnf install -y gdbm-libs
+sudo dnf install -y ncurses-devel
+sudo dnf install -y tk-devel
+sudo dnf install -y python3-tkinter
+sudo dnf install -y gdbm-devel
 ```
 
 - https://docs.python.org/3.10/using/unix.html
@@ -18,21 +28,40 @@ dnf install perl-FindBin
 - https://docs.python.org/3.13/using/unix.html#custom-openssl
 
 ```text
-# https://www.openssl.org/source/openssl-1.1.1v.tar.gz
-# https://www.openssl.org/source/openssl-3.0.10.tar.gz
-# https://github.com/openssl/openssl/releases/download/openssl-3.4.1/openssl-3.4.1.tar.gz
+https://www.openssl.org/source/openssl-1.1.1v.tar.gz
+https://www.openssl.org/source/openssl-3.0.10.tar.gz
+https://github.com/openssl/openssl/releases/download/openssl-3.4.1/openssl-3.4.1.tar.gz
+
+# System ver
+https://github.com/openssl/openssl/releases/download/openssl-3.0.16/openssl-3.0.16.tar.gz
 ```
 
 ```shell
 wget https://github.com/openssl/openssl/releases/download/openssl-3.4.1/openssl-3.4.1.tar.gz
 tar xzf openssl-3.4.1.tar.gz
 pushd openssl-3.4.1
-./config --prefix=/usr/local/bin/custom-openssl --libdir=lib --openssldir=/etc/pki/tls
+./config enable-md2 --prefix=/usr/local --libdir=lib --openssldir=/etc/pki/tls
 make -j1 depend
 make -j8
 make install_sw
 popd
 ```
+
+### Start over
+
+```shell
+# Start over
+make clean && make distclean
+```
+
+### Optionally:
+
+```shell
+sudo ldconfig /usr/local/lib64/
+sudo ldconfig
+openssl version -a
+```
+
 
 ##### ERROR
 - (you may need to install the FindBin module)
@@ -58,17 +87,25 @@ cd Python-3.13.2
 
 ## Install
 
-### Use --enable-shared now for Oracle Linux
+#### EASY
 
-
-- EASY
 ```shell
-./configure --enable-optimizations --enable-shared --with-lto --with-openssl=/usr/local/bin/custom-openssl
+./configure --enable-optimizations --with-lto --with-openssl=/usr/local/bin/custom-openssl LDFLAGS="-Wl,-rpath /usr/local"
 ```
 
+#### PRO
 
-- PRO
+```shell
+./configure --prefix=/usr/local \
+            --enable-optimizations \
+            --with-lto \
+            --enable-shared \
+            --with-pydebug \
+            --enable-loadable-sqlite-extensions \
+            --with-openssl-rpath=auto LDFLAGS="-Wl,-rpath /usr/local/lib"
+```
 
+- old
 
 ```shell
 ./configure --prefix=/usr/local \
@@ -99,7 +136,36 @@ make -j "$(nproc)"
 make altinstall
 ```
 
+### Start over
+
+```shell
+# Start over
+make clean && make distclean
+```
+
+# Finish:
+
+```shell
+whereis python3.11
+python3.11: /usr/local/bin/python3.11 /usr/local/lib/python3.11
+
+whereis python3.13
+python3.13: /usr/local/bin/python3.13 /usr/local/lib/python3.13
+```
+
 # ERRORS
+
+## Missing modules
+
+Find by dnf
+
+```shell
+The necessary bits to build these optional modules were not found:
+_bz2                      _curses                   _curses_panel
+_dbm                      _gdbm                     _tkinter
+_uuid                     readline
+```
+
 
 ## ibpython3.11.so.1.0
 

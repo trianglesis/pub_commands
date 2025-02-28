@@ -7,7 +7,8 @@
 mkdir esphome
 cd esphome
 # Install virt env
-virtualenv --python=/usr/bin/python3 venv
+# Better use newer python
+virtualenv --python=/usr/local/bin/python3.13 venv --system-site-packages
 # Activate
 source venv/bin/activate
 # Install ESPHome

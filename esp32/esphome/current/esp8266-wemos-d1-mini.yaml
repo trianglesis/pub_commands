@@ -65,7 +65,7 @@ globals:
   - id: RZERO
     type: float
     restore_value: no
-    initial_value: '21.926'
+    initial_value: '40.505'
 
 #Atmospheric CO2 level for calibration purposes. Outdoor CO2 level during calibration. Usually 450, but it's better to clarify.
 # https://www.co2.earth/daily-co2
@@ -162,19 +162,21 @@ sensor:
     model: AM2302
     temperature:
       name: "Temperature AM2302"
+      state_class: 'measurement'
       id: dht_temperature
       accuracy_decimals: 1
       web_server:
         sorting_group_id: sorting_group_co2
     humidity:
       name: "Humidity AM2302"
+      state_class: 'measurement'
       id: dht_humidity
       accuracy_decimals: 1
       filters:
       - lambda: if ((id(dht_temperature).state)>=0) {return (id(dht_humidity).raw_state + (25.0 - id(dht_temperature).state) * (-0.15));} else {return id(dht_humidity).raw_state;}
       web_server:
         sorting_group_id: sorting_group_co2
-    update_interval: 5s
+    update_interval: 60s
     
     
   - platform: adc
@@ -249,6 +251,7 @@ sensor:
       }
     update_interval: 5s
     unit_of_measurement: ppm
+    state_class: 'measurement'
     id: ppm_co2
     web_server:
       sorting_group_id: sorting_group_co2
@@ -265,6 +268,7 @@ sensor:
       }
     update_interval: 5s
     unit_of_measurement: ppm
+    state_class: 'measurement'
     id: corrected_ppm_co2
     web_server:
       sorting_group_id: sorting_group_co2
