@@ -12,10 +12,7 @@ esp8266:
   restore_from_flash: true
 
 logger:
-  level: INFO
-api:
-  encryption:
-    key: !secret api_key
+  level: DEBUG
 ota:
   - platform: esphome
     password: !secret ota_password
@@ -44,7 +41,63 @@ web_server:
   - id: sorting_group_service
     name: "Service"
     sorting_weight: 90
-    
+  
+api:
+  encryption:
+    key: !secret api_key
+  # Services
+  # PRONTO https://community.home-assistant.io/t/esp32-ir-remote-pronto-inconsistent-data-not-sending/504681/13
+  services:
+    - service: send_ir
+      variables:
+        protocol: string
+        code: string
+        command: string
+        repeats: string
+      then:
+        # TODO: Split a very long RAW command into chunks
+        # https://esphome.io/cookbook/lambda_magic.html#delaying-remote-transmissions
+        # https://esphome.io/components/remote_transmitter.html#remote-transmitter-transmit-action
+        - lambda: 'ESP_LOGD("main", "Protocol: %s - Code: %s",  protocol.c_str(), code.c_str() ); '
+        - if:
+            condition: # --=[ *** RAW *** ]=--
+              lambda: 'return protocol == "RAW";'
+            then:
+              - logger.log: "Sending RAW data...!"
+              - remote_transmitter.transmit_raw:
+                  carrier_frequency: 38kHz
+                  code: !lambda |-
+                    std::string fullcode = code;
+                    std::vector<int> rawcodes;
+                    char * token;
+                    char seps[] = ",";
+                    token = strtok (&fullcode[0],seps);
+                    while (token != NULL)
+                    {
+                      rawcodes.push_back(std::stoi(token));
+                      token = strtok (NULL, seps);
+                    }
+                    ESP_LOGD("Athom IR", "rawcode count %d", rawcodes.size());
+                    std::string csv;
+                    for (int num : rawcodes) {
+                      csv += std::to_string(num) + " ";    
+                    }
+                    ESP_LOGD("Athom IR", "rawcodes: %s", csv.c_str());
+                    return rawcodes;
+        # IR Blaster
+        # by AA van Zoelen
+        #
+        # Version: 1.1
+        # Date   : 23 Aug 2022
+        - if:
+            condition: # --=[ *** PRONTO *** ]=--
+              lambda: 'return protocol == "PRONTO";'
+            then:
+              - logger.log: "Sending PRONTO data...!"
+              - remote_transmitter.transmit_pronto:
+                  data: !lambda |-
+                      return code.c_str();
+
 remote_receiver:
   pin:
     number: GPIO5
@@ -138,14 +191,11 @@ text_sensor:
       web_server:
         sorting_group_id: sorting_group_diagnostic
 
-# Services
-# PRONTO https://community.home-assistant.io/t/esp32-ir-remote-pronto-inconsistent-data-not-sending/504681/13
 button:
   - platform: restart
     name: "Restart"
     web_server:
       sorting_group_id: sorting_group_service
-
   ## Cooper & Hunter
   - platform: template
     name: "C&H Power Off"
@@ -248,4 +298,12 @@ button:
           code: [9260, -4521, 587, -559, 590, -556, 592, -557, 614, -532, 591, -555, 588, -557, 589, -556, 589, -558, 611, -1666, 588, -1691, 585, -1693, 611, -1665, 612, -1666, 611, -1667, 587, -1691, 586, -1691, 588, -556, 586, -1691, 611, -535, 609, -1668, 586, -558, 580, -565, 611, -534, 580, -564, 588, -1690, 610, -534, 609, -1669, 586, -557, 578, -1699, 586, -1691, 585, -1692, 610, -1666, 584, -39517, 9199, -2281, 609]
     web_server:
       sorting_group_id: sorting_group_controls
+
+
+# https://esphome.io/components/climate/climate_ir.html#gree-ir
+climate:
+  - platform: gree
+    name: "AC"
+    model: yac1fb9
+
 ### END
