@@ -59,6 +59,7 @@ i2c:
 globals:
 
 #The load resistance on the board. Value in KiloOhms
+# Factory rezistor 1k, custom rezistor ~20k soldered manually.
   - id: RLOAD
     type: float
     restore_value: no
