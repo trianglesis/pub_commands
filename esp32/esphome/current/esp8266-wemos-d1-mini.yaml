@@ -1,3 +1,5 @@
+# https://github.com/AlexBelfegor/esphome-mq135/blob/main/isl_climatestatio.yaml
+# https://www.codrey.com/electronic-circuits/how-to-use-mq-135-gas-sensor/
 substitutions:
   name: "ESP8266-WEMOS-D1-Mini"
   friendly_name: "ESP8266-WEMOS-D1-Mini"
@@ -47,6 +49,7 @@ web_server:
     name: "Diagnostic info"
     sorting_weight: 50
 
+# https://esphome.io/components/i2c.html
 i2c:
   sda: 5
   scl: 4
@@ -59,13 +62,13 @@ globals:
   - id: RLOAD
     type: float
     restore_value: no
-    initial_value: '1.025'
+    initial_value: '19.65'
 
 #Calibration resistance at atmospheric CO2 level. Outdoor calibration data
   - id: RZERO
     type: float
     restore_value: no
-    initial_value: '40.505'
+    initial_value: '44.666'
 
 #Atmospheric CO2 level for calibration purposes. Outdoor CO2 level during calibration. Usually 450, but it's better to clarify.
 # https://www.co2.earth/daily-co2
@@ -126,7 +129,7 @@ globals:
   - id: volt_resolution
     type: float
     restore_value: no
-    initial_value: '5.14'
+    initial_value: '4.677'
 
 # 1 for Exponential, 2 for Linear
   - id: regression_method
@@ -176,9 +179,9 @@ sensor:
       - lambda: if ((id(dht_temperature).state)>=0) {return (id(dht_humidity).raw_state + (25.0 - id(dht_temperature).state) * (-0.15));} else {return id(dht_humidity).raw_state;}
       web_server:
         sorting_group_id: sorting_group_co2
-    update_interval: 60s
+    update_interval: 10s
     
-    
+    # https://esphome.io/components/sensor/adc.html#different-esp32-adc-behavior-since-2021-11
   - platform: adc
     pin: A0
     name: "Gas ADC"
