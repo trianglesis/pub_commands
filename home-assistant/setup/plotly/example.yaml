@@ -1,0 +1,332 @@
+type: custom:plotly-graph
+title: null
+time_offset: 3h
+autorange_after_scroll: true
+config:
+  displaylogo: false
+  scrollZoom: true
+  displayModeBar: true
+entities:
+  - entity: sensor.temperatura_tado
+    mode: lines+markers+text
+    textposition: top right
+    textfont:
+      color: rgba ( 0, 221, 51 , 1)
+      size: 10
+    marker:
+      size: 8
+      color: rgba(  0, 221, 51  , 1)
+    showlegend: true
+    hovertemplate: >-
+      <span style="text-align: center; font-size: 20px;">%{y:.1f}
+      ºC</span><br>%{x}<extra></extra>  
+    texttemplate: ' %{y:.0f}'
+    yaxis: y1
+    name: TC
+    line:
+      width: 2
+      color: rgba ( 0, 221, 51   , 1)
+  - entity: sensor.aire_acondicionado_ac
+    legendgroup: 2
+    showlegend: true
+    visible: true
+    name: P
+    mode: lines+markers
+    fill: tozeroy
+    fillcolor: rgba(   225, 255, 0   ,.1)
+    marker:
+      size: 3
+      color: rgba(  225, 255, 0   , 1)
+    yaxis: y4
+    line:
+      width: 2
+      color: rgba (  225, 255, 0   , 0.1)
+  - entity: sensor.netatmo_casa_de_sh_interior_exterior_temperature
+    showlegend: true
+    visible: legendonly
+    mode: lines
+    hovertemplate: >-
+      <span style="text-align: center; font-size: 20px;">%{y:.1f}
+      ºC</span><br>%{x}<extra></extra>  
+    texttemplate: ' %{y:.1f}'
+    yaxis: y1
+    marker:
+      size: 20
+      color: rgba(165,165,0,0.9)
+    name: 'N'
+    line:
+      shape: spline
+      width: 3
+      color: ' #ffab3b '
+  - entity: sensor.switchbot_meter_bt_temperatura
+    showlegend: true
+    hovertemplate: >-
+      <span style="text-align: center; font-size: 20px;">%{y:.1f}
+      ºC</span><br>%{x}<extra></extra>    
+    yaxis: y1
+    textposition: bottom left
+    texttemplate: ' %{y:.1f}'
+    name: SB
+    line:
+      width: 3
+      shape: spline
+      color: rgba ( 249, 37, 8, 0.8)
+  - entity: sensor.netatmo_casa_de_sh_interior_temperature
+    showlegend: true
+    visible: legendonly
+    hovertemplate: >-
+      <span style="text-align: center; font-size: 20px;">%{y:.1f}
+      ºC</span><br>%{x}<extra></extra>    
+    yaxis: y1
+    name: 'N'
+    texttemplate: ' %{y:.1f}'
+    line:
+      shape: spline
+      width: 3
+      color: rgba (   0, 201, 255  , 0.9)
+  - entity: sensor.aire_acondicionado_temperature
+    showlegend: true
+    hovertemplate: >-
+      <span style="text-align: center; font-size: 20px;">%{y:.1f}
+      ºC</span><br>%{x}<extra></extra>    
+    yaxis: y1
+    name: T
+    texttemplate: ' %{y:.1f}'
+    line:
+      shape: spline
+      width: 3
+      color: rgba (  0, 111, 255 , 0.9)
+  - entity: ''
+    hovertemplate: '<span style="display: none;"> <extra></extra>     '
+    name: Now
+    yaxis: y9
+    texttemplate: ' Now'
+    showlegend: false
+    show_value: true
+    line:
+      width: 2
+      color: rgba (   255,255,255 , 1 )
+    x: $ex [Date.now(), Date.now()]
+    'y':
+      - 0
+      - 1
+defaults:
+  entity:
+    show_value: false
+  yaxes:
+    fixedrange: true
+    rangemode: tozero
+fn: |
+  $fn({getFromConfig, vars})=> {
+    const range = getFromConfig("visible_range");
+    const width = range[1] - range[0];
+    vars.scroll = (label, p) => ({
+      args: [
+        {
+          layout: {
+            "xaxis.range": [range[0] + width*p, range[1] + width*p],
+          }
+        }, {
+          transition: {
+            duration: 150,
+          }
+        }
+      ],
+      label,
+      method: "animate",
+    })
+    vars.zoom = (label, h) => ({
+      args: [
+        {
+          layout: {
+            "xaxis.range": [Date.now()-1000*60*60*h, Date.now()],
+          }
+        }
+      ],
+      label,
+      method: "animate",
+    })
+  }      
+layout:
+  modebar:
+    orientation: v
+  marker:
+    size: 20
+  xaxis:
+    tickangle: 0
+    minor:
+      nticks: 3
+      tickmode: auto
+      showgrid: false
+      tickformat: auto
+      gridcolor: '   #454545   '
+  yaxis:
+    side: left
+    ticksuffix: null
+    showticklabels: true
+    tickangle: 0
+    minor:
+      nticks: 4
+      tickmode: auto
+      showgrid: true
+      gridcolor: '   #454545   '
+      tickformat: auto
+    range:
+      - 15
+      - 35
+  annotations:
+    - text: |-
+        $fn ({hass}) =>
+          "<span style='font-size: 18px;'><span style='font-weight: bold; color: rgba( 0, 221, 51   , 1)'>"
+          + hass.states['sensor.temperatura_tado'].state + "</span></span>º<br>"
+          +  "</span><span style='font-weight: bold; font-size: 16px;color: rgba( 0, 221, 51   , 1)'>Tado</span><br>"
+          + (hass.states['sensor.aire_acondicionado_temperature']  ? "<br><span style='font-size: 30px;color: rgba(  47, 255, 241    , 1)'>❄</span>":'')
+          
+      xref: x domain
+      yref: y1 domain
+      xanchor: center
+      yanchor: top
+      x: 1.08
+      'y': 0.9
+      showarrow: false
+    - text: |-
+        $fn ({hass}) =>
+          "<span style='font-size: 18px;'><span style='font-weight: bold; color: rgba(  255, 187, 47    , 1)'>"
+          + hass.states['sensor.netatmo_casa_de_sh_interior_exterior_temperature'].state + "</span></span>º<br>"
+          +  "</span><span style='font-weight: bold; color: rgba( 255, 187, 47   , 1)'>NET🌡</span><br>"
+          + (hass.states['sensor.aire_acondicionado_temperature']  ? "<br><span style='font-size: 30px;color: rgba( 0, 221, 51   , 1)'></span>":'')
+          
+      xref: x domain
+      yref: y1 domain
+      xanchor: center
+      yanchor: top
+      x: 1.08
+      'y': 0.6
+      showarrow: false
+    - text: |-
+        $fn ({hass}) =>
+          "<span style='font-size: 18px;'><span style='font-weight: bold; color: rgba(  249, 37, 8  , 1)'>"
+          + hass.states['sensor.switchbot_meter_bt_temperatura'].state + "</span></span>º<br>"
+          +  "</span><span style='font-weight: bold; color: rgba( 249, 37, 8   , 1)'>SB🌡</span><br>"
+          + (hass.states['sensor.aire_acondicionado_temperature']  ? "<br><span style='font-size: 30px;color: rgba( 0, 221, 51   , 1)'></span>":'')
+          
+      xref: x domain
+      yref: y1 domain
+      xanchor: center
+      yanchor: top
+      x: 1.08
+      'y': 0.45
+      showarrow: false
+    - text: |-
+        $fn ({hass}) =>
+          "<span style='font-size: 18px;'><span style='font-weight: bold; color: rgba(  0, 201, 255  , 1)'>"
+          + hass.states['sensor.netatmo_casa_de_sh_interior_temperature'].state + "</span></span>º<br>"
+          +  "</span><span style='font-weight: bold; color: rgba( 0, 201, 255   , 1)'>NET🌡</span><br>"
+          + (hass.states['sensor.aire_acondicionado_temperature']  ? "<br><span style='font-size: 30px;color: rgba( 0, 221, 51   , 1)'></span>":'')
+          
+      xref: x domain
+      yref: y1 domain
+      xanchor: center
+      yanchor: top
+      x: 1.08
+      'y': 0.3
+      showarrow: false
+    - text: |-
+        $fn ({hass}) =>
+          "<span style='font-size: 18px;'><span style='font-weight: bold; color: rgba(  0, 111, 255  , 1)'>"
+          + hass.states['sensor.tado_temperature_1_decimal'].state + "</span></span>º<br>"
+          +  "</span><span style='font-weight: bold; color: rgba( 0, 111, 255   , 1)'>Tado🌡</span><br>"
+          + (hass.states['sensor.aire_acondicionado_temperature']  ? "<br><span style='font-size: 30px;color: rgba( 0, 221, 51   , 1)'></span>":'')
+          
+      xref: x domain
+      yref: y1 domain
+      xanchor: center
+      yanchor: top
+      x: 1.08
+      'y': 0.15
+      showarrow: false
+  yaxis2:
+    side: left
+    showticklabels: false
+    title: ''
+    tickangle: 0
+    minor:
+      nticks: 3
+      tickmode: auto
+      showgrid: true
+      gridcolor: '   #454545   '
+      tickformat: auto
+  yaxis3:
+    side: left
+    showticklabels: false
+    tickangle: 0
+    minor:
+      nticks: 3
+      tickmode: auto
+      showgrid: true
+      gridcolor: '   #454545   '
+      tickformat: auto
+  yaxis4:
+    side: left
+    showticklabels: false
+    tickangle: 0
+    minor:
+      nticks: 3
+      tickmode: auto
+      showgrid: true
+      gridcolor: '   #454545   '
+      tickformat: auto
+  yaxis5:
+    side: left
+    showticklabels: false
+    tickangle: 0
+    minor:
+      nticks: 3
+      tickmode: auto
+      showgrid: true
+      gridcolor: '   #454545   '
+      tickformat: auto
+  height: 500
+  margin:
+    l: 40
+    r: 60
+    t: 100
+  updatemenus:
+    - buttons:
+        - $fn({vars}) => vars.scroll( '<', -.5)
+        - $fn({vars}) => vars.scroll( '>', .5)
+      direction: right
+      active: -1
+      pad:
+        r: 10
+        t: -90
+      type: buttons
+      x: 1
+      xanchor: right
+      'y': 1
+      yanchor: top
+    - buttons:
+        - $fn({vars}) => vars.zoom( '2w', 24*14)
+        - $fn({vars}) => vars.zoom( '2d', 24*2)
+        - $fn({vars}) => vars.zoom( '12h', 12)
+        - $fn({vars}) => vars.zoom( '3h', 3)
+        - $fn({vars}) => vars.zoom( '1h', 1)
+      direction: right
+      active: -1
+      pad:
+        l: -15
+        t: -90
+      type: buttons
+      x: 0
+      xanchor: left
+      'y': 1
+      yanchor: top
+  font:
+    family: Roboto,Noto,sans-serif
+    size: 14
+    color: $fn ({css_vars}) => css_vars['primary-text-color']
+  paper_bgcolor: rgba(0, 0, 0, 0.4)
+  plot_bgcolor: rgba(0, 0, 0, 0)
+  legend:
+    itemwidth: 1
+hours_to_show: 30

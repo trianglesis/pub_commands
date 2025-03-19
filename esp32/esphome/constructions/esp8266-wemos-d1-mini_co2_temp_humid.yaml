@@ -1,3 +1,4 @@
+# mq-135 sensor is shit, use this file as a good reference for linear functions and calculations
 # https://github.com/AlexBelfegor/esphome-mq135/blob/main/isl_climatestatio.yaml
 # https://www.codrey.com/electronic-circuits/how-to-use-mq-135-gas-sensor/
 substitutions:
