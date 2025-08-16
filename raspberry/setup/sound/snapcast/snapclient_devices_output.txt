@@ -1,0 +1,299 @@
+0: null
+Discard all samples (playback) or generate zero samples (capture)
+
+1: default
+Playback/recording through the PulseAudio sound server
+
+2: sysdefault
+Default Audio Device
+
+3: lavrate
+Rate Converter Plugin Using Libav/FFmpeg Library
+
+4: samplerate
+Rate Converter Plugin Using Samplerate Library
+
+5: speexrate
+Rate Converter Plugin Using Speex Resampler
+
+6: jack
+JACK Audio Connection Kit
+
+7: oss
+Open Sound System
+
+8: pulse
+PulseAudio Sound Server
+
+9: speex
+Plugin using Speex DSP (resample, agc, denoise, echo, dereverb)
+
+10: upmix
+Plugin for channel upmix (4,6,8)
+
+11: vdownmix
+Plugin for channel downmix (stereo) with a simple spacialization
+
+12: hw:CARD=vc4hdmi0,DEV=0
+vc4-hdmi-0, MAI PCM i2s-hifi-0
+Direct hardware device without any conversions
+
+13: plughw:CARD=vc4hdmi0,DEV=0
+vc4-hdmi-0, MAI PCM i2s-hifi-0
+Hardware device with all software conversions
+
+14: sysdefault:CARD=vc4hdmi0
+vc4-hdmi-0, MAI PCM i2s-hifi-0
+Default Audio Device
+
+15: hdmi:CARD=vc4hdmi0,DEV=0
+vc4-hdmi-0, MAI PCM i2s-hifi-0
+HDMI Audio Output
+
+16: dmix:CARD=vc4hdmi0,DEV=0
+vc4-hdmi-0, MAI PCM i2s-hifi-0
+Direct sample mixing device
+
+17: usbstream:CARD=vc4hdmi0
+vc4-hdmi-0
+USB Stream Output
+
+18: hw:CARD=vc4hdmi1,DEV=0
+vc4-hdmi-1, MAI PCM i2s-hifi-0
+Direct hardware device without any conversions
+
+19: plughw:CARD=vc4hdmi1,DEV=0
+vc4-hdmi-1, MAI PCM i2s-hifi-0
+Hardware device with all software conversions
+
+20: sysdefault:CARD=vc4hdmi1
+vc4-hdmi-1, MAI PCM i2s-hifi-0
+Default Audio Device
+
+21: hdmi:CARD=vc4hdmi1,DEV=0
+vc4-hdmi-1, MAI PCM i2s-hifi-0
+HDMI Audio Output
+
+22: dmix:CARD=vc4hdmi1,DEV=0
+vc4-hdmi-1, MAI PCM i2s-hifi-0
+Direct sample mixing device
+
+23: usbstream:CARD=vc4hdmi1
+vc4-hdmi-1
+USB Stream Output
+
+24: hw:CARD=Loopback,DEV=0
+Loopback, Loopback PCM
+Direct hardware device without any conversions
+
+25: hw:CARD=Loopback,DEV=1
+Loopback, Loopback PCM
+Direct hardware device without any conversions
+
+26: plughw:CARD=Loopback,DEV=0
+Loopback, Loopback PCM
+Hardware device with all software conversions
+
+27: plughw:CARD=Loopback,DEV=1
+Loopback, Loopback PCM
+Hardware device with all software conversions
+
+28: sysdefault:CARD=Loopback
+Loopback, Loopback PCM
+Default Audio Device
+
+29: front:CARD=Loopback,DEV=0
+Loopback, Loopback PCM
+Front output / input
+
+30: surround21:CARD=Loopback,DEV=0
+Loopback, Loopback PCM
+2.1 Surround output to Front and Subwoofer speakers
+
+31: surround40:CARD=Loopback,DEV=0
+Loopback, Loopback PCM
+4.0 Surround output to Front and Rear speakers
+
+32: surround41:CARD=Loopback,DEV=0
+Loopback, Loopback PCM
+4.1 Surround output to Front, Rear and Subwoofer speakers
+
+33: surround50:CARD=Loopback,DEV=0
+Loopback, Loopback PCM
+5.0 Surround output to Front, Center and Rear speakers
+
+34: surround51:CARD=Loopback,DEV=0
+Loopback, Loopback PCM
+5.1 Surround output to Front, Center, Rear and Subwoofer speakers
+
+35: surround71:CARD=Loopback,DEV=0
+Loopback, Loopback PCM
+7.1 Surround output to Front, Center, Side, Rear and Woofer speakers
+
+36: dmix:CARD=Loopback,DEV=0
+Loopback, Loopback PCM
+Direct sample mixing device
+
+37: dmix:CARD=Loopback,DEV=1
+Loopback, Loopback PCM
+Direct sample mixing device
+
+38: usbstream:CARD=Loopback
+Loopback
+USB Stream Output
+
+39: hw:CARD=Device,DEV=0
+USB Audio Device, USB Audio
+Direct hardware device without any conversions
+
+40: plughw:CARD=Device,DEV=0
+USB Audio Device, USB Audio
+Hardware device with all software conversions
+
+41: sysdefault:CARD=Device
+USB Audio Device, USB Audio
+Default Audio Device
+
+42: front:CARD=Device,DEV=0
+USB Audio Device, USB Audio
+Front output / input
+
+43: surround21:CARD=Device,DEV=0
+USB Audio Device, USB Audio
+2.1 Surround output to Front and Subwoofer speakers
+
+44: surround40:CARD=Device,DEV=0
+USB Audio Device, USB Audio
+4.0 Surround output to Front and Rear speakers
+
+45: surround41:CARD=Device,DEV=0
+USB Audio Device, USB Audio
+4.1 Surround output to Front, Rear and Subwoofer speakers
+
+46: surround50:CARD=Device,DEV=0
+USB Audio Device, USB Audio
+5.0 Surround output to Front, Center and Rear speakers
+
+47: surround51:CARD=Device,DEV=0
+USB Audio Device, USB Audio
+5.1 Surround output to Front, Center, Rear and Subwoofer speakers
+
+48: surround71:CARD=Device,DEV=0
+USB Audio Device, USB Audio
+7.1 Surround output to Front, Center, Side, Rear and Woofer speakers
+
+49: iec958:CARD=Device,DEV=0
+USB Audio Device, USB Audio
+IEC958 (S/PDIF) Digital Audio Output
+
+50: dmix:CARD=Device,DEV=0
+USB Audio Device, USB Audio
+Direct sample mixing device
+
+51: usbstream:CARD=Device
+USB Audio Device
+USB Stream Output
+
+52: hw:CARD=Device_1,DEV=0
+USB Audio Device, USB Audio
+Direct hardware device without any conversions
+
+53: plughw:CARD=Device_1,DEV=0
+USB Audio Device, USB Audio
+Hardware device with all software conversions
+
+54: sysdefault:CARD=Device_1
+USB Audio Device, USB Audio
+Default Audio Device
+
+55: front:CARD=Device_1,DEV=0
+USB Audio Device, USB Audio
+Front output / input
+
+56: surround21:CARD=Device_1,DEV=0
+USB Audio Device, USB Audio
+2.1 Surround output to Front and Subwoofer speakers
+
+57: surround40:CARD=Device_1,DEV=0
+USB Audio Device, USB Audio
+4.0 Surround output to Front and Rear speakers
+
+58: surround41:CARD=Device_1,DEV=0
+USB Audio Device, USB Audio
+4.1 Surround output to Front, Rear and Subwoofer speakers
+
+59: surround50:CARD=Device_1,DEV=0
+USB Audio Device, USB Audio
+5.0 Surround output to Front, Center and Rear speakers
+
+60: surround51:CARD=Device_1,DEV=0
+USB Audio Device, USB Audio
+5.1 Surround output to Front, Center, Rear and Subwoofer speakers
+
+61: surround71:CARD=Device_1,DEV=0
+USB Audio Device, USB Audio
+7.1 Surround output to Front, Center, Side, Rear and Woofer speakers
+
+62: iec958:CARD=Device_1,DEV=0
+USB Audio Device, USB Audio
+IEC958 (S/PDIF) Digital Audio Output
+
+63: dmix:CARD=Device_1,DEV=0
+USB Audio Device, USB Audio
+Direct sample mixing device
+
+64: usbstream:CARD=Device_1
+USB Audio Device
+USB Stream Output
+
+65: hw:CARD=Device_2,DEV=0
+USB Audio Device, USB Audio
+Direct hardware device without any conversions
+
+66: plughw:CARD=Device_2,DEV=0
+USB Audio Device, USB Audio
+Hardware device with all software conversions
+
+67: sysdefault:CARD=Device_2
+USB Audio Device, USB Audio
+Default Audio Device
+
+68: front:CARD=Device_2,DEV=0
+USB Audio Device, USB Audio
+Front output / input
+
+69: surround21:CARD=Device_2,DEV=0
+USB Audio Device, USB Audio
+2.1 Surround output to Front and Subwoofer speakers
+
+70: surround40:CARD=Device_2,DEV=0
+USB Audio Device, USB Audio
+4.0 Surround output to Front and Rear speakers
+
+71: surround41:CARD=Device_2,DEV=0
+USB Audio Device, USB Audio
+4.1 Surround output to Front, Rear and Subwoofer speakers
+
+72: surround50:CARD=Device_2,DEV=0
+USB Audio Device, USB Audio
+5.0 Surround output to Front, Center and Rear speakers
+
+73: surround51:CARD=Device_2,DEV=0
+USB Audio Device, USB Audio
+5.1 Surround output to Front, Center, Rear and Subwoofer speakers
+
+74: surround71:CARD=Device_2,DEV=0
+USB Audio Device, USB Audio
+7.1 Surround output to Front, Center, Side, Rear and Woofer speakers
+
+75: iec958:CARD=Device_2,DEV=0
+USB Audio Device, USB Audio
+IEC958 (S/PDIF) Digital Audio Output
+
+76: dmix:CARD=Device_2,DEV=0
+USB Audio Device, USB Audio
+Direct sample mixing device
+
+77: usbstream:CARD=Device_2
+USB Audio Device
+USB Stream Output
