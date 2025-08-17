@@ -4,11 +4,15 @@
 
 Reboot will mix USB sound cards all over
 
-
 Get list of devices:
 
-cat /proc/asound/cards
-snapclient -l
+- `cat /proc/asound/cards`
+- `snapclient -l`
+
+Change default system device:
+
+- `alsamixer`
+- `sudo alsactl store`
 
 # Test devices one after another
 
@@ -157,9 +161,10 @@ sudo systemctl restart snapclient_2
 # Etc
 
 - https://github.com/badaix/snapcast/issues/1358
+- https://www.alsa-project.org/main/index.php/Asoundrc
 
 
-Test again
+# Test again
 ```
 Kitchen:
 75: iec958:CARD=Device_2,DEV=0
@@ -182,4 +187,23 @@ sudo vi /etc/default/snapclient_3
 
 sudo systemctl enable snapclient_3
 sudo systemctl restart snapclient_3
+```
+
+
+# Drift USB devices after reboot
+
+```shell
+snapclient -l
+
+sudo vi /etc/default/snapclient
+sudo vi /etc/default/snapclient_2
+sudo vi /etc/default/snapclient_3
+
+snapclient --instance=3 --Soundcard=39
+snapclient --instance=3 --Soundcard=52
+snapclient --instance=3 --Soundcard=65
+
+
+sudo systemctl enable snapclient snapclient_2 snapclient_3
+sudo systemctl restart snapclient snapclient_2 snapclient_3
 ```
