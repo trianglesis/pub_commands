@@ -332,6 +332,11 @@ sudo chmod 774 /etc/nut/notifycmd.sh
 sudo systemctl restart nut-server.service
 sudo systemctl restart nut-driver.service
 sudo systemctl restart nut-monitor.service
+
+
+sudo systemctl disable nut-server.service
+sudo systemctl disable nut-driver.service
+sudo systemctl disable nut-monitor.service
 ```
 
 

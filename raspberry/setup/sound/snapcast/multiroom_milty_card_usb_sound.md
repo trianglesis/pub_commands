@@ -1,5 +1,55 @@
 # Setup SnapServer and two clients
 
+# Assign USB Sound card
+
+```shell
+:~ $ find /sys/devices/ -name id | grep sound
+/sys/devices/platform/soc@107c000000/107c706400.hdmi/sound/card1/id
+/sys/devices/platform/soc@107c000000/107c706400.hdmi/sound/card1/input4/id
+/sys/devices/platform/soc@107c000000/107c701400.hdmi/sound/card0/id
+/sys/devices/platform/soc@107c000000/107c701400.hdmi/sound/card0/input2/id
+/sys/devices/platform/snd_aloop.0/sound/card2/id
+/sys/devices/platform/axi/1000120000.pcie/1f00200000.usb/xhci-hcd.0/usb1/1-2/1-2:1.0/sound/card4/id
+/sys/devices/platform/axi/1000120000.pcie/1f00300000.usb/xhci-hcd.1/usb3/3-2/3-2:1.0/sound/card5/id
+/sys/devices/platform/axi/1000120000.pcie/1f00300000.usb/xhci-hcd.1/usb3/3-1/3-1:1.0/sound/card3/id
+```
+
+
+```
+# This is a sample ude rules file to staticaly assign names to sound cards (in this case USB) that have the exact
+# same product, vendor and serial number. This normally creates card names in pulseaudio that are a combination of this
+# attributes plus an auto incrementing numbering, the problem is that the cards will get their names depending on the 
+# order the cards are plugged in.
+# This udev rules fixes that issues by assigning a name to any card that is plugged in the same USB port, I don't know
+# any other way.
+#
+# Name this file something like /etc/udev/rules.d/95-identical-cards-names.rules
+# The list of cards should be changed to match your system, the only lines you are supposed to change/remove/add 
+# are DEVPATHs, look a the comments comments to see where to get the soundcard path.
+#
+#
+# For alsa card naming (check with `cat /proc/asound/cards`)
+#
+SUBSYSTEM!="sound", GOTO="alsa_naming_end"
+ACTION!="add", GOTO="alsa_naming_end"
+
+# DEVPATH can be obtained by looking at `udevadm monitor --subsystem=sound` and while pluging in the sound card.
+# Do one card at a time, the "?" char on card should stay as it matches any card number that may pop on that USB port.
+DEVPATH=="/devices/platform/axi/1000120000.pcie/1f00300000.usb/xhci-hcd.1/usb3/3-2/3-2:1.0/sound/card?", ATTR{id}="USBCard1"
+DEVPATH=="/devices/platform/axi/1000120000.pcie/1f00200000.usb/xhci-hcd.0/usb1/1-1/1-1:1.0/sound/card?", ATTR{id}="USBCard2"
+DEVPATH=="/devices/platform/axi/1000120000.pcie/1f00300000.usb/xhci-hcd.1/usb3/3-1/3-1:1.0/sound/card?", ATTR{id}="USBCard3"
+
+LABEL="alsa_naming_end"
+```
+
+## Use names
+
+Later use names: USBCard1,2,3 instead of IDs.
+
+snapclient --instance=3 --Soundcard=USBCard1 --hostID=Test
+snapclient --instance=3 --Soundcard=USBCard2 --hostID=Test
+snapclient --instance=3 --Soundcard=USBCard3 --hostID=Test
+
 ## Problems:
 
 Reboot will mix USB sound cards all over
@@ -199,9 +249,9 @@ sudo vi /etc/default/snapclient
 sudo vi /etc/default/snapclient_2
 sudo vi /etc/default/snapclient_3
 
-snapclient --instance=3 --Soundcard=39
-snapclient --instance=3 --Soundcard=52
-snapclient --instance=3 --Soundcard=65
+snapclient --instance=3 --Soundcard=USBCard1
+snapclient --instance=3 --Soundcard=USBCard2
+snapclient --instance=3 --Soundcard=USBCard3
 
 
 sudo systemctl enable snapclient snapclient_2 snapclient_3
