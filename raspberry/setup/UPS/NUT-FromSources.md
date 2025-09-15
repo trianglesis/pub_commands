@@ -314,7 +314,7 @@ exit 0
 ```
 
 ```shell
- sudo /usr/local/ups/etc/upssched-cmd test_email
+sudo /usr/local/ups/etc/upssched-cmd test_email
 ```
 
 

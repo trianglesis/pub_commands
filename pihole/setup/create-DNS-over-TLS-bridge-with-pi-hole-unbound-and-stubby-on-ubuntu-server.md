@@ -1,3 +1,7 @@
+[FROM](https://gist.github.com/Jiab77/1cdc2896f22791c4db492e87bbf609ff)
+
+[READ FIRST](https://docs.pi-hole.net/guides/dns/cloudflared/)
+
 # Create DNS-over-TLS bridge with Pi-hole, unbound and stubby on Ubuntu Server
 
 Few months ago, I've made a similar work but I wanted something a little more easier to manage. Please have a look at [here](https://gist.github.com/Jiab77/72c868ecebce1d0027258eeec53b5a0f) for my previous work.
@@ -50,6 +54,8 @@ sudo apt autoremove --purge -y
 
 ```
 bash <(curl -Ss https://my-netdata.io/kickstart.sh) all --dont-wait --disable-telemetry
+
+wget -O /tmp/netdata-kickstart.sh https://get.netdata.cloud/kickstart.sh && sh /tmp/netdata-kickstart.sh --dont-wait --disable-telemetry
 ```
 
 #### Enable sensors
