@@ -1,0 +1,41 @@
+features:
+  - type: custom:service-call
+    entries:
+      - type: dropdown
+        entity_id: media_player.raspberrypi_3
+        options:
+          - entity_id: media_player.raspberrypi_3
+            tap_action:
+              action: perform-action
+              perform_action: music_assistant.play_media
+              target:
+                entity_id: media_player.raspberrypi_3
+              data:
+                media_id: library://track/5796
+                enqueue: play
+            option: Go
+            label: GO
+            icon: mdi:music-note-eighth
+          - entity_id: media_player.raspberrypi_3
+            tap_action:
+              action: perform-action
+              perform_action: music_assistant.play_media
+              target:
+                entity_id: media_player.raspberrypi_3
+              data:
+                media_id: library://track/5486
+                enqueue: play
+            option: Eye Of A Tiger
+            label: Eye Of A Tiger
+            icon: mdi:music-note-eighth
+type: tile
+entity: media_player.raspberrypi_3
+features_position: inline
+vertical: false
+grid_options:
+  columns: full
+hide_state: true
+show_entity_picture: true
+color: green
+name: Обрати пісню
+icon: mdi:music-note
