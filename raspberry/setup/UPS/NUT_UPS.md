@@ -70,16 +70,49 @@ Read about overriding options above at web.
     port = auto
     vendorid = 0d9f
     productid = 0004
-    pollfreq = 60
-    pollinterval = 10
+    pollfreq = 5
+    pollinterval = 2
     ignorelb
     override.battery.date = 2024/01/25
     override.battery.date.maintenance = 2026/01/25
-    override.ups.delay.start = 0
-    override.battery.charge.low = 5
-    override.battery.charge.warning = 15
-    override.battery.runtime.low = 60
+    override.ups.delay.start = 2
+    override.battery.charge.low = 55
+    override.battery.runtime.low = 45
+    override.battery.charge.warning = 65
     override.ups.beeper.status = disabled
+```
+
+For HA
+
+```yaml
+users:
+  - username: nut-ups
+    password: NutUpsSanek
+    instcmds:
+      - all
+    actions: []
+devices:
+  - name: PowerCom
+    driver: usbhid-ups
+    port: auto
+    config:
+      - vendorid = 0d9f
+      - productid = 0004
+      - desc = "Powercom 800W"
+     - pollfreq = 5
+     - pollinterval = 2
+     - ignorelb
+     - override.battery.date = 2025/10/31
+     - override.battery.date.maintenance = 2026/10/31
+     - override.ups.delay.start = 2
+     - override.battery.charge.low = 55
+     - override.battery.runtime.low = 45
+     - override.battery.charge.warning = 65
+     - override.ups.beeper.status = disabled
+mode: netserver
+shutdown_host: false
+log_level: info
+list_usb_devices: true
 ```
 
 
