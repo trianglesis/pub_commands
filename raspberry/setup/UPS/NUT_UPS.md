@@ -73,13 +73,14 @@ Read about overriding options above at web.
     pollfreq = 5
     pollinterval = 2
     ignorelb
-    override.battery.date = 2024/01/25
-    override.battery.date.maintenance = 2026/01/25
     override.ups.delay.start = 2
     override.battery.charge.low = 55
     override.battery.runtime.low = 45
     override.battery.charge.warning = 65
     override.ups.beeper.status = disabled
+    override.battery.mfr.date = 2025/10/31
+    override.battery.date = 31/10/25
+    override.battery.date.maintenance = 31/10/25
 ```
 
 For HA
@@ -103,6 +104,7 @@ devices:
      - pollinterval = 2
      - ignorelb
      - override.battery.date = 2025/10/31
+     - override.battery.mfr.date = 2025/10/31
      - override.battery.date.maintenance = 2026/10/31
      - override.ups.delay.start = 2
      - override.battery.charge.low = 55
@@ -943,7 +945,7 @@ Add
 # * * * * * <command to execute>
 
 # Montly each 1st day at 10AM UPS self-test
-0  10  1   *   *       /bin/upscmd -u admin -p PASSWD Powercom800W@localhost test.battery.start.quick
+0  11  1   *   *       /usr/local/ups/bin/upscmd -u admin -p sanek_ups_admin Powercom800W@localhost test.battery.start.quick
 ```
 
 # CMD Control:
