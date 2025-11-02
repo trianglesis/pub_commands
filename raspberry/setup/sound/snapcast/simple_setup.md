@@ -98,3 +98,104 @@ I've deleted every player but VLC from rasp.
 #}
 
 ```
+
+
+
+# Not simple setup
+
+ - https://github.com/badaix/snapcast/blob/develop/doc/build.md#raspberry-pi-cross-compile
+
+
+```shell
+# /home/USER/Snapcast_sources/snapcast
+
+cd <snapcast dir>
+mkdir build
+cd build
+
+# /usr/include/boost
+cmake .. -DBOOST_ROOT=/usr/include/boost
+cmake --build .
+```
+
+Binaries will be created in <snapcast dir>/bin:
+
+<snapcast dir>/bin/snapclient
+<snapcast dir>/bin/snapserver
+
+`/home/$USER/Snapcast_sources/snapcast/bin/snapserver`
+`/home/$USER/Snapcast_sources/snapcast/bin/snapclient`
+
+Update conf files to use compiled binaries
+
+```shell
+# check
+/home/$USER/Snapcast_sources/snapcast/bin/snapserver -V
+/home/$USER/Snapcast_sources/snapcast/bin/snapclient -V
+
+# delete installed snapserver, snapclient
+# copy to /usr/bin
+sudo cp Snapcast_sources/snapcast/bin/snapserver /usr/bin/
+sudo cp Snapcast_sources/snapcast/bin/snapclient /usr/bin/
+
+# Test
+/usr/bin/snapserver --version
+/usr/bin/snapclient --version
+
+sudo cp /lib/systemd/system/snapserver.service /lib/systemd/system/snapserver.service_backup
+sudo cp /lib/systemd/system/snapclient.service /lib/systemd/system/snapclient.service_backup
+sudo cp /lib/systemd/system/snapclient_2.service /lib/systemd/system/snapclient_2.service_backup
+sudo cp /lib/systemd/system/snapclient_3.service /lib/systemd/system/snapclient_3.service_backup
+
+sudo vi /lib/systemd/system/snapserver.service
+sudo vi /lib/systemd/system/snapclient.service
+sudo vi /lib/systemd/system/snapclient_2.service
+sudo vi /lib/systemd/system/snapclient_3.service
+
+# Check args, new version arg --soundcard= is lowercase
+sudo vi /etc/default/snapclient
+sudo vi /etc/default/snapclient_2
+sudo vi /etc/default/snapclient_3
+
+# Conf changed - reload
+sudo systemctl daemon-reload
+sudo systemctl restart snapserver snapclient snapclient_2 snapclient_3
+
+# Check
+sudo systemctl restart snapserver
+sudo systemctl status snapserver
+sudo systemctl status snapclient
+sudo systemctl status snapclient_2
+sudo systemctl status snapclient_3
+
+# Debug
+journalctl -xeu snapserver.service
+journalctl -xeu snapclient.service
+journalctl -xeu snapclient_2.service
+journalctl -xeu snapclient_3.service
+
+# Stop
+sudo systemctl stop snapserver snapclient snapclient_2 snapclient_3
+
+# old configs moving
+sudo rm /lib/systemd/system/snapserver.service
+sudo rm /lib/systemd/system/snapclient.service
+sudo rm /lib/systemd/system/snapclient_2.service
+sudo rm /lib/systemd/system/snapclient_3.service
+
+sudo cp /lib/systemd/system/snapserver.service_backup /lib/systemd/system/snapserver.service
+sudo cp /lib/systemd/system/snapclient.service_backup /lib/systemd/system/snapclient.service
+sudo cp /lib/systemd/system/snapclient_2.service_backup /lib/systemd/system/snapclient_2.service
+sudo cp /lib/systemd/system/snapclient_3.service_backup /lib/systemd/system/snapclient_3.service
+```
+
+
+## Etc
+
+Web:
+
+Revive old path:
+`sudo chown snapclient:snapclient -R /usr/share/snapserver/snapweb/`
+Download compiled web zip: https://github.com/badaix/snapweb/releases
+Copy: `sudo cp -r /home/$USER/Snapcast_sources/snapweb/* /usr/share/snapserver/snapweb/`
+Change own: `sudo chown snapclient:snapclient -R /usr/share/snapserver/snapweb/`
