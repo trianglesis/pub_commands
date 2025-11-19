@@ -1,5 +1,6 @@
 # Config snapcast
 
+
 Check prereq: 
 - [snapuser](https://github.com/badaix/snapcast/issues/668#issuecomment-692732687)
 
