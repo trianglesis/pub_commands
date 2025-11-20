@@ -126,3 +126,35 @@ php occ background-job:list
       background:cron
       background:webcron
 ``
+
+
+
+# Immich fix
+
+
+- https://github.com/immich-app/immich/issues/24009#issuecomment-3556056053
+
+```
+For TrueNAS users it was kind of a pain for me to figure out how to run the command to fix this issue, so hopefully this saves someone a little suffering:
+
+    Select the immich application
+    Click the shell icon for the pgvecto container
+    Login to pg with psql -U immich -d immich
+    Run the fix command DELETE FROM system_metadata WHERE key = 'version-check-state';
+    Exit with \q
+    Profit
+
+```
+
+```shell
+
+sudo docker ps | grep "immich"
+
+# ix-immich-pgvecto-1
+# ix-immich-server-1
+
+sudo docker exec ix-immich-server-1  psql -U postgres -d immich -c "UPDATE system_metadata SET value = value::jsonb || '{\"newVersionCheck\": {\"enabled\": false}}'::jsonb WHERE key = 'system-config'; DELETE FROM system_metadata WHERE key = 'version-check-state';"
+```
+
+
+
