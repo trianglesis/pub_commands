@@ -171,8 +171,11 @@ sudo systemctl status snapclient_3
 
 # Debug
 journalctl -xeu snapserver.service
+# Bathroom
 journalctl -xeu snapclient.service
+# Bedroom
 journalctl -xeu snapclient_2.service
+# Kitchen
 journalctl -xeu snapclient_3.service
 
 # Stop

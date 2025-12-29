@@ -187,6 +187,7 @@ DEADTIME 120
 
 ```text
 MONITOR Powercom800W@localhost 1 monmaster PASSWORD master
+
 ```
 
 # Run as server
@@ -218,7 +219,10 @@ upsc Powercom800W@localhost
 ```shell
 sudo apt install nut-cgi
 sudo vi /etc/nut/hosts.conf
-MONITOR Powercom800W@localhost "Powercom800W_Raspb"
+
+# MONITOR Powercom800W@localhost "Powercom800W_Raspb"
+MONITOR powerwalker@localhost "RaspPi"
+
 ```
 
 ## I'm using lighttpd

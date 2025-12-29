@@ -15,8 +15,8 @@ Series by subdir:
 # aa - subdir when series exists for one serie
 {series}/{series_index} - {title}
 
-# bb - subdir per single title
-{title}/{title}
+# bb - subdir per single title and ID (if two same titles)
+{title}/{title}-({id})
 
 calibre/{author_sort:shorten(25,,0)}/{series:lookup(.,#aa,#bb)}
 {series:lookup(.,#aa,#bb)}
