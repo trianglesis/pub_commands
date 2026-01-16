@@ -46,9 +46,9 @@ LABEL="alsa_naming_end"
 
 Later use names: USBCard1,2,3 instead of IDs.
 
-snapclient --instance=3 --Soundcard=USBCard1 --hostID=Test
-snapclient --instance=3 --Soundcard=USBCard2 --hostID=Test
-snapclient --instance=3 --Soundcard=USBCard3 --hostID=Test
+snapclient --instance=3 --soundcard=USBCard1 --hostID=Test
+snapclient --instance=3 --soundcard=USBCard2 --hostID=Test
+snapclient --instance=3 --soundcard=USBCard3 --hostID=Test
 
 ## Problems:
 
@@ -68,9 +68,9 @@ Change default system device:
 
 ## 1 Bathroom
 
-snapclient --instance=3 --Soundcard=7 --hostID=Test
-snapclient --instance=3 --Soundcard=11 --hostID=Test
-snapclient --instance=3 --Soundcard=39 --hostID=Test
+snapclient --instance=3 --soundcard=7 --hostID=Test
+snapclient --instance=3 --soundcard=11 --hostID=Test
+snapclient --instance=3 --soundcard=39 --hostID=Test
 
 ```
 39: hw:CARD=Device,DEV=0
@@ -91,7 +91,7 @@ Front output / input
 ```
 
 ## 2 Bedroom
-snapclient --instance=3 --Soundcard=52 --hostID=Test
+snapclient --instance=3 --soundcard=52 --hostID=Test
 
 ```
 52: hw:CARD=Device_1,DEV=0
@@ -151,7 +151,7 @@ START_SNAPCLIENT=true
 # For a list of available options, invoke "snapclient --help"
 
 # Bathroom
-SNAPCLIENT_OPTS="--instance=1 --Soundcard=39 --hostID=Bathroom"
+SNAPCLIENT_OPTS="--instance=1 --soundcard=39 --hostID=Bathroom"
 ```
 
 
@@ -197,7 +197,7 @@ START_SNAPCLIENT=true
 # For a list of available options, invoke "snapclient --help"
 
 # Bedroom
-SNAPCLIENT_OPTS="--instance=2 --Soundcard=52 --hostID=Bedroom"
+SNAPCLIENT_OPTS="--instance=2 --soundcard=52 --hostID=Bedroom"
 ```
 
 # Start Restart Reload
@@ -249,11 +249,11 @@ sudo vi /etc/default/snapclient
 sudo vi /etc/default/snapclient_2
 sudo vi /etc/default/snapclient_3
 
-snapclient --instance=3 --Soundcard=USBCard1
-snapclient --instance=3 --Soundcard=USBCard2
-snapclient --instance=3 --Soundcard=USBCard3
+snapclient --instance=3 --soundcard=USBCard1
+snapclient --instance=3 --soundcard=USBCard2
+snapclient --instance=3 --soundcard=USBCard3
 
 
 sudo systemctl enable snapclient snapclient_2 snapclient_3
-sudo systemctl restart snapclient snapclient_2 snapclient_3
+sudo systemctl restart snapserver snapclient snapclient_2 snapclient_3
 ```

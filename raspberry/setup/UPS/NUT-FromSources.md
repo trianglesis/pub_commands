@@ -132,7 +132,7 @@ sudo rm -r /etc/nut
 
 ```shell
 sudo vi /usr/local/ups/etc/hosts.conf
-# MONITOR Powercom800W@localhost "RaspberryPi"
+# MONITOR powerwalker@localhost "RaspberryPi"
 sudo vi /usr/local/ups/etc/nut.conf
 # MODE=netserver
 sudo vi /usr/local/ups/etc/ups.conf
@@ -171,28 +171,28 @@ sudo vi /usr/local/ups/etc/upssched-cmd
 #!/bin/sh
 UPS_USERNAME="admin"
 UPS_PASSWORD="PASSWD"
-UPS_LINK="Powercom800W@localhost"
+UPS_LINK="powerwalker@localhost"
 EMAIL="it@MAIL.COM"
 
 # Variables:
 set_variables () {
     DATUM=`/bin/date -R`
     DATE_LOG=`/bin/date +"%Y-%m-%d %H:%M:%S"`
-    STAT=`/usr/local/ups/bin/upsc Powercom800W@localhost ups.status`
-    LOAD=`/usr/local/ups/bin/upsc Powercom800W@localhost ups.load`
-    BATT=`/usr/local/ups/bin/upsc Powercom800W@localhost battery.charge`
-    BATT_t=`/usr/local/ups/bin/upsc Powercom800W@localhost battery.temperature`
-    BATT_LOW=`/usr/local/ups/bin/upsc Powercom800W@localhost battery.charge.low`
-    BATT_WARN=`/usr/local/ups/bin/upsc Powercom800W@localhost battery.charge.warning`
-    RUNTIME=`/usr/local/ups/bin/upsc Powercom800W@localhost battery.runtime`
-    BEEPER=`/usr/local/ups/bin/upsc Powercom800W@localhost ups.beeper.status`
-    TESTRES=`/usr/local/ups/bin/upsc Powercom800W@localhost ups.test.result`
-    INP_FREQ=`/usr/local/ups/bin/upsc Powercom800W@localhost input.frequency`
-    INP_V=`/usr/local/ups/bin/upsc Powercom800W@localhost input.voltage`
-    INP_V_Nom=`/usr/local/ups/bin/upsc Powercom800W@localhost input.voltage.nominal`
-    OUT_FREQ=`/usr/local/ups/bin/upsc Powercom800W@localhost output.frequency`
-    OUT_V=`/usr/local/ups/bin/upsc Powercom800W@localhost output.voltage`
-    OUT_V_Nom=`/usr/local/ups/bin/upsc Powercom800W@localhost output.voltage.nominal`
+    STAT=`/usr/local/ups/bin/upsc powerwalker@localhost ups.status`
+    LOAD=`/usr/local/ups/bin/upsc powerwalker@localhost ups.load`
+    BATT=`/usr/local/ups/bin/upsc powerwalker@localhost battery.charge`
+    BATT_t=`/usr/local/ups/bin/upsc powerwalker@localhost battery.temperature`
+    BATT_LOW=`/usr/local/ups/bin/upsc powerwalker@localhost battery.charge.low`
+    BATT_WARN=`/usr/local/ups/bin/upsc powerwalker@localhost battery.charge.warning`
+    RUNTIME=`/usr/local/ups/bin/upsc powerwalker@localhost battery.runtime`
+    BEEPER=`/usr/local/ups/bin/upsc powerwalker@localhost ups.beeper.status`
+    TESTRES=`/usr/local/ups/bin/upsc powerwalker@localhost ups.test.result`
+    INP_FREQ=`/usr/local/ups/bin/upsc powerwalker@localhost input.frequency`
+    INP_V=`/usr/local/ups/bin/upsc powerwalker@localhost input.voltage`
+    INP_V_Nom=`/usr/local/ups/bin/upsc powerwalker@localhost input.voltage.nominal`
+    OUT_FREQ=`/usr/local/ups/bin/upsc powerwalker@localhost output.frequency`
+    OUT_V=`/usr/local/ups/bin/upsc powerwalker@localhost output.voltage`
+    OUT_V_Nom=`/usr/local/ups/bin/upsc powerwalker@localhost output.voltage.nominal`
     # UPSLOG=`cat /var/log/messages | grep ups | tail -50`
     BASIC_INFO="
 Date:                   $DATUM
@@ -222,7 +222,7 @@ Battery test state:     $TESTRES - at CRON
 
 
 update_local_log () {
-    echo "$LOG_LOCAL" >> /var/log/ups/UPS_Powercom800W.log
+    echo "$LOG_LOCAL" >> /var/log/ups/UPS_powerwalker.log
 }
 
 disable_beep () {
@@ -234,7 +234,7 @@ disable_beep () {
 
 wake_on_lan () {
     # Wake media box device:
-    sudo wakeonlan -i 192.168.1.9 -p 4343 1C:69:7A:AB:54:E6 >> /var/log/ups/UPS_Powercom800W.log >> /dev/null 2>&1
+    sudo wakeonlan -i 192.168.1.9 -p 4343 1C:69:7A:AB:54:E6 >> /var/log/ups/UPS_powerwalker.log >> /dev/null 2>&1
 }
 
 disable_beep
@@ -314,7 +314,7 @@ exit 0
 ```
 
 ```shell
- sudo /usr/local/ups/etc/upssched-cmd test_email
+sudo /usr/local/ups/etc/upssched-cmd test_email
 ```
 
 
@@ -356,19 +356,20 @@ journalctl -n 100 -f | grep http
 
 ```shell
 # Commands:
-/usr/local/ups/bin/upsc Powercom800W@localhost
-/usr/local/ups/bin/upsc Powercom800W@localhost battery.charge.low
-/usr/local/ups/bin/upsc Powercom800W@localhost ups.beeper.status
+/usr/local/ups/bin/upsc powerwalker@localhost
+/usr/local/ups/bin/upsc powerwalker@localhost battery.charge.low
+/usr/local/ups/bin/upsc powerwalker@localhost ups.beeper.status
+/usr/local/ups/bin/upsc powerwalker@localhost test.battery.start.quick
 
 # Test
-/usr/local/ups/bin/upscmd -l Powercom800W@localhost
-/usr/local/ups/bin/upscmd -u admin -p passwd Powercom800W@localhost beeper.toggle
-/usr/local/ups/bin/upscmd -u admin -p passwd Powercom800W@localhost beeper.enable
-/usr/local/ups/bin/upscmd -u admin -p PASSWD Powercom800W@localhost beeper.disable
-/usr/local/ups/bin/upscmd -u admin -p PASSWD Powercom800W@localhost battery.charge.low=10
+/usr/local/ups/bin/upscmd -l powerwalker@localhost
+/usr/local/ups/bin/upscmd -u admin -p passwd powerwalker@localhost beeper.toggle
+/usr/local/ups/bin/upscmd -u admin -p passwd powerwalker@localhost beeper.enable
+/usr/local/ups/bin/upscmd -u admin -p PASSWD powerwalker@localhost beeper.disable
+/usr/local/ups/bin/upscmd -u admin -p PASSWD powerwalker@localhost battery.charge.low=10
 
 # Show supported
-/usr/local/ups/bin/upsrw -u admin -p passwd Powercom800W@localhost
+/usr/local/ups/bin/upsrw -u admin -p passwd powerwalker@localhost
 ```
 
 ## Start restart:
@@ -400,8 +401,8 @@ sudo /usr/local/ups/etc/upssched-cmd test_email
 
 Change path to bin and cmd:
 
-- old: `upsc Powercom800W@localhost battery.charge.low 2>&1 | grep -v '^Init SSL'`
-- new `/usr/local/ups/bin/upsc Powercom800W@localhost battery.charge.low`
+- old: `upsc powerwalker@localhost battery.charge.low 2>&1 | grep -v '^Init SSL'`
+- new `/usr/local/ups/bin/upsc powerwalker@localhost battery.charge.low`
 
 # Outputs:
 
