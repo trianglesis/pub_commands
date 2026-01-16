@@ -1,0 +1,249 @@
+type: tile
+grid_options:
+  columns: full
+entity: media_player.kitchen
+name: Christmas
+icon: mdi:string-lights
+color: pink
+show_entity_picture: false
+hide_state: true
+vertical: true
+features:
+  - type: custom:service-call
+    entries:
+      - type: dropdown
+        entity_id: media_player.kitchen
+        options:
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: music_assistant.play_media
+              target:
+                entity_id: media_player.kitchen
+              data:
+                media_id: library://playlist/307
+                enqueue: play
+            option: "[A] Christmas Old (before 1960)"
+            label: "[A] Christmas Old (before 1960)"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: music_assistant.play_media
+              target:
+                entity_id: media_player.kitchen
+              data:
+                media_id: library://playlist/275
+                enqueue: play
+            option: "[A] Christmas Old (before 1960) by date"
+            label: "[A] Christmas Old (before 1960) by date"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: music_assistant.play_media
+              target:
+                entity_id: media_player.kitchen
+              data:
+                media_id: library://playlist/290
+                enqueue: play
+            option: "[A] Christmas Old (before 1970)"
+            label: "[A] Christmas Old (before 1970)"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: music_assistant.play_media
+              target:
+                entity_id: media_player.kitchen
+              data:
+                media_id: library://playlist/346
+                enqueue: play
+            option: "[A] Christmas Old (before 1970) by date"
+            label: "[A] Christmas Old (before 1970) by date"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: music_assistant.play_media
+              target:
+                entity_id: media_player.kitchen
+              data:
+                media_id: library://playlist/269
+                enqueue: play
+            option: "[A] Christmas Old (before 1980)"
+            label: "[A] Christmas Old (before 1980)"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: music_assistant.play_media
+              target:
+                entity_id: media_player.kitchen
+              data:
+                media_id: library://playlist/374
+                enqueue: play
+            option: "[A] Christmas Old (before 1980) by date"
+            label: "[A] Christmas Old (before 1980) by date"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: music_assistant.play_media
+              target:
+                entity_id: media_player.kitchen
+              data:
+                media_id: library://playlist/369
+                enqueue: play
+            option: "[A] Christmas New (after 1980)"
+            label: "[A] Christmas New (after 1980)"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: music_assistant.play_media
+              target:
+                entity_id: media_player.kitchen
+              data:
+                media_id: library://playlist/282
+                enqueue: play
+            option: "[A] Christmas New (after 1980) by date"
+            label: "[A] Christmas New (after 1980) by date"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: music_assistant.play_media
+              target:
+                entity_id: media_player.kitchen
+              data:
+                media_id: library://playlist/334
+                enqueue: play
+            option: "[A] Christmas New (after 2000)"
+            label: "[A] Christmas New (after 2000)"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: music_assistant.play_media
+              target:
+                entity_id: media_player.kitchen
+              data:
+                media_id: library://playlist/272
+                enqueue: play
+            option: "[A] Christmas New (after 2000) by date"
+            label: "[A] Christmas New (after 2000) by date"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: music_assistant.play_media
+              target:
+                entity_id: media_player.kitchen
+              data:
+                media_id: library://playlist/263
+                enqueue: play
+            option: "[AG] Christmas Rock"
+            label: "[AG] Christmas Rock"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: music_assistant.play_media
+              target:
+                entity_id: media_player.kitchen
+              data:
+                media_id: library://playlist/288
+                enqueue: play
+            option: "[AG] Christmas Soul"
+            label: "[AG] Christmas Soul"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: music_assistant.play_media
+              target:
+                entity_id: media_player.kitchen
+              data:
+                media_id: library://playlist/306
+                enqueue: play
+            option: "[X VA] Christmas"
+            label: "[X VA] Christmas"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: music_assistant.play_media
+              target:
+                entity_id: media_player.kitchen
+              data:
+                media_id: library://playlist/318
+                enqueue: play
+            option: "[AG] Christmas Electro Dance House"
+            label: "[AG] Christmas Electro Dance House"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: music_assistant.play_media
+              target:
+                entity_id: media_player.kitchen
+              data:
+                media_id: library://playlist/336
+                enqueue: play
+            option: "[AG] Christmas Classical Vocal"
+            label: "[AG] Christmas Classical Vocal"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: music_assistant.play_media
+              target:
+                entity_id: media_player.kitchen
+              data:
+                media_id: library://playlist/343
+                enqueue: play
+            option: "[AG] Christmas Pop"
+            label: "[AG] Christmas Pop"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: music_assistant.play_media
+              target:
+                entity_id: media_player.kitchen
+              data:
+                media_id: library://playlist/344
+                enqueue: play
+            option: "[AG] Christmas Jazz Swing Blues"
+            label: "[AG] Christmas Jazz Swing Blues"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: music_assistant.play_media
+              target:
+                entity_id: media_player.kitchen
+              data:
+                media_id: library://playlist/351
+                enqueue: play
+            option: "[AG] Christmas R&B"
+            label: "[AG] Christmas R&B"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: music_assistant.play_media
+              target:
+                entity_id: media_player.kitchen
+              data:
+                media_id: library://playlist/366
+                enqueue: play
+            option: "[AG] Christmas Folk Country Ballad Vocal"
+            label: "[AG] Christmas Folk Country Ballad Vocal"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: music_assistant.play_media
+              target:
+                entity_id: media_player.kitchen
+              data:
+                media_id: library://playlist/326
+                enqueue: play
+            option: "[X VA] Різдво 2025 наші"
+            label: "[X VA] Різдво 2025 наші"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: music_assistant.play_media
+              target:
+                entity_id: media_player.kitchen
+              data:
+                media_id: library://playlist/368
+                enqueue: play
+            option: "[R VA] Різдво 2025 наші"
+            label: "[R VA] Різдво 2025 наші"
+        icon: mdi:speaker
+features_position: bottom

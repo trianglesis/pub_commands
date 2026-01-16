@@ -1,0 +1,292 @@
+type: tile
+grid_options:
+  columns: full
+entity: media_player.kitchen
+name: "[Artist UA] Pop Set"
+icon: mdi:account-music-outline
+show_entity_picture: false
+hide_state: true
+vertical: false
+features:
+  - type: custom:service-call
+    entries:
+      - type: dropdown
+        entity_id: media_player.kitchen
+        options:
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "adm:t"
+                media_player: media_player.kitchen
+            option: "adm:t"
+            label: "adm:t"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Fahot & ТНМК"
+                media_player: media_player.kitchen
+            option: "Fahot & ТНМК"
+            label: "Fahot & ТНМК"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "FliT"
+                media_player: media_player.kitchen
+            option: "FliT"
+            label: "FliT"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Jerry Heil"
+                media_player: media_player.kitchen
+            option: "Jerry Heil"
+            label: "Jerry Heil"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Kadnay"
+                media_player: media_player.kitchen
+            option: "Kadnay"
+            label: "Kadnay"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Klavdia Petrivna"
+                media_player: media_player.kitchen
+            option: "Klavdia Petrivna"
+            label: "Klavdia Petrivna"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "KLER"
+                media_player: media_player.kitchen
+            option: "KLER"
+            label: "KLER"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "KRUTЬ"
+                media_player: media_player.kitchen
+            option: "KRUTЬ"
+            label: "KRUTЬ"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Lama"
+                media_player: media_player.kitchen
+            option: "Lama"
+            label: "Lama"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "LATEXFAUNA"
+                media_player: media_player.kitchen
+            option: "LATEXFAUNA"
+            label: "LATEXFAUNA"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "ONUKA"
+                media_player: media_player.kitchen
+            option: "ONUKA"
+            label: "ONUKA"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "The Hardkiss"
+                media_player: media_player.kitchen
+            option: "The Hardkiss"
+            label: "The Hardkiss"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Антитіла"
+                media_player: media_player.kitchen
+            option: "Антитіла"
+            label: "Антитіла"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Бумбокс"
+                media_player: media_player.kitchen
+            option: "Бумбокс"
+            label: "Бумбокс"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Бумбокс, The Gitas"
+                media_player: media_player.kitchen
+            option: "Бумбокс, The Gitas"
+            label: "Бумбокс, The Gitas"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "ВУЗВ"
+                media_player: media_player.kitchen
+            option: "ВУЗВ"
+            label: "ВУЗВ"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Друга Ріка"
+                media_player: media_player.kitchen
+            option: "Друга Ріка"
+            label: "Друга Ріка"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Кому Вниз"
+                media_player: media_player.kitchen
+            option: "Кому Вниз"
+            label: "Кому Вниз"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Крихітка"
+                media_player: media_player.kitchen
+            option: "Крихітка"
+            label: "Крихітка"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Крихітка Цахес"
+                media_player: media_player.kitchen
+            option: "Крихітка Цахес"
+            label: "Крихітка Цахес"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Танок на майдані Конґо"
+                media_player: media_player.kitchen
+            option: "Танок на майдані Конґо"
+            label: "Танок на майдані Конґо"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Тартак"
+                media_player: media_player.kitchen
+            option: "Тартак"
+            label: "Тартак"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Тартак Та Друзi"
+                media_player: media_player.kitchen
+            option: "Тартак Та Друзi"
+            label: "Тартак Та Друзi"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Тік"
+                media_player: media_player.kitchen
+            option: "Тік"
+            label: "Тік"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "ТНМК"
+                media_player: media_player.kitchen
+            option: "ТНМК"
+            label: "ТНМК"
+        icon: mdi:speaker
+features_position: bottom

@@ -1,0 +1,138 @@
+type: tile
+grid_options:
+  columns: full
+entity: media_player.kitchen
+name: "[Artist Foreign] Lazer"
+icon: mdi:account-music-outline
+show_entity_picture: false
+hide_state: true
+vertical: false
+features:
+  - type: custom:service-call
+    entries:
+      - type: dropdown
+        entity_id: media_player.kitchen
+        options:
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Bloody Beetroots"
+                media_player: media_player.kitchen
+            option: "Bloody Beetroots"
+            label: "Bloody Beetroots"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Carpenter Brut"
+                media_player: media_player.kitchen
+            option: "Carpenter Brut"
+            label: "Carpenter Brut"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "DANCE WITH THE DEAD"
+                media_player: media_player.kitchen
+            option: "DANCE WITH THE DEAD"
+            label: "DANCE WITH THE DEAD"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Lazerhawk"
+                media_player: media_player.kitchen
+            option: "Lazerhawk"
+            label: "Lazerhawk"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Magic Sword"
+                media_player: media_player.kitchen
+            option: "Magic Sword"
+            label: "Magic Sword"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Nero"
+                media_player: media_player.kitchen
+            option: "Nero"
+            label: "Nero"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Pendulum"
+                media_player: media_player.kitchen
+            option: "Pendulum"
+            label: "Pendulum"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Perturbator"
+                media_player: media_player.kitchen
+            option: "Perturbator"
+            label: "Perturbator"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "The Bloody Beetroots"
+                media_player: media_player.kitchen
+            option: "The Bloody Beetroots"
+            label: "The Bloody Beetroots"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "The Midnight"
+                media_player: media_player.kitchen
+            option: "The Midnight"
+            label: "The Midnight"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Turbo Knight"
+                media_player: media_player.kitchen
+            option: "Turbo Knight"
+            label: "Turbo Knight"
+        icon: mdi:speaker
+features_position: bottom

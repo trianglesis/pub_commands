@@ -1,0 +1,259 @@
+type: tile
+grid_options:
+  columns: full
+entity: media_player.kitchen
+name: "[Artist UA] Indie Set"
+icon: mdi:account-music-outline
+show_entity_picture: false
+hide_state: true
+vertical: false
+features:
+  - type: custom:service-call
+    entries:
+      - type: dropdown
+        entity_id: media_player.kitchen
+        options:
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Dakh Daughters"
+                media_player: media_player.kitchen
+            option: "Dakh Daughters"
+            label: "Dakh Daughters"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "DakhaBrakha"
+                media_player: media_player.kitchen
+            option: "DakhaBrakha"
+            label: "DakhaBrakha"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Go_A"
+                media_player: media_player.kitchen
+            option: "Go_A"
+            label: "Go_A"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Go-A, Katya Chilly"
+                media_player: media_player.kitchen
+            option: "Go-A, Katya Chilly"
+            label: "Go-A, Katya Chilly"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Leléka"
+                media_player: media_player.kitchen
+            option: "Leléka"
+            label: "Leléka"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "OSTRIV"
+                media_player: media_player.kitchen
+            option: "OSTRIV"
+            label: "OSTRIV"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Perkalaba"
+                media_player: media_player.kitchen
+            option: "Perkalaba"
+            label: "Perkalaba"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Pur:Pur"
+                media_player: media_player.kitchen
+            option: "Pur:Pur"
+            label: "Pur:Pur"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "SadSvit"
+                media_player: media_player.kitchen
+            option: "SadSvit"
+            label: "SadSvit"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Schmalgauzen"
+                media_player: media_player.kitchen
+            option: "Schmalgauzen"
+            label: "Schmalgauzen"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Tember Blanche"
+                media_player: media_player.kitchen
+            option: "Tember Blanche"
+            label: "Tember Blanche"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "The Cheburashkas"
+                media_player: media_player.kitchen
+            option: "The Cheburashkas"
+            label: "The Cheburashkas"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Ziferblat"
+                media_player: media_player.kitchen
+            option: "Ziferblat"
+            label: "Ziferblat"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Zwyntar"
+                media_player: media_player.kitchen
+            option: "Zwyntar"
+            label: "Zwyntar"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Гурт [О]"
+                media_player: media_player.kitchen
+            option: "Гурт [О]"
+            label: "Гурт [О]"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "ДахаБраха"
+                media_player: media_player.kitchen
+            option: "ДахаБраха"
+            label: "ДахаБраха"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "діти інженерів"
+                media_player: media_player.kitchen
+            option: "діти інженерів"
+            label: "діти інженерів"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Квітка Цісик"
+                media_player: media_player.kitchen
+            option: "Квітка Цісик"
+            label: "Квітка Цісик"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "НастяЗникає"
+                media_player: media_player.kitchen
+            option: "НастяЗникає"
+            label: "НастяЗникає"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Наталка Карпа"
+                media_player: media_player.kitchen
+            option: "Наталка Карпа"
+            label: "Наталка Карпа"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "паліндром"
+                media_player: media_player.kitchen
+            option: "паліндром"
+            label: "паліндром"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "хейтcпіч"
+                media_player: media_player.kitchen
+            option: "хейтcпіч"
+            label: "хейтcпіч"
+        icon: mdi:speaker
+features_position: bottom

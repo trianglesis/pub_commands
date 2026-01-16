@@ -1,0 +1,193 @@
+type: tile
+grid_options:
+  columns: full
+entity: media_player.kitchen
+name: "[Artist Foreign] Heavy"
+icon: mdi:account-music-outline
+show_entity_picture: false
+hide_state: true
+vertical: false
+features:
+  - type: custom:service-call
+    entries:
+      - type: dropdown
+        entity_id: media_player.kitchen
+        options:
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "AC/DC"
+                media_player: media_player.kitchen
+            option: "AC/DC"
+            label: "AC/DC"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Accept"
+                media_player: media_player.kitchen
+            option: "Accept"
+            label: "Accept"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Apocalyptica"
+                media_player: media_player.kitchen
+            option: "Apocalyptica"
+            label: "Apocalyptica"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Bring Me The Horizon"
+                media_player: media_player.kitchen
+            option: "Bring Me The Horizon"
+            label: "Bring Me The Horizon"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Deftones"
+                media_player: media_player.kitchen
+            option: "Deftones"
+            label: "Deftones"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Five Finger Death Punch"
+                media_player: media_player.kitchen
+            option: "Five Finger Death Punch"
+            label: "Five Finger Death Punch"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Guano Apes"
+                media_player: media_player.kitchen
+            option: "Guano Apes"
+            label: "Guano Apes"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Korn"
+                media_player: media_player.kitchen
+            option: "Korn"
+            label: "Korn"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Lindemann"
+                media_player: media_player.kitchen
+            option: "Lindemann"
+            label: "Lindemann"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Metallica"
+                media_player: media_player.kitchen
+            option: "Metallica"
+            label: "Metallica"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Motörhead"
+                media_player: media_player.kitchen
+            option: "Motörhead"
+            label: "Motörhead"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Rammstein"
+                media_player: media_player.kitchen
+            option: "Rammstein"
+            label: "Rammstein"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Sabaton"
+                media_player: media_player.kitchen
+            option: "Sabaton"
+            label: "Sabaton"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Slipknot"
+                media_player: media_player.kitchen
+            option: "Slipknot"
+            label: "Slipknot"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "System of a Down"
+                media_player: media_player.kitchen
+            option: "System of a Down"
+            label: "System of a Down"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Within Temptation"
+                media_player: media_player.kitchen
+            option: "Within Temptation"
+            label: "Within Temptation"
+        icon: mdi:speaker
+features_position: bottom

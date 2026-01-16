@@ -1,0 +1,347 @@
+type: tile
+grid_options:
+  columns: full
+entity: media_player.kitchen
+name: "[Artist Foreign] Rock"
+icon: mdi:account-music-outline
+show_entity_picture: false
+hide_state: true
+vertical: false
+features:
+  - type: custom:service-call
+    entries:
+      - type: dropdown
+        entity_id: media_player.kitchen
+        options:
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Ace Of Base"
+                media_player: media_player.kitchen
+            option: "Ace Of Base"
+            label: "Ace Of Base"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Arctic Monkeys"
+                media_player: media_player.kitchen
+            option: "Arctic Monkeys"
+            label: "Arctic Monkeys"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Bad Omens"
+                media_player: media_player.kitchen
+            option: "Bad Omens"
+            label: "Bad Omens"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "E"
+                media_player: media_player.kitchen
+            option: "E"
+            label: "E"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Eels"
+                media_player: media_player.kitchen
+            option: "Eels"
+            label: "Eels"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Faith No More"
+                media_player: media_player.kitchen
+            option: "Faith No More"
+            label: "Faith No More"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Florence + the Machine"
+                media_player: media_player.kitchen
+            option: "Florence + the Machine"
+            label: "Florence + the Machine"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Foo Fighters"
+                media_player: media_player.kitchen
+            option: "Foo Fighters"
+            label: "Foo Fighters"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Linkin Park"
+                media_player: media_player.kitchen
+            option: "Linkin Park"
+            label: "Linkin Park"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Manowar"
+                media_player: media_player.kitchen
+            option: "Manowar"
+            label: "Manowar"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Nothing But Thieves"
+                media_player: media_player.kitchen
+            option: "Nothing But Thieves"
+            label: "Nothing But Thieves"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "ONEREPUBLIC"
+                media_player: media_player.kitchen
+            option: "ONEREPUBLIC"
+            label: "ONEREPUBLIC"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Papa Roach"
+                media_player: media_player.kitchen
+            option: "Papa Roach"
+            label: "Papa Roach"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Pet Shop Boys"
+                media_player: media_player.kitchen
+            option: "Pet Shop Boys"
+            label: "Pet Shop Boys"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Rage Against The Machine"
+                media_player: media_player.kitchen
+            option: "Rage Against The Machine"
+            label: "Rage Against The Machine"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Rasmus"
+                media_player: media_player.kitchen
+            option: "Rasmus"
+            label: "Rasmus"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Red Hot Chili Peppers"
+                media_player: media_player.kitchen
+            option: "Red Hot Chili Peppers"
+            label: "Red Hot Chili Peppers"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Roxanne"
+                media_player: media_player.kitchen
+            option: "Roxanne"
+            label: "Roxanne"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Scorpions"
+                media_player: media_player.kitchen
+            option: "Scorpions"
+            label: "Scorpions"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Sting"
+                media_player: media_player.kitchen
+            option: "Sting"
+            label: "Sting"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "The Charlatans"
+                media_player: media_player.kitchen
+            option: "The Charlatans"
+            label: "The Charlatans"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "the eels"
+                media_player: media_player.kitchen
+            option: "the eels"
+            label: "the eels"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "The Killers"
+                media_player: media_player.kitchen
+            option: "The Killers"
+            label: "The Killers"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "The Monkees"
+                media_player: media_player.kitchen
+            option: "The Monkees"
+            label: "The Monkees"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "The Rasmus"
+                media_player: media_player.kitchen
+            option: "The Rasmus"
+            label: "The Rasmus"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "The Score"
+                media_player: media_player.kitchen
+            option: "The Score"
+            label: "The Score"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Twenty One Pilots"
+                media_player: media_player.kitchen
+            option: "Twenty One Pilots"
+            label: "Twenty One Pilots"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "U2"
+                media_player: media_player.kitchen
+            option: "U2"
+            label: "U2"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Uriah Heep"
+                media_player: media_player.kitchen
+            option: "Uriah Heep"
+            label: "Uriah Heep"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "ZZ Top"
+                media_player: media_player.kitchen
+            option: "ZZ Top"
+            label: "ZZ Top"
+        icon: mdi:speaker
+features_position: bottom
