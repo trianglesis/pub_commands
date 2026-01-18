@@ -1,0 +1,94 @@
+type: tile
+grid_options:
+  columns: full
+entity: media_player.kitchen
+name: "[Artist Foreign] Electro Set"
+icon: mdi:account-music-outline
+show_entity_picture: false
+hide_state: true
+vertical: false
+features:
+  - type: custom:service-call
+    entries:
+      - type: dropdown
+        entity_id: media_player.kitchen
+        options:
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Depeche Mode"
+                media_player: media_player.kitchen
+            option: "Depeche Mode"
+            label: "Depeche Mode"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Fatboy Slim"
+                media_player: media_player.kitchen
+            option: "Fatboy Slim"
+            label: "Fatboy Slim"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Jamiroquai"
+                media_player: media_player.kitchen
+            option: "Jamiroquai"
+            label: "Jamiroquai"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Placebo"
+                media_player: media_player.kitchen
+            option: "Placebo"
+            label: "Placebo"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Planet Funk"
+                media_player: media_player.kitchen
+            option: "Planet Funk"
+            label: "Planet Funk"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "The Chemical Brothers"
+                media_player: media_player.kitchen
+            option: "The Chemical Brothers"
+            label: "The Chemical Brothers"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "The Prodigy"
+                media_player: media_player.kitchen
+            option: "The Prodigy"
+            label: "The Prodigy"
+        icon: mdi:speaker
+features_position: bottom

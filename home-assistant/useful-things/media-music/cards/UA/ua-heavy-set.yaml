@@ -1,0 +1,204 @@
+type: tile
+grid_options:
+  columns: full
+entity: media_player.kitchen
+name: "[Artist UA] Heavy Set"
+icon: mdi:account-music-outline
+show_entity_picture: false
+hide_state: true
+vertical: false
+features:
+  - type: custom:service-call
+    entries:
+      - type: dropdown
+        entity_id: media_player.kitchen
+        options:
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Haydamaky"
+                media_player: media_player.kitchen
+            option: "Haydamaky"
+            label: "Haydamaky"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Merva"
+                media_player: media_player.kitchen
+            option: "Merva"
+            label: "Merva"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Motanka"
+                media_player: media_player.kitchen
+            option: "Motanka"
+            label: "Motanka"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Riffmaster"
+                media_player: media_player.kitchen
+            option: "Riffmaster"
+            label: "Riffmaster"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Szokyra Peruna"
+                media_player: media_player.kitchen
+            option: "Szokyra Peruna"
+            label: "Szokyra Peruna"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "The Unsleeping"
+                media_player: media_player.kitchen
+            option: "The Unsleeping"
+            label: "The Unsleeping"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "The Unsleeping & паліндром"
+                media_player: media_player.kitchen
+            option: "The Unsleeping & паліндром"
+            label: "The Unsleeping & паліндром"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Брем Стокер"
+                media_player: media_player.kitchen
+            option: "Брем Стокер"
+            label: "Брем Стокер"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Карна"
+                media_player: media_player.kitchen
+            option: "Карна"
+            label: "Карна"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Коловрат"
+                media_player: media_player.kitchen
+            option: "Коловрат"
+            label: "Коловрат"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Мері"
+                media_player: media_player.kitchen
+            option: "Мері"
+            label: "Мері"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Мертвий Півень"
+                media_player: media_player.kitchen
+            option: "Мертвий Півень"
+            label: "Мертвий Півень"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Молот"
+                media_player: media_player.kitchen
+            option: "Молот"
+            label: "Молот"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Сварог"
+                media_player: media_player.kitchen
+            option: "Сварог"
+            label: "Сварог"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Сокира Перуна"
+                media_player: media_player.kitchen
+            option: "Сокира Перуна"
+            label: "Сокира Перуна"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Тінь Сонця"
+                media_player: media_player.kitchen
+            option: "Тінь Сонця"
+            label: "Тінь Сонця"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "ТОЛ"
+                media_player: media_player.kitchen
+            option: "ТОЛ"
+            label: "ТОЛ"
+        icon: mdi:speaker
+features_position: bottom

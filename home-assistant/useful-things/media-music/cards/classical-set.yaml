@@ -1,0 +1,182 @@
+type: tile
+grid_options:
+  columns: full
+entity: media_player.kitchen
+name: "[Classical]"
+icon: mdi:account-music-outline
+show_entity_picture: false
+hide_state: true
+vertical: false
+features:
+  - type: custom:service-call
+    entries:
+      - type: dropdown
+        entity_id: media_player.kitchen
+        options:
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Antonio Vivaldi"
+                media_player: media_player.kitchen
+            option: "Antonio Vivaldi"
+            label: "Antonio Vivaldi"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Franz Schubert"
+                media_player: media_player.kitchen
+            option: "Franz Schubert"
+            label: "Franz Schubert"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Frederic Chopin"
+                media_player: media_player.kitchen
+            option: "Frederic Chopin"
+            label: "Frederic Chopin"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Frédéric Chopin"
+                media_player: media_player.kitchen
+            option: "Frédéric Chopin"
+            label: "Frédéric Chopin"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "London Chamber Orchestra"
+                media_player: media_player.kitchen
+            option: "London Chamber Orchestra"
+            label: "London Chamber Orchestra"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "London Classical Players"
+                media_player: media_player.kitchen
+            option: "London Classical Players"
+            label: "London Classical Players"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "London Symphony Orchestra"
+                media_player: media_player.kitchen
+            option: "London Symphony Orchestra"
+            label: "London Symphony Orchestra"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Ludovico Einaudi"
+                media_player: media_player.kitchen
+            option: "Ludovico Einaudi"
+            label: "Ludovico Einaudi"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Ludwig van Beethoven"
+                media_player: media_player.kitchen
+            option: "Ludwig van Beethoven"
+            label: "Ludwig van Beethoven"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Max Richter"
+                media_player: media_player.kitchen
+            option: "Max Richter"
+            label: "Max Richter"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Modest Mussorgsky"
+                media_player: media_player.kitchen
+            option: "Modest Mussorgsky"
+            label: "Modest Mussorgsky"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Robert Schumann"
+                media_player: media_player.kitchen
+            option: "Robert Schumann"
+            label: "Robert Schumann"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Sergei Prokofiev"
+                media_player: media_player.kitchen
+            option: "Sergei Prokofiev"
+            label: "Sergei Prokofiev"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Sergei Rachmaninov"
+                media_player: media_player.kitchen
+            option: "Sergei Rachmaninov"
+            label: "Sergei Rachmaninov"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.play_artist
+              target:
+                entity_id: media_player.kitchen
+              data:
+                artist: "Людвиг ван Бетховен"
+                media_player: media_player.kitchen
+            option: "Людвиг ван Бетховен"
+            label: "Людвиг ван Бетховен"
+        icon: mdi:speaker
+features_position: bottom
