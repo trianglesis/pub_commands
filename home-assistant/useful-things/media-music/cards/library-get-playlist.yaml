@@ -1,0 +1,28 @@
+type: tile
+grid_options:
+  columns: full
+entity: media_player.kitchen
+name: "[AC] Playlists"
+icon: mdi:account-music-outline
+show_entity_picture: false
+hide_state: true
+vertical: false
+features:
+  - type: custom:service-call
+    entries:
+      - type: dropdown
+        entity_id: media_player.kitchen
+        options:
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: ARTIST_ADD
+                media_player: media_player.kitchen
+            option: ARTIST_ADD
+            label: ARTIST_ADD
+        icon: mdi:speaker
+features_position: inline

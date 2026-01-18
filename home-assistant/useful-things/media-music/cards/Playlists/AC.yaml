@@ -1,0 +1,83 @@
+type: tile
+grid_options:
+  columns: full
+entity: media_player.kitchen
+name: "[AC] Playlists"
+icon: mdi:account-music-outline
+show_entity_picture: false
+hide_state: true
+vertical: false
+features:
+  - type: custom:service-call
+    entries:
+      - type: dropdown
+        entity_id: media_player.kitchen
+        options:
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AC]\_Bring Me The Horizon"
+                media_player: media_player.kitchen
+            option: "[AC]\_Bring Me The Horizon"
+            label: "[AC]\_Bring Me The Horizon"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AC]\_Deftones"
+                media_player: media_player.kitchen
+            option: "[AC]\_Deftones"
+            label: "[AC]\_Deftones"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AC]\_Jamiroquai"
+                media_player: media_player.kitchen
+            option: "[AC]\_Jamiroquai"
+            label: "[AC]\_Jamiroquai"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AC]\_The Chemical Brothers"
+                media_player: media_player.kitchen
+            option: "[AC]\_The Chemical Brothers"
+            label: "[AC]\_The Chemical Brothers"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AC] Disturbed"
+                media_player: media_player.kitchen
+            option: "[AC] Disturbed"
+            label: "[AC] Disturbed"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AC] Metallica"
+                media_player: media_player.kitchen
+            option: "[AC] Metallica"
+            label: "[AC] Metallica"
+        icon: mdi:speaker
+features_position: inline

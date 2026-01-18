@@ -1,0 +1,105 @@
+type: tile
+grid_options:
+  columns: full
+entity: media_player.kitchen
+name: "[GR] Genre Random"
+icon: mdi:account-music-outline
+show_entity_picture: false
+hide_state: true
+vertical: false
+features:
+  - type: custom:service-call
+    entries:
+      - type: dropdown
+        entity_id: media_player.kitchen
+        options:
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[GR] Classical BEST 50 max"
+                media_player: media_player.kitchen
+            option: "[GR] Classical BEST 50 max"
+            label: "[GR] Classical BEST 50 max"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[GR] Classical rand album by artist (100)"
+                media_player: media_player.kitchen
+            option: "[GR] Classical rand album by artist (100)"
+            label: "[GR] Classical rand album by artist (100)"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[GR] Classical rand track (50)"
+                media_player: media_player.kitchen
+            option: "[GR] Classical rand track (50)"
+            label: "[GR] Classical rand track (50)"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[GR] Drum & Base (100)"
+                media_player: media_player.kitchen
+            option: "[GR] Drum & Base (100)"
+            label: "[GR] Drum & Base (100)"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[GR] Metal Rock Alternative (50)"
+                media_player: media_player.kitchen
+            option: "[GR] Metal Rock Alternative (50)"
+            label: "[GR] Metal Rock Alternative (50)"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[GR] Synthwave (100)"
+                media_player: media_player.kitchen
+            option: "[GR] Synthwave (100)"
+            label: "[GR] Synthwave (100)"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[GR] Rock, Metal (100)"
+                media_player: media_player.kitchen
+            option: "[GR] Rock, Metal (100)"
+            label: "[GR] Rock, Metal (100)"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[GR] Synth (100)"
+                media_player: media_player.kitchen
+            option: "[GR] Synth (100)"
+            label: "[GR] Synth (100)"
+        icon: mdi:speaker
+features_position: inline

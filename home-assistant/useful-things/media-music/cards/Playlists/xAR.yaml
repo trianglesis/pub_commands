@@ -1,0 +1,259 @@
+type: tile
+grid_options:
+  columns: full
+entity: media_player.kitchen
+name: "[xAR] Exrt Random Artist"
+icon: mdi:account-music-outline
+show_entity_picture: false
+hide_state: true
+vertical: false
+features:
+  - type: custom:service-call
+    entries:
+      - type: dropdown
+        entity_id: media_player.kitchen
+        options:
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[xAR] Accept (30)"
+                media_player: media_player.kitchen
+            option: "[xAR] Accept (30)"
+            label: "[xAR] Accept (30)"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[xAR] AC-DC (30)"
+                media_player: media_player.kitchen
+            option: "[xAR] AC-DC (30)"
+            label: "[xAR] AC-DC (30)"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[xAR] Bring Me the Horizon (30)"
+                media_player: media_player.kitchen
+            option: "[xAR] Bring Me the Horizon (30)"
+            label: "[xAR] Bring Me the Horizon (30)"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[xAR] Depeche Mode (30)"
+                media_player: media_player.kitchen
+            option: "[xAR] Depeche Mode (30)"
+            label: "[xAR] Depeche Mode (30)"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[xAR] Fatboy Slim (30)"
+                media_player: media_player.kitchen
+            option: "[xAR] Fatboy Slim (30)"
+            label: "[xAR] Fatboy Slim (30)"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[xAR] Florence + the Machine (30)"
+                media_player: media_player.kitchen
+            option: "[xAR] Florence + the Machine (30)"
+            label: "[xAR] Florence + the Machine (30)"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[xAR] Full random (200)"
+                media_player: media_player.kitchen
+            option: "[xAR] Full random (200)"
+            label: "[xAR] Full random (200)"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[xAR] Imagine Dragons (30)"
+                media_player: media_player.kitchen
+            option: "[xAR] Imagine Dragons (30)"
+            label: "[xAR] Imagine Dragons (30)"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[xAR] Jamiroquai (30)"
+                media_player: media_player.kitchen
+            option: "[xAR] Jamiroquai (30)"
+            label: "[xAR] Jamiroquai (30)"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[xAR] Linkin Park (30)"
+                media_player: media_player.kitchen
+            option: "[xAR] Linkin Park (30)"
+            label: "[xAR] Linkin Park (30)"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[xAR] Manowar (30)"
+                media_player: media_player.kitchen
+            option: "[xAR] Manowar (30)"
+            label: "[xAR] Manowar (30)"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[xAR] Metallica (100)"
+                media_player: media_player.kitchen
+            option: "[xAR] Metallica (100)"
+            label: "[xAR] Metallica (100)"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[xAR] Muse (100)"
+                media_player: media_player.kitchen
+            option: "[xAR] Muse (100)"
+            label: "[xAR] Muse (100)"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[xAR] Nero (100)"
+                media_player: media_player.kitchen
+            option: "[xAR] Nero (100)"
+            label: "[xAR] Nero (100)"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[xAR] Nothing But Thieves (30)"
+                media_player: media_player.kitchen
+            option: "[xAR] Nothing But Thieves (30)"
+            label: "[xAR] Nothing But Thieves (30)"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[xAR] Perturbator (30)"
+                media_player: media_player.kitchen
+            option: "[xAR] Perturbator (30)"
+            label: "[xAR] Perturbator (30)"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[xAR] Rage Against The Machine (30)"
+                media_player: media_player.kitchen
+            option: "[xAR] Rage Against The Machine (30)"
+            label: "[xAR] Rage Against The Machine (30)"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[xAR] The Chemical Brothers (30)"
+                media_player: media_player.kitchen
+            option: "[xAR] The Chemical Brothers (30)"
+            label: "[xAR] The Chemical Brothers (30)"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[xAR] The Prodigy (30)"
+                media_player: media_player.kitchen
+            option: "[xAR] The Prodigy (30)"
+            label: "[xAR] The Prodigy (30)"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[xAR] ZZ Top (30)"
+                media_player: media_player.kitchen
+            option: "[xAR] ZZ Top (30)"
+            label: "[xAR] ZZ Top (30)"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[xAR] Тартак (50)"
+                media_player: media_player.kitchen
+            option: "[xAR] Тартак (50)"
+            label: "[xAR] Тартак (50)"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[xAR] ТНМК (50)"
+                media_player: media_player.kitchen
+            option: "[xAR] ТНМК (50)"
+            label: "[xAR] ТНМК (50)"
+        icon: mdi:speaker
+features_position: inline

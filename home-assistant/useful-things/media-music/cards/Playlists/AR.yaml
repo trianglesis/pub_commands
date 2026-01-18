@@ -1,0 +1,512 @@
+type: tile
+grid_options:
+  columns: full
+entity: media_player.kitchen
+name: "[AR] Foreign"
+icon: mdi:account-music-outline
+show_entity_picture: false
+hide_state: true
+vertical: false
+features:
+  - type: custom:service-call
+    entries:
+      - type: dropdown
+        entity_id: media_player.kitchen
+        options:
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Accept"
+                media_player: media_player.kitchen
+            option: "[AR] Accept"
+            label: "[AR] Accept"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] AC-DC"
+                media_player: media_player.kitchen
+            option: "[AR] AC-DC"
+            label: "[AR] AC-DC"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Apocalyptica"
+                media_player: media_player.kitchen
+            option: "[AR] Apocalyptica"
+            label: "[AR] Apocalyptica"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Arctic Monkeys"
+                media_player: media_player.kitchen
+            option: "[AR] Arctic Monkeys"
+            label: "[AR] Arctic Monkeys"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Bring Me the Horizon"
+                media_player: media_player.kitchen
+            option: "[AR] Bring Me the Horizon"
+            label: "[AR] Bring Me the Horizon"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Deftones"
+                media_player: media_player.kitchen
+            option: "[AR] Deftones"
+            label: "[AR] Deftones"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Depeche Mode"
+                media_player: media_player.kitchen
+            option: "[AR] Depeche Mode"
+            label: "[AR] Depeche Mode"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Disturbed"
+                media_player: media_player.kitchen
+            option: "[AR] Disturbed"
+            label: "[AR] Disturbed"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] EEls"
+                media_player: media_player.kitchen
+            option: "[AR] EEls"
+            label: "[AR] EEls"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Evanescence"
+                media_player: media_player.kitchen
+            option: "[AR] Evanescence"
+            label: "[AR] Evanescence"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Faith No More"
+                media_player: media_player.kitchen
+            option: "[AR] Faith No More"
+            label: "[AR] Faith No More"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Fatboy Slim"
+                media_player: media_player.kitchen
+            option: "[AR] Fatboy Slim"
+            label: "[AR] Fatboy Slim"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Five Finger Death Punch"
+                media_player: media_player.kitchen
+            option: "[AR] Five Finger Death Punch"
+            label: "[AR] Five Finger Death Punch"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Florence + the Machine"
+                media_player: media_player.kitchen
+            option: "[AR] Florence + the Machine"
+            label: "[AR] Florence + the Machine"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Foo Fighters"
+                media_player: media_player.kitchen
+            option: "[AR] Foo Fighters"
+            label: "[AR] Foo Fighters"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Full random 200"
+                media_player: media_player.kitchen
+            option: "[AR] Full random 200"
+            label: "[AR] Full random 200"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Garbage"
+                media_player: media_player.kitchen
+            option: "[AR] Garbage"
+            label: "[AR] Garbage"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Imagine Dragons"
+                media_player: media_player.kitchen
+            option: "[AR] Imagine Dragons"
+            label: "[AR] Imagine Dragons"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Jamiroquai"
+                media_player: media_player.kitchen
+            option: "[AR] Jamiroquai"
+            label: "[AR] Jamiroquai"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Korn"
+                media_player: media_player.kitchen
+            option: "[AR] Korn"
+            label: "[AR] Korn"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Linkin Park"
+                media_player: media_player.kitchen
+            option: "[AR] Linkin Park"
+            label: "[AR] Linkin Park"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Manowar"
+                media_player: media_player.kitchen
+            option: "[AR] Manowar"
+            label: "[AR] Manowar"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Metallica"
+                media_player: media_player.kitchen
+            option: "[AR] Metallica"
+            label: "[AR] Metallica"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Motörhead"
+                media_player: media_player.kitchen
+            option: "[AR] Motörhead"
+            label: "[AR] Motörhead"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Muse"
+                media_player: media_player.kitchen
+            option: "[AR] Muse"
+            label: "[AR] Muse"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Nero"
+                media_player: media_player.kitchen
+            option: "[AR] Nero"
+            label: "[AR] Nero"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Nothing But Thieves"
+                media_player: media_player.kitchen
+            option: "[AR] Nothing But Thieves"
+            label: "[AR] Nothing But Thieves"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Papa Roach"
+                media_player: media_player.kitchen
+            option: "[AR] Papa Roach"
+            label: "[AR] Papa Roach"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Perturbator"
+                media_player: media_player.kitchen
+            option: "[AR] Perturbator"
+            label: "[AR] Perturbator"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Pet Shop Boys"
+                media_player: media_player.kitchen
+            option: "[AR] Pet Shop Boys"
+            label: "[AR] Pet Shop Boys"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Placebo "
+                media_player: media_player.kitchen
+            option: "[AR] Placebo "
+            label: "[AR] Placebo "
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Planet Funk"
+                media_player: media_player.kitchen
+            option: "[AR] Planet Funk"
+            label: "[AR] Planet Funk"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Rage Against The Machine"
+                media_player: media_player.kitchen
+            option: "[AR] Rage Against The Machine"
+            label: "[AR] Rage Against The Machine"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Rammstein"
+                media_player: media_player.kitchen
+            option: "[AR] Rammstein"
+            label: "[AR] Rammstein"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Roxanne"
+                media_player: media_player.kitchen
+            option: "[AR] Roxanne"
+            label: "[AR] Roxanne"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Sabaton"
+                media_player: media_player.kitchen
+            option: "[AR] Sabaton"
+            label: "[AR] Sabaton"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Sting"
+                media_player: media_player.kitchen
+            option: "[AR] Sting"
+            label: "[AR] Sting"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] System Of A Down"
+                media_player: media_player.kitchen
+            option: "[AR] System Of A Down"
+            label: "[AR] System Of A Down"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] The Chemical Brothers"
+                media_player: media_player.kitchen
+            option: "[AR] The Chemical Brothers"
+            label: "[AR] The Chemical Brothers"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] The Prodigy"
+                media_player: media_player.kitchen
+            option: "[AR] The Prodigy"
+            label: "[AR] The Prodigy"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] The Rasmus"
+                media_player: media_player.kitchen
+            option: "[AR] The Rasmus"
+            label: "[AR] The Rasmus"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] The Score"
+                media_player: media_player.kitchen
+            option: "[AR] The Score"
+            label: "[AR] The Score"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Three Days Grace"
+                media_player: media_player.kitchen
+            option: "[AR] Three Days Grace"
+            label: "[AR] Three Days Grace"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] Within Temptation"
+                media_player: media_player.kitchen
+            option: "[AR] Within Temptation"
+            label: "[AR] Within Temptation"
+          - entity_id: media_player.kitchen
+            tap_action:
+              action: perform-action
+              perform_action: script.get_playlist_get_from_library_by_name
+              target:
+                entity_id: media_player.kitchen
+              data:
+                playlist_name: "[AR] ZZ Top"
+                media_player: media_player.kitchen
+            option: "[AR] ZZ Top"
+            label: "[AR] ZZ Top"
+        icon: mdi:speaker
+features_position: inline
