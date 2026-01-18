@@ -256,4 +256,7 @@ snapclient --instance=3 --soundcard=USBCard3
 
 sudo systemctl enable snapclient snapclient_2 snapclient_3
 sudo systemctl restart snapserver snapclient snapclient_2 snapclient_3
+
+journalctl -n 100 -f | grep snapserver
+journalctl -n 100 -f | grep snapclient
 ```

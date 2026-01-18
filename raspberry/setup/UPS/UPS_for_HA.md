@@ -17,7 +17,7 @@ List USB devices:
 ➜  / lsusb
 Bus 003 Device 001: ID 1d6b:0002
 Bus 001 Device 001: ID 1d6b:0002
-Bus 001 Device 003: ID 0665:5161  #|-> this is ups
+Bus 001 Device 003: ID 0665:5161  #|-> this is upsN
 Bus 004 Device 001: ID 1d6b:0003
 Bus 002 Device 001: ID 1d6b:0003
 ```
