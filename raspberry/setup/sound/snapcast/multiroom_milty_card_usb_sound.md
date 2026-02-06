@@ -12,6 +12,15 @@
 /sys/devices/platform/axi/1000120000.pcie/1f00200000.usb/xhci-hcd.0/usb1/1-2/1-2:1.0/sound/card4/id
 /sys/devices/platform/axi/1000120000.pcie/1f00300000.usb/xhci-hcd.1/usb3/3-2/3-2:1.0/sound/card5/id
 /sys/devices/platform/axi/1000120000.pcie/1f00300000.usb/xhci-hcd.1/usb3/3-1/3-1:1.0/sound/card3/id
+
+
+# Shower
+/sys/devices/platform/axi/1000120000.pcie/1f00200000.usb/xhci-hcd.0/usb1/1-1/1-1.2/1-1.2:1.0/sound/card3/id
+# Kitchen
+/sys/devices/platform/axi/1000120000.pcie/1f00200000.usb/xhci-hcd.0/usb1/1-1/1-1.1/1-1.1:1.0/sound/card4/id
+# Bedroom
+/sys/devices/platform/axi/1000120000.pcie/1f00200000.usb/xhci-hcd.0/usb1/1-1/1-1.3/1-1.3:1.0/sound/card5/id
+
 ```
 
 
@@ -35,9 +44,16 @@ ACTION!="add", GOTO="alsa_naming_end"
 
 # DEVPATH can be obtained by looking at `udevadm monitor --subsystem=sound` and while pluging in the sound card.
 # Do one card at a time, the "?" char on card should stay as it matches any card number that may pop on that USB port.
-DEVPATH=="/devices/platform/axi/1000120000.pcie/1f00300000.usb/xhci-hcd.1/usb3/3-2/3-2:1.0/sound/card?", ATTR{id}="USBCard1"
-DEVPATH=="/devices/platform/axi/1000120000.pcie/1f00200000.usb/xhci-hcd.0/usb1/1-1/1-1:1.0/sound/card?", ATTR{id}="USBCard2"
-DEVPATH=="/devices/platform/axi/1000120000.pcie/1f00300000.usb/xhci-hcd.1/usb3/3-1/3-1:1.0/sound/card?", ATTR{id}="USBCard3"
+# DEVPATH=="/devices/platform/axi/1000120000.pcie/1f00300000.usb/xhci-hcd.1/usb3/3-2/3-2:1.0/sound/card?", ATTR{id}="USBCard1"
+# DEVPATH=="/devices/platform/axi/1000120000.pcie/1f00200000.usb/xhci-hcd.0/usb1/1-1/1-1:1.0/sound/card?", ATTR{id}="USBCard2"
+# DEVPATH=="/devices/platform/axi/1000120000.pcie/1f00300000.usb/xhci-hcd.1/usb3/3-1/3-1:1.0/sound/card?", ATTR{id}="USBCard3"
+
+# Shower
+DEVPATH=="/devices/platform/axi/1000120000.pcie/1f00200000.usb/xhci-hcd.0/usb1/1-1/1-1.2/1-1.2:1.0/sound/card?", ATTR{id}="USBCard1"
+# Kitchen
+DEVPATH=="/devices/platform/axi/1000120000.pcie/1f00200000.usb/xhci-hcd.0/usb1/1-1/1-1.1/1-1.1:1.0/sound/card?", ATTR{id}="USBCard2"
+# Bedroom
+DEVPATH=="/devices/platform/axi/1000120000.pcie/1f00200000.usb/xhci-hcd.0/usb1/1-1/1-1.3/1-1.3:1.0/sound/card?", ATTR{id}="USBCard3"
 
 LABEL="alsa_naming_end"
 ```
