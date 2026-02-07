@@ -13,13 +13,12 @@
 /sys/devices/platform/axi/1000120000.pcie/1f00300000.usb/xhci-hcd.1/usb3/3-2/3-2:1.0/sound/card5/id
 /sys/devices/platform/axi/1000120000.pcie/1f00300000.usb/xhci-hcd.1/usb3/3-1/3-1:1.0/sound/card3/id
 
-
 # Shower
-/sys/devices/platform/axi/1000120000.pcie/1f00200000.usb/xhci-hcd.0/usb1/1-1/1-1.2/1-1.2:1.0/sound/card3/id
+/sys/devices/platform/axi/1000120000.pcie/1f00200000.usb/xhci-hcd.0/usb1/1-1/1-1.2/1-1.2:1.0/sound/card0/id
 # Kitchen
-/sys/devices/platform/axi/1000120000.pcie/1f00200000.usb/xhci-hcd.0/usb1/1-1/1-1.1/1-1.1:1.0/sound/card4/id
+/sys/devices/platform/axi/1000120000.pcie/1f00200000.usb/xhci-hcd.0/usb1/1-1/1-1.1/1-1.1:1.0/sound/card3/id
 # Bedroom
-/sys/devices/platform/axi/1000120000.pcie/1f00200000.usb/xhci-hcd.0/usb1/1-1/1-1.3/1-1.3:1.0/sound/card5/id
+/sys/devices/platform/axi/1000120000.pcie/1f00200000.usb/xhci-hcd.0/usb1/1-1/1-1.3/1-1.3:1.0/sound/card4/id
 
 ```
 
@@ -134,9 +133,9 @@ Front output / input
 
 Re-use
 
-## First service
+## Multiple Services
 
-`$ cat /lib/systemd/system/snapclient.service`
+`cat /lib/systemd/system/snapclient.service`
 
 ```conf
 [Unit]
@@ -156,33 +155,7 @@ Restart=on-failure
 WantedBy=multi-user.target
 ```
 
-## First conf
-
-```conf
-# Start the client, used only by the init.d script
-START_SNAPCLIENT=true
-
-# Additional command line options that will be passed to snapclient
-# note that user/group should be configured in the init.d script or the systemd unit file
-# For a list of available options, invoke "snapclient --help"
-
-# Bathroom
-SNAPCLIENT_OPTS="--instance=1 --soundcard=39 --hostID=Bathroom"
-```
-
-
-Additional instance by copying the defaut one:
-
-`sudo cp /lib/systemd/system/snapclient.service /lib/systemd/system/snapclient_2.service`
-`sudo cp /etc/default/snapclient /etc/default/snapclient_2`
-
-
-Modify copied:
-
-`sudo vi /lib/systemd/system/snapclient_2.service`
-`sudo vi /etc/default/snapclient_2`
-
-## Second Service
+`cat /lib/systemd/system/snapclient_2.service`
 
 ```conf
 [Unit]
@@ -202,7 +175,37 @@ Restart=on-failure
 WantedBy=multi-user.target
 ```
 
-## Second config file
+`cat /lib/systemd/system/snapclient_3.service`
+
+```conf
+[Unit]
+Description=Snapcast client 3
+Documentation=man:snapclient(1)
+Wants=avahi-daemon.service
+After=network-online.target time-sync.target sound.target avahi-daemon.service
+
+[Service]
+EnvironmentFile=-/etc/default/snapclient_3
+ExecStart=/usr/bin/snapclient --logsink=system $SNAPCLIENT_OPTS
+User=snapclient
+Group=snapclient
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+```
+
+```shell
+ls -lah /lib/systemd/system/ | grep snap
+-rw-r--r--  1 root root  383 Feb  7 01:49 snapclient_2.service
+-rw-r--r--  1 root root  383 Feb  7 01:49 snapclient_3.service
+-rw-r--r--  1 root root  379 Feb  7 01:46 snapclient.service
+```
+
+
+## Multiple Confs
+
+`cat /etc/default/snapclient`
 
 ```conf
 # Start the client, used only by the init.d script
@@ -212,16 +215,92 @@ START_SNAPCLIENT=true
 # note that user/group should be configured in the init.d script or the systemd unit file
 # For a list of available options, invoke "snapclient --help"
 
+# Bathroom
+SNAPCLIENT_OPTS="--instance=1 --soundcard=USBCard1 --hostID=Bathroom"
+```
+
+`cat /etc/default/snapclient_2`
+
+```conf
+# Start the client, used only by the init.d script
+START_SNAPCLIENT=true
+
+# Additional command line options that will be passed to snapclient
+# note that user/group should be configured in the init.d script or the systemd unit file
+# For a list of available options, invoke "snapclient --help"
+
+# Kitchen
+SNAPCLIENT_OPTS="--instance=2 --soundcard=USBCard2 --hostID=Kitchen"
+```
+
+`cat /etc/default/snapclient_3`
+ls -lah 
+```conf
+# Start the client, used only by the init.d script
+START_SNAPCLIENT=true
+
+# Additional command line options that will be passed to snapclient
+# note that user/group should be configured in the init.d script or the systemd unit file
+# For a list of available options, invoke "snapclient --help"
+
 # Bedroom
-SNAPCLIENT_OPTS="--instance=2 --soundcard=52 --hostID=Bedroom"
+SNAPCLIENT_OPTS="--instance=3 --soundcard=USBCard3 --hostID=Bedroom"
+```
+
+```shell
+ls -lah /etc/default/ | grep snap
+-rw-r--r--   1 root root  376 Feb  7 01:47 snapclient
+-rw-r--r--   1 root root  374 Feb  7 01:50 snapclient_2
+-rw-r--r--   1 root root  374 Feb  7 01:50 snapclient_3
+```
+
+
+## Server service
+
+
+- extras/package/debian/snapserver.service
+
+`sudo vi /lib/systemd/system/snapserver.service`
+
+```conf
+[Unit]
+Description=Snapcast server
+Documentation=man:snapserver(1)
+Wants=avahi-daemon.service
+After=network-online.target time-sync.target avahi-daemon.service
+
+[Service]
+EnvironmentFile=-/etc/default/snapserver
+ExecStart=/usr/bin/snapserver --logging.sink=system --server.datadir=${HOME} $SNAPSERVER_OPTS
+User=snapserver
+Group=snapserver
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+```
+
+`sudo vi /etc/default/snapserver`
+
+
+```shell
+# Start the server, used only by the init.d script
+START_SNAPSERVER=true
+
+# Additional command line options that will be passed to snapserver
+# note that user/group should be configured in the init.d script or the systemd unit file
+# For a list of available options, invoke "snapserver --help" 
+SNAPSERVER_OPTS=""
 ```
 
 # Start Restart Reload
 
 ```shell
 sudo systemctl daemon-reload
-sudo systemctl restart snapclient
-sudo systemctl restart snapclient_2
+sudo systemctl start snapclient snapclient_2 snapclient_3
+sudo systemctl enable snapclient snapclient_2 snapclient_3
+sudo systemctl status snapclient snapclient_2 snapclient_3
+sudo systemctl restart snapclient snapclient_2 snapclient_3
 ```
 
 # Etc
@@ -270,7 +349,8 @@ snapclient --instance=3 --soundcard=USBCard2
 snapclient --instance=3 --soundcard=USBCard3
 
 
-sudo systemctl enable snapclient snapclient_2 snapclient_3
+sudo systemctl start snapserver
+sudo systemctl enable snapserver snapclient snapclient_2 snapclient_3
 sudo systemctl restart snapserver snapclient snapclient_2 snapclient_3
 
 journalctl -n 100 -f | grep snapserver

@@ -1,10 +1,28 @@
 # Config snapcast
 
+Install wiht deb to set everything as usual
+
+
+```shell
+wget https://github.com/snapcast/snapcast/releases/download/v0.34.0/snapclient_0.34.0-1_arm64_trixie.deb
+wget https://github.com/snapcast/snapcast/releases/download/v0.34.0/snapserver_0.34.0-1_arm64_trixie.deb
+sudo apt install ./snapclient_0.34.0-1_arm64_trixie.deb
+sudo apt install ./snapserver_0.34.0-1_arm64_trixie.deb
+
+useradd snapserver
+groupadd snapserver
+sudo mkdir -p /home/snapserver/
+sudo chown snapserver:snapserver /home/snapserver/
+sudo chmod 776 /home/snapserver/
+
+```
 
 Check prereq: 
 - [snapuser](https://github.com/badaix/snapcast/issues/668#issuecomment-692732687)
 
 ## Conf file
+
+- https://github.com/snapcast/snapcast/blob/develop/server/etc/snapserver.conf
 
 `sudo vi /etc/snapserver.conf`
 
@@ -57,8 +75,6 @@ chunk_ms = 20
 buffer = 350
 ```
 
-
-
 ## Home assistant setup
 
 Disable all other integrations and players, I only use HA Music as player.
@@ -108,9 +124,10 @@ I've deleted every player but VLC from rasp.
 
 
 ```shell
-# /home/USER/Snapcast_sources/snapcast
+git clone https://github.com/snapcast/snapcast.git
+# ls ~/Downloads/snapcast/
 
-cd <snapcast dir>
+cd snapcast
 mkdir build
 cd build
 
@@ -121,11 +138,14 @@ cmake --build .
 
 Binaries will be created in <snapcast dir>/bin:
 
+ls
+libcommon.a  snapclient  snapserver
+
 <snapcast dir>/bin/snapclient
 <snapcast dir>/bin/snapserver
 
-`/home/$USER/Snapcast_sources/snapcast/bin/snapserver`
-`/home/$USER/Snapcast_sources/snapcast/bin/snapclient`
+`ls ~/Downloads/snapcast/bin/snapserver`
+`ls ~/Downloads/snapcast/bin/snapclient`
 
 Update conf files to use compiled binaries
 
@@ -160,6 +180,7 @@ sudo vi /etc/default/snapclient_3
 
 # Conf changed - reload
 sudo systemctl daemon-reload
+sudo systemctl enable snapserver snapclient snapclient_2 snapclient_3
 sudo systemctl restart snapserver snapclient snapclient_2 snapclient_3
 
 # Check
