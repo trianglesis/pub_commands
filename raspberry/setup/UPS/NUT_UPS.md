@@ -36,12 +36,10 @@ sudo apt install nut
 
 ```shell
 ~ $ lsusb
-Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
-Bus 003 Device 109: ID 0d9f:0004 Powercom Co., Ltd HID UPS Battery
-Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
-Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 003 Device 002: ID 0764:0601 Cyber Power System, Inc. PR1500LCDRT2U UPS
 ```
+
+- PowerWalker 10121076 Basic VI 1500 STL
 
 ## Add UPS to config:
 
@@ -49,10 +47,7 @@ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 sudo vi /etc/nut/ups.conf
 ```
 
-Bus 001 Device 003: ID 0665:5161
-
-
-Use 0d9f:0004 as vendorid\productid
+Use 0764:0601 as vendorid\productid
 Read about overriding options above at web.
 
 - **override**
@@ -64,12 +59,12 @@ Read about overriding options above at web.
 
 
 ```text
-[Powercom800W]
+[PowerWalker]
     driver = usbhid-ups
-    desc = "Powercom Co 800W"
+    desc = "PowerWalker 1500"
     port = auto
-    vendorid = 0d9f
-    productid = 0004
+    vendorid = 0764
+    productid = 0601
     pollfreq = 5
     pollinterval = 2
     ignorelb
@@ -210,7 +205,7 @@ sudo systemctl restart nut-server && sudo systemctl restart nut-monitor
 ```
 
 ```shell
-upsc Powercom800W@localhost
+upsc PowerWalker@localhost
 ```
 
 
@@ -220,7 +215,7 @@ upsc Powercom800W@localhost
 sudo apt install nut-cgi
 sudo vi /etc/nut/hosts.conf
 
-# MONITOR Powercom800W@localhost "Powercom800W_Raspb"
+# MONITOR PowerWalker@localhost "PowerWalker_Raspb"
 MONITOR powerwalker@localhost "RaspPi"
 
 ```
@@ -523,7 +518,7 @@ More monstrous config:
 
 ```shell
 # Full config:
-NOTIFYCMD /sbin/upssched
+NOTIFYCMD "/usr/local/ups/sbin/upssched"
 
 # Events with battery
 NOTIFYFLAG ONLINE     SYSLOG+WALL+EXEC
@@ -567,6 +562,7 @@ AT <**EVENT**> * **ACTION** Do an action or cancel an action.
 
 ```shell
 sudo vi /etc/nut/upssched.conf
+sudo vi /usr/local/ups/etc/upssched.conf
 ```
 
 ```sh
@@ -609,6 +605,7 @@ AT NOPARENT * EXECUTE servicedown
 
 ```shell
 sudo vi /etc/nut/upssched-cmd
+sudo vi /usr/local/ups/etc/upssched-cmd
 ```
 
 ```sh

@@ -5,11 +5,43 @@ Better install NUT from sources to get this and other fixes:
 - https://networkupstools.org/docs/user-manual.chunked/_installation_instructions.html
 
 
+# NOTE
+
+No longer create SYSMEMD scripts:
+
+```yaml
+cat /etc/os-release
+PRETTY_NAME="Debian GNU/Linux 13 (trixie)"
+NAME="Debian GNU/Linux"
+VERSION_ID="13"
+VERSION="13 (trixie)"
+VERSION_CODENAME=trixie
+DEBIAN_VERSION_FULL=13.3
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+
+
+Failed to restart nut-driver-enumerator.service: Unit nut-driver-enumerator.service not found.
+Failed to restart nut-monitor.service: Unit nut-monitor.service not found.
+Failed to restart nut-server.service: Unit nut-server.service not found.
+
+```
+
+
 # Download
 
 ```shell
 mkdir NUT_Sources && cd NUT_Sources
 git clone https://github.com/networkupstools/nut.git
+
+# ALT
+mkdir nut_2_8_4
+cd nut_2_8_4/
+wget https://github.com/networkupstools/nut/archive/refs/tags/v2.8.4.zip
+unzip v2.8.4.zip
+cd nut-2.8.4/
 ```
 
 # Configure
@@ -25,6 +57,8 @@ git clone https://github.com/networkupstools/nut.git
 ./configure --help
 # Run, in case of USB driver or libgd related error, see below
 ./configure --with-user=nut --with-group=nut --with-usb --with-cgi
+
+./configure --with-user=nut --with-group=nut --with-usb --with-cgi --htmldir=/usr/local/ups/html
 ```
 
 ## Issues:
@@ -61,6 +95,10 @@ sudo apt-get install libgd-gd2-perl
 
 # Make & install
 
+- https://networkupstools.org/docs/user-manual.chunked/_installation_instructions.html#replacing-a-systemd-enabled-nut-deployment
+- https://networkupstools.org/docs/user-manual.chunked/_installation_instructions.html#replacing-a-systemd-enabled-nut-deployment
+
+
 ```shell
 make
 make install
@@ -82,6 +120,42 @@ make -j 4 all && make -j 4 check && \
     { sudo systemctl restart udev || true ; } && \
     sudo systemctl restart nut-driver-enumerator.service \
         nut-monitor nut-server
+
+
+sudo systemctl restart nut-driver-enumerator.service nut-monitor nut-server
+
+
+# 
+./configure --enable-inplace-runtime --with-user=nut --with-group=nut --with-usb --with-cgi \
+    --with-libsystemd \
+    --with-systemdsystemunitdir=/home/sanek/Downloads/nut-md \
+    --with-systemdsystempresetdir=/home/sanek/Downloads/nut-md \
+    --with-systemdshutdowndir=/home/sanek/Downloads/nut-md \
+    --with-systemdtmpfilesdir=/home/sanek/Downloads/nut-md
+
+
+
+./configure --enable-inplace-runtime --with-libsystemd --with-user=nut --with-group=nut --with-usb --with-cgi
+make -j 4 all && make -j 4 check && \
+    { sudo systemctl stop nut-monitor nut-server || true ; } && \
+    { sudo systemctl stop nut-driver.service || true ; } && \
+    { sudo systemctl stop nut-driver.target || true ; } && \
+    { sudo systemctl stop nut.target || true ; } && \
+    sudo make install && \
+    sudo systemctl daemon-reload && \
+    sudo systemd-tmpfiles --create && \
+    sudo systemctl disable nut.target nut-driver.target \
+        nut-monitor nut-server nut-driver-enumerator.path \
+        nut-driver-enumerator.service && \
+    sudo systemctl enable nut.target nut-driver.target \
+        nut-monitor nut-server nut-driver-enumerator.path \
+        nut-driver-enumerator.service && \
+    { sudo systemctl restart udev || true ; } && \
+    sudo systemctl restart nut-driver-enumerator.service \
+        nut-monitor nut-server
+
+# Start over
+make clean && make distclean
 ```
 
 ## Remove installed previously
@@ -93,6 +167,8 @@ sudo apt remove nut
 # Daemon
 
 Should be generated in config + make install
+
+- https://github.com/networkupstools/nut/tree/master/scripts/systemd
 
 Pre setup:
 - UPS Config See: [ups.conf](NUT_UPS.md#add-ups-to-config)
@@ -144,8 +220,9 @@ sudo vi /usr/local/ups/etc/upsd.users
 sudo vi /usr/local/ups/etc/upssched.conf
 # See "UPS Scheduler conf"
 # Maybe change: CMDSCRIPT /usr/local/ups/etc/upssched-cmd
+# sudo chown -R root:nut /usr/local/ups/
 # Maybe change: PIPEFN /var/state/ups/upssched/upssched.pipe
-# Maybe change: PIPEFN /var/state/ups/upssched/upssched.lock
+# Maybe change: LOCKFN /var/state/ups/upssched/upssched.lock
 sudo vi /usr/local/ups/etc/upsmon.conf
 # Check and change:
 # NOTIFYCMD /usr/local/ups/sbin/upssched
@@ -164,7 +241,6 @@ sudo vi /usr/local/ups/etc/upssched-cmd
 ```
 
 ### The Program:
-
 
 
 ```sh
@@ -314,6 +390,7 @@ exit 0
 ```
 
 ```shell
+sudo chmod a+rwx /usr/local/ups/etc/upssched-cmd
 sudo /usr/local/ups/etc/upssched-cmd test_email
 ```
 

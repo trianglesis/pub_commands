@@ -37,6 +37,7 @@ sudo systemctl restart nfs-server nfs-kernel-server
 
 sudo exportfs -ra
 # exportfs: /mnt/share/HA_Share_1Tb does not support NFS export
+showmount --exports
 
 sudo vi /etc/samba/smb.conf
 sudo systemctl restart samba

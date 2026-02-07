@@ -20,6 +20,12 @@ Bus 001 Device 001: ID 1d6b:0002
 Bus 001 Device 003: ID 0665:5161  #|-> this is upsN
 Bus 004 Device 001: ID 1d6b:0003
 Bus 002 Device 001: ID 1d6b:0003
+
+#
+
+Bus 003 Device 002: ID 0764:0601 1 1500
+#  Bus 003 Device 002: ID 0764:0601 Cyber Power System, Inc. PR1500LCDRT2U UPS
+
 ```
 
 
@@ -30,21 +36,23 @@ Bus 002 Device 001: ID 1d6b:0003
 Add IDs and different driver
 - nutdrv_qx
 
+Powerwalker
+
 ```yaml
 users:
-  - username: nut-ups
-    password: passwd
+  - username: ha_ups
+    password: NuT_UPS_HoM3_@$$
     instcmds:
       - all
     actions: []
 devices:
   - name: PowerWalker
-    driver: nutdrv_qx
+    driver: usbhid-ups
     port: auto
     config:
-      - vendorid = 0665
-      - productid = 5161
-      - desc = "PowerWalker VI 1200 CSW"
+      - vendorid = 0764
+      - productid = 0601
+      - desc = "PowerWalker Basic VI 1500 STL"
 mode: netserver
 shutdown_host: false
 log_level: info
@@ -71,3 +79,5 @@ Poll UPS [myups@localhost] failed - Driver not connected
 # Connect at the integration to a hostname:
 
 - See "Hostname" at the page of addon: "Network UPS Tools"
+
+![note](image.png)
