@@ -45,6 +45,8 @@ ssh -i /home/USER/.ssh/USER_rpi 'root@1.1.1.15' 'ls -lah'
 
 ## From HA to RPI
 
+NOTE: HA wants `id_rsa` file name for a private key at `/config/.ssh` no matter what, so rename the key or generate as it is.
+
 ```shell
 # Gen the key same as in RPi
 cd /config/.ssh
