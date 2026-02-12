@@ -5,6 +5,7 @@
 - https://unix.stackexchange.com/questions/714500/sound-volume-settings-dont-persist-through-reboots
 - https://panther.kapsi.fi/posts/2016-04-25_asound
 - https://linuxaudiofoundation.org/category/alsa/
+- https://forum.libreelec.tv/thread/28211-saving-and-restoring-alsa-mixer-state/ !!!!
 
 
 ```shell
@@ -12,19 +13,36 @@
 sudo alsamixer
 amixer controls
 
+
+sudo modprobe snd-bcm2835                      # load module for single boot
+echo "snd-bcm2835" | sudo tee -a /etc/modules  # load module for persistance
+
 # NOICE!
 speaker-test
 
 # Save forever
 sudo alsactl store
 sudo alsactl --no-ucm store
-
 sudo alsactl store 0 && sudo alsactl store 1 && sudo alsactl store 2 && sudo alsactl store 3 && sudo alsactl store 4
 
 sudo alsactl restore
 # Fix failed to import hw:2 use case configuration 
 sudo alsactl --no-ucm restore
 
+# Clean
+sudo alsactl clean
+sudo alsactl restore -P
+sudo rm /var/lib/alsa/asound.state
+
+sudo systemctl enable alsa-restore.service
+sudo systemctl enable alsa-state.service
+sudo systemctl enable alsa-utils.service
+
+sudo systemctl start alsa-restore.service && sudo systemctl start alsa-state.service && sudo systemctl start alsa-utils.service
+
+sudo systemctl status alsa-restore.service 
+sudo systemctl status alsa-state.service 
+sudo systemctl status alsa-utils.service
 
 sudo amixer controls
 # numid=3,iface=MIXER,name='Mic Playback Switch'
@@ -43,6 +61,8 @@ amixer cget numid=3
 #   : values=16462,16462
 
 sudo amixer cset numid=3 1
+
+amixer cset numid=3 70%
 ```
 
 # Setup ALSA devices
@@ -58,11 +78,13 @@ sudo amixer cset numid=3 1
 ```
 
 
-`vi ~/.asoundrc`
+`vi cat `
 `sudo vi /etc/asound.conf`
 
 Current setup is probably surviving reboots with volume set
 - no, only for default (one of three) USB device
+- reinstall alsa everything! - does not help
+
 
 ```conf
 # Bathroom
@@ -128,7 +150,7 @@ defaults.ctl.!device 0
 
 ```
 
-# Settings
+## Settings
 
 ```shell
 /usr/bin/amixer scontrols
@@ -148,23 +170,23 @@ amixer
 #   Mono: Capture 65536 [100%] [on]
 
 # Now it saves master volume at ONE default Sound device (of 3)
-/usr/bin/amixer set Master 75
+/usr/bin/amixer set Master 80
 amixer set Master 80% >> /dev/null
 
 ```
 
-Does not work, volume still can stuck at small % and only be set after user login.
+Work but need a user login
 
 ```shell
 sudo alsactl --file ~/.config/asound.state store
 sudo vi ~/.bashrc
-alsactl --file ~/.config/asound.state restore
+sudo vi /root/.bashrc
+sudo alsactl --file ~/.config/asound.state restore
 ```
 
 
-# Workarounds
+## Workarounds
 
-When\if volume level cannot be saved between reboots - reinstall alsa everything!
 
 - https://linuxaudiofoundation.org/category/alsa/
 
@@ -177,6 +199,7 @@ sudo apt --purge remove alsa-base alsa-firmware-loaders alsa-oss alsa-source als
 sudo apt-get install alsa-base alsa-utils alsa-tools libasound2
 
 sudo apt-get install alsa-utils alsa-tools
+sudo apt-get install alsa-ucm-conf
 
 sudo reboot
 
@@ -192,4 +215,21 @@ sudo systemctl start alsa-utils
 # check the status again everything should be okay
 sudo systemctl status alsa-utils.service
 
+```
+
+
+## Pusleaudio
+
+- https://www.freedesktop.org/software/pulseaudio/pavucontrol/?__goaway_challenge=meta-refresh&__goaway_id=bb3d98019ab369cd8f7ab4db831735c5&__goaway_referer=https%3A%2F%2Fduckduckgo.com%2F
+- https://forums.raspberrypi.com/viewtopic.php?t=62851
+
+
+```shell
+sudo apt update
+sudo apt install pulseaudio-utils pavucontrol
+
+# remove
+sudo apt -y purge "pavucontrol"
+sudo apt -y purge "pulseaudio"
+sudo apt -y purge "pulseaudio-utils"
 ```

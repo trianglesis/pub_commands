@@ -1,0 +1,31 @@
+pcm.card1 {
+  type hw
+  card 1
+}
+
+ctl.card1 {
+  type hw
+  card 1
+}
+
+pcm.monocard {
+  slave.pcm card1
+  slave.channels 2
+#  type plug
+  type route
+  ttable {
+    # Copy both input channels to output channel 0 (Left).
+    0.0 0.5
+    1.0 0.5
+    # Send nothing to output channel 1 (Right).
+    0.1 0
+    1.1 0
+  }
+}
+
+ctl.monocard {
+  type hw
+  card 1
+}
+
+pcm.!default monocard
