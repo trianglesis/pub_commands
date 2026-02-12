@@ -75,48 +75,6 @@ chunk_ms = 20
 buffer = 350
 ```
 
-## Home assistant setup
-
-Disable all other integrations and players, I only use HA Music as player.
-I've deleted every player but VLC from rasp.
-
-`sudo vi /etc/mpd.conf`
-
-
-```conf
- # https://github.com/badaix/snapcast/blob/develop/doc/configuration.md#alsa
-
- audio_output_format            "48000:16:2"
- audio_output {
-         type            "alsa"
-         name            "My ALSA Device"
-         device          "hw:0,0,0"      # optional
- #       auto_resample   "no"
- #       mixer_type      "hardware"      # optional
- #       mixer_device    "default"       # optional
- #       mixer_control   "PCM"           # optional
- #       mixer_index     "0"             # optional
- }
-
-```
-
-
-`sudo vi /etc/asound.conf`
-
-```conf
-#pcm.!default {
-#       type hw
-#       card 0
-#}
-#
-#ctl.!default {
-#       type hw
-#       card 0
-#}
-
-```
-
-
 
 # Not simple setup
 

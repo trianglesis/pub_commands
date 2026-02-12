@@ -1,0 +1,2448 @@
+type: grid
+cards:
+  - type: heading
+    heading: Душ Плейлист
+    heading_style: subtitle
+    icon: mdi:shower-head
+  - type: custom:custom-features-card
+    features:
+      - type: custom:service-call
+        entries:
+          - type: dropdown
+            entity_id: input_select.playlists_christmass
+            options:
+              - entity_id: input_select.playlists_christmass
+                option: Christmass
+                tap_action:
+                  action: none
+              - entity_id: input_select.playlists_christmass
+                option: "[AG] Christmas Classical Vocal"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AG] Christmas Classical Vocal"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.playlists_christmass
+                option: "[AG] Christmas Electro Dance House"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AG] Christmas Electro Dance House"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.playlists_christmass
+                option: "[AG] Christmas Folk Country Ballad Vocal"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AG] Christmas Folk Country Ballad Vocal"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.playlists_christmass
+                option: "[AG] Christmas Jazz Swing Blues"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AG] Christmas Jazz Swing Blues "
+                    media_player: media_player.bathroom
+              - entity_id: input_select.playlists_christmass
+                option: "[AG] Christmas Pop"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AG] Christmas Pop"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.playlists_christmass
+                option: "[AG] Christmas R&B"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AG] Christmas R&B"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.playlists_christmass
+                option: "[AG] Christmas Rock"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AG] Christmas Rock"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.playlists_christmass
+                option: "[AG] Christmas Soul"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AG] Christmas Soul"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.playlists_christmass
+                option: "[R VA] Різдво 2025 наші"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[R VA] Різдво 2025 наші"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.playlists_christmass
+                option: "[X VA] Christmas"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[X VA] Christmas"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.playlists_christmass
+                option: "[X VA] Різдво 2025 наші"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[X VA] Різдво 2025 наші"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.playlists_christmass
+                option: "[A] Christmas New (after 1980) by date"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[A] Christmas New (after 1980) by date"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.playlists_christmass
+                option: "[A] Christmas New (after 1980)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[A] Christmas New (after 1980)"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.playlists_christmass
+                option: "[A] Christmas New (after 2000) by date"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[A] Christmas New (after 2000) by date"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.playlists_christmass
+                option: "[A] Christmas New (after 2000)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[A] Christmas New (after 2000)"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.playlists_christmass
+                option: "[A] Christmas Old (before 1960) by date"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[A] Christmas Old (before 1960) by date"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.playlists_christmass
+                option: "[A] Christmas Old (before 1960)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[A] Christmas Old (before 1960) "
+                    media_player: media_player.bathroom
+              - entity_id: input_select.playlists_christmass
+                option: "[A] Christmas Old (before 1970) by date"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[A] Christmas Old (before 1970) by date"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.playlists_christmass
+                option: "[A] Christmas Old (before 1970)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[A] Christmas Old (before 1970) "
+                    media_player: media_player.bathroom
+              - entity_id: input_select.playlists_christmass
+                option: "[A] Christmas Old (before 1980) by date"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[A] Christmas Old (before 1980)"
+                    media_player: media_player.bathroom by date
+              - entity_id: input_select.playlists_christmass
+                option: "[A] Christmas Old (before 1980)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[A] Christmas Old (before 1980)"
+                    media_player: media_player.bathroom
+            icon: mdi:string-lights
+      - type: custom:service-call
+        entries:
+          - type: dropdown
+            entity_id: input_select.ac_artists_custom
+            options:
+              - entity_id: input_select.ac_artists_custom
+                option: "[AC] Artists Custom"
+                tap_action:
+                  action: none
+              - entity_id: input_select.ac_artists_custom
+                option: "[AC] Bring Me The Horizon"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AC] Bring Me The Horizon"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ac_artists_custom
+                option: "[AC] Deftones"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AC] Deftones"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ac_artists_custom
+                option: "[AC] Jamiroquai"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AC] Jamiroquai"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ac_artists_custom
+                option: "[AC] The Chemical Brothers"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AC] The Chemical Brothers"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ac_artists_custom
+                option: "[AC] Disturbed"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AC] Disturbed"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ac_artists_custom
+                option: "[AC] Metallica"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AC] Metallica"
+                    media_player: media_player.bathroom
+            icon: mdi:account-music
+            value_attribute: state
+      - type: custom:service-call
+        entries:
+          - type: dropdown
+            entity_id: input_select.ar_artists_random
+            options:
+              - entity_id: input_select.ar_artists_random
+                option: "[AC] Artists Random"
+                tap_action:
+                  action: none
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Accept"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Accept"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] AC-DC"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] AC-DC"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Apocalyptica"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Apocalyptica"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Arctic Monkeys"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Arctic Monkeys"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Bring Me the Horizon"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Bring Me the Horizon"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Deftones"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Deftones"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Depeche Mode"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Depeche Mode"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Disturbed"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Disturbed"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] EEls"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] EEls"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Evanescence"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Evanescence"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Faith No More"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Faith No More"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Fatboy Slim"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Fatboy Slim"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Five Finger Death Punch"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Five Finger Death Punch"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Florence + the Machine"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Florence + the Machine"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Foo Fighters"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Foo Fighters"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Full random 200"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Full random 200"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Garbage"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Garbage"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Imagine Dragons"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Imagine Dragons"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Jamiroquai"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Jamiroquai"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Korn"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Korn"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Linkin Park"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Linkin Park"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Manowar"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Manowar"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Metallica"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Metallica"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Motörhead"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Motörhead"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Muse"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Muse"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Nero"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Nero"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Nothing But Thieves"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Nothing But Thieves"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Papa Roach"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Papa Roach"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Perturbator"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Perturbator"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Pet Shop Boys"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Pet Shop Boys"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Placebo "
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Placebo "
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Planet Funk"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Planet Funk"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Rage Against The Machine"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Rage Against The Machine"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Rammstein"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Rammstein"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Roxanne"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Roxanne"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Sabaton"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Sabaton"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Sting"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Sting"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] System Of A Down"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] System Of A Down"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] The Chemical Brothers"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] The Chemical Brothers"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] The Prodigy"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] The Prodigy"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] The Rasmus"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] The Rasmus"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] The Score"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] The Score"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Three Days Grace"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Three Days Grace"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] Within Temptation"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Within Temptation"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_artists_random
+                option: "[AR] ZZ Top"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] ZZ Top"
+                    media_player: media_player.bathroom
+            icon: mdi:account-music
+      - type: custom:service-call
+        entries:
+          - type: dropdown
+            entity_id: input_select.ar_ua_artists_random
+            options:
+              - entity_id: input_select.ar_ua_artists_random
+                option: "[AR] UA Playlists"
+                tap_action:
+                  action: none
+              - entity_id: input_select.ar_ua_artists_random
+                option: "[AR] Бумбокс"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Бумбокс"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_ua_artists_random
+                option: "[AR] ВУЗВ"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] ВУЗВ"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_ua_artists_random
+                option: "[AR] Гайдамаки"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Гайдамаки"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_ua_artists_random
+                option: "[AR] Димна суміш"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Димна суміш"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_ua_artists_random
+                option: "[AR] Карна"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Карна"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_ua_artists_random
+                option: "[AR] Кому Вниз"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Кому Вниз"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_ua_artists_random
+                option: "[AR] Мотор`ролла"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Мотор`ролла"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_ua_artists_random
+                option: "[AR] паліндром"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] паліндром"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_ua_artists_random
+                option: "[AR] Пирятин"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Пирятин"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_ua_artists_random
+                option: "[AR] Тартак"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] Тартак"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_ua_artists_random
+                option: "[AR] ТНМК"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] ТНМК"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_ua_artists_random
+                option: "[AR] ТОЛ"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] ТОЛ"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ar_ua_artists_random
+                option: "[AR] хейтспіч"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[AR] хейтспіч"
+                    media_player: media_player.bathroom
+            icon: mdi:account-music
+      - type: custom:service-call
+        entries:
+          - type: dropdown
+            entity_id: input_select.gr_genre_random
+            options:
+              - entity_id: input_select.gr_genre_random
+                option: "[GR] Genre Random"
+                tap_action:
+                  action: none
+              - entity_id: input_select.gr_genre_random
+                option: "[GR] Classical BEST 50 max"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[GR] Classical BEST 50 max"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.gr_genre_random
+                option: "[GR] Classical rand album by artist (100)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[GR] Classical rand album by artist (100)"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.gr_genre_random
+                option: "[GR] Classical rand track (50)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[GR] Classical rand track (50)"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.gr_genre_random
+                option: "[GR] Drum & Base (100)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[GR] Drum & Base (100)"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.gr_genre_random
+                option: "[GR] Metal Rock Alternative (50)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[GR] Metal Rock Alternative (50)"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.gr_genre_random
+                option: "[GR] Synthwave (100)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[GR] Synthwave (100)"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.gr_genre_random
+                option: "[GR] Rock, Metal (100)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[GR] Rock, Metal (100)"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.gr_genre_random
+                option: "[GR] Synth (100)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[GR] Synth (100)"
+                    media_player: media_player.bathroom
+            icon: mdi:account-music
+      - type: custom:service-call
+        entries:
+          - type: dropdown
+            entity_id: input_select.xar_genre_random
+            options:
+              - entity_id: input_select.xar_genre_random
+                option: "[xAR] Exrt Random Artist"
+                tap_action:
+                  action: none
+              - entity_id: input_select.xar_genre_random
+                option: "[xAR] Accept (30)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[xAR] Accept (30)"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.xar_genre_random
+                option: "[xAR] AC-DC (30)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[xAR] AC-DC (30)"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.xar_genre_random
+                option: "[xAR] Bring Me the Horizon (30)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: >-
+                      [xAR] Bring Me the Horizon (30) 
+                    media_player: media_player.bathroom
+              - entity_id: input_select.xar_genre_random
+                option: "[xAR] Depeche Mode (30)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[xAR] Depeche Mode (30)"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.xar_genre_random
+                option: "[xAR] Fatboy Slim (30)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[xAR] Fatboy Slim (30)"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.xar_genre_random
+                option: "[xAR] Florence + the Machine (30)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[xAR] Florence + the Machine (30)"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.xar_genre_random
+                option: "[xAR] Full random (200)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[xAR] Full random (200)"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.xar_genre_random
+                option: "[xAR] Imagine Dragons (30)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[xAR] Imagine Dragons (30)"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.xar_genre_random
+                option: "[xAR] Jamiroquai (30)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[xAR] Jamiroquai (30)"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.xar_genre_random
+                option: "[xAR] Linkin Park (30)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[xAR] Linkin Park (30)"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.xar_genre_random
+                option: "[xAR] Manowar (30)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[xAR] Manowar (30)"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.xar_genre_random
+                option: "[xAR] Metallica (100)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[xAR] Metallica (100)"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.xar_genre_random
+                option: "[xAR] Muse (100)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[xAR] Muse (100)"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.xar_genre_random
+                option: "[xAR] Nero (100)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[xAR] Nero (100)"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.xar_genre_random
+                option: "[xAR] Nothing But Thieves (30)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[xAR] Nothing But Thieves (30)"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.xar_genre_random
+                option: "[xAR] Perturbator (30)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[xAR] Perturbator (30)"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.xar_genre_random
+                option: "[xAR] Rage Against The Machine (30)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[xAR] Rage Against The Machine (30)"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.xar_genre_random
+                option: "[xAR] The Chemical Brothers (30)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[xAR] The Chemical Brothers (30)"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.xar_genre_random
+                option: "[xAR] The Prodigy (30)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[xAR] The Prodigy (30)"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.xar_genre_random
+                option: "[xAR] ZZ Top (30)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[xAR] ZZ Top (30)"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.xar_genre_random
+                option: "[xAR] Тартак (50)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[xAR] Тартак (50)"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.xar_genre_random
+                option: "[xAR] ТНМК (50)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[xAR] ТНМК (50)"
+                    media_player: media_player.bathroom
+            icon: mdi:account-music
+      - type: custom:service-call
+        entries:
+          - type: dropdown
+            entity_id: input_select.other_playlists
+            options:
+              - entity_id: input_select.other_playlists
+                option: "[Other] Playlists"
+                tap_action:
+                  action: none
+              - entity_id: input_select.other_playlists
+                option: "[xDR] Classic (50)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[xDR] Classic (50)"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.other_playlists
+                option: "[xDR] Foreign (200)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[xDR] Foreign (200)"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.other_playlists
+                option: "[xDR] Ukraine (200)"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: "[xDR] Ukraine (200)"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.other_playlists
+                option: TOP Played Foreign (200)
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: TOP Played Foreign (200)
+                    media_player: media_player.bathroom
+              - entity_id: input_select.other_playlists
+                option: TOP Played Ukraine (200)
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: TOP Played Ukraine (200)
+                    media_player: media_player.bathroom
+              - entity_id: input_select.other_playlists
+                option: TOP Rated Classical (100)
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: TOP Rated Classical (100)
+                    media_player: media_player.bathroom
+              - entity_id: input_select.other_playlists
+                option: TOP Rated Foreign (200)
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: TOP Rated Foreign (200)
+                    media_player: media_player.bathroom
+              - entity_id: input_select.other_playlists
+                option: TOP Rated Ukraine (200)
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: TOP Rated Ukraine (200)
+                    media_player: media_player.bathroom
+              - entity_id: input_select.other_playlists
+                option: WC Cabinet
+                tap_action:
+                  action: perform-action
+                  perform_action: script.get_playlist_get_from_library_by_name
+                  data:
+                    option: WC Cabinet
+                    media_player: media_player.bathroom
+            icon: mdi:account-music
+    feature_height: 32
+    transparent: true
+  - type: heading
+    heading: Душ Виконавці зарубіжні
+    heading_style: subtitle
+    icon: mdi:shower-head
+  - type: custom:custom-features-card
+    features:
+      - type: custom:service-call
+        entries:
+          - type: dropdown
+            entity_id: input_select.foreign_electro_set
+            options:
+              - entity_id: input_select.foreign_electro_set
+                option: "[Foreign] Electro"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: "[Foreign] Electro"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.foreign_electro_set
+                option: Depeche Mode
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Depeche Mode
+                    media_player: media_player.bathroom
+              - entity_id: input_select.foreign_electro_set
+                option: Daft Punk
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Daft Punk
+                    media_player: media_player.bathroom
+              - entity_id: input_select.foreign_electro_set
+                option: Fatboy Slim
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Fatboy Slim
+                    media_player: media_player.bathroom
+              - entity_id: input_select.foreign_electro_set
+                option: Jamiroquai
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Jamiroquai
+                    media_player: media_player.bathroom
+              - entity_id: input_select.foreign_electro_set
+                option: Placebo
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Placebo
+                    media_player: media_player.bathroom
+              - entity_id: input_select.foreign_electro_set
+                option: Planet Funk
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Planet Funk
+                    media_player: media_player.bathroom
+              - entity_id: input_select.foreign_electro_set
+                option: The Chemical Brothers
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: The Chemical Brothers
+                    media_player: media_player.bathroom
+              - entity_id: input_select.foreign_electro_set
+                option: The Prodigy
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: The Prodigy
+                    media_player: media_player.bathroom
+            icon: mdi:account-music
+            value_attribute: state
+      - type: custom:service-call
+        entries:
+          - type: dropdown
+            entity_id: input_select.foreign_heavy_set
+            options:
+              - entity_id: input_select.foreign_heavy_set
+                option: "[Foreign] Heavy"
+                tap_action:
+                  action: none
+              - entity_id: input_select.foreign_heavy_set
+                option: AC/DC
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: AC/DC
+                    media_player: media_player.bathroom
+              - entity_id: input_select.foreign_heavy_set
+                option: Accept
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Accept
+                    media_player: media_player.bathroom
+              - entity_id: input_select.foreign_heavy_set
+                option: Apocalyptica
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Apocalyptica
+                    media_player: media_player.bathroom
+              - entity_id: input_select.foreign_heavy_set
+                option: Bring Me The Horizon
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Bring Me The Horizon
+                    media_player: media_player.bathroom
+              - entity_id: input_select.foreign_heavy_set
+                option: Deftones
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Deftones
+                    media_player: media_player.bathroom
+              - entity_id: input_select.foreign_heavy_set
+                option: Five Finger Death Punch
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Five Finger Death Punch
+                    media_player: media_player.bathroom
+              - entity_id: input_select.foreign_heavy_set
+                option: Guano Apes
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Guano Apes
+                    media_player: media_player.bathroom
+              - entity_id: input_select.foreign_heavy_set
+                option: Korn
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Korn
+                    media_player: media_player.bathroom
+              - entity_id: input_select.foreign_heavy_set
+                option: Lindemann
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Lindemann
+                    media_player: media_player.bathroom
+              - entity_id: input_select.foreign_heavy_set
+                option: Metallica
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Metallica
+                    media_player: media_player.bathroom
+              - entity_id: input_select.foreign_heavy_set
+                option: Motörhead
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Motörhead
+                    media_player: media_player.bathroom
+              - entity_id: input_select.foreign_heavy_set
+                option: Rammstein
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Rammstein
+                    media_player: media_player.bathroom
+              - entity_id: input_select.foreign_heavy_set
+                option: Sabaton
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Sabaton
+                    media_player: media_player.bathroom
+              - entity_id: input_select.foreign_heavy_set
+                option: Slipknot
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Slipknot
+                    media_player: media_player.bathroom
+              - entity_id: input_select.foreign_heavy_set
+                option: System of a Down
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: System of a Down
+                    media_player: media_player.bathroom
+              - entity_id: input_select.foreign_heavy_set
+                option: Within Temptation
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Within Temptation
+                    media_player: media_player.bathroom
+            icon: mdi:account-music
+            media_player: media_player.bathroom
+      - type: custom:service-call
+        entries:
+          - type: dropdown
+            entity_id: input_select.foreign_lazer_set
+            options:
+              - entity_id: input_select.foreign_lazer_set
+                option: "[Foreign] Lazer"
+                tap_action:
+                  action: none
+              - entity_id: input_select.foreign_lazer_set
+                option: Bloody Beetroots
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Bloody Beetroots
+                    media_player: media_player.bathroom
+              - entity_id: input_select.foreign_lazer_set
+                option: Carpenter Brut
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Carpenter Brut
+                    media_player: media_player.bathroom
+              - entity_id: input_select.foreign_lazer_set
+                option: DANCE WITH THE DEAD
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: DANCE WITH THE DEAD
+                    media_player: media_player.bathroom
+              - entity_id: input_select.foreign_lazer_set
+                option: Lazerhawk
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Lazerhawk
+                    media_player: media_player.bathroom
+              - entity_id: input_select.foreign_lazer_set
+                option: Magic Sword
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Magic Sword
+                    media_player: media_player.bathroom
+              - entity_id: input_select.foreign_lazer_set
+                option: Nero
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Nero
+                    media_player: media_player.bathroom
+              - entity_id: input_select.foreign_lazer_set
+                option: Pendulum
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Pendulum
+                    media_player: media_player.bathroom
+              - entity_id: input_select.foreign_lazer_set
+                option: Perturbator
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Perturbator
+                    media_player: media_player.bathroom
+              - entity_id: input_select.foreign_lazer_set
+                option: The Bloody Beetroots
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: The Bloody Beetroots
+                    media_player: media_player.bathroom
+              - entity_id: input_select.foreign_lazer_set
+                option: The Midnight
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: The Midnight
+                    media_player: media_player.bathroom
+              - entity_id: input_select.foreign_lazer_set
+                option: Turbo Knight
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Turbo Knight
+                    media_player: media_player.bathroom
+            icon: mdi:account-music
+      - type: custom:service-call
+        entries:
+          - type: dropdown
+            entity_id: input_select.foreign_rock_set
+            options:
+              - entity_id: input_select.foreign_rock_set
+                option: "[Foreign] Rock"
+                tap_action:
+                  action: none
+              - entity_id: input_select.foreign_rock_set
+                option: Ace Of Base
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Ace Of Base
+                    media_player: media_player.bathroom
+                  target:
+                    entity_id: input_select.foreign_rock_set
+              - entity_id: input_select.foreign_rock_set
+                option: Arctic Monkeys
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Arctic Monkeys
+                    media_player: media_player.bathroom
+                  target:
+                    entity_id: input_select.foreign_rock_set
+              - entity_id: input_select.foreign_rock_set
+                option: Bad Omens
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Bad Omens
+                    media_player: media_player.bathroom
+                  target:
+                    entity_id: input_select.foreign_rock_set
+              - entity_id: input_select.foreign_rock_set
+                option: E
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: E
+                    media_player: media_player.bathroom
+                  target:
+                    entity_id: input_select.foreign_rock_set
+              - entity_id: input_select.foreign_rock_set
+                option: Eels
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Eels
+                    media_player: media_player.bathroom
+                  target:
+                    entity_id: input_select.foreign_rock_set
+              - entity_id: input_select.foreign_rock_set
+                option: Faith No More
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Faith No More
+                    media_player: media_player.bathroom
+                  target:
+                    entity_id: input_select.foreign_rock_set
+              - entity_id: input_select.foreign_rock_set
+                option: Florence + the Machine
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    media_player: media_player.bathroom
+                    option: Florence + the Machine
+                  target:
+                    entity_id: input_select.foreign_rock_set
+              - entity_id: input_select.foreign_rock_set
+                option: Foo Fighters
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Foo Fighters
+                    media_player: media_player.bathroom
+                  target:
+                    entity_id: input_select.foreign_rock_set
+              - entity_id: input_select.foreign_rock_set
+                option: Linkin Park
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Linkin Park
+                    media_player: media_player.bathroom
+                  target:
+                    entity_id: input_select.foreign_rock_set
+              - entity_id: input_select.foreign_rock_set
+                option: Manowar
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Manowar
+                    media_player: media_player.bathroom
+                  target:
+                    entity_id: input_select.foreign_rock_set
+              - entity_id: input_select.foreign_rock_set
+                option: Nothing But Thieves
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Nothing But Thieves
+                    media_player: media_player.bathroom
+                  target:
+                    entity_id: input_select.foreign_rock_set
+              - entity_id: input_select.foreign_rock_set
+                option: ONEREPUBLIC
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: ONEREPUBLIC
+                    media_player: media_player.bathroom
+                  target:
+                    entity_id: input_select.foreign_rock_set
+              - entity_id: input_select.foreign_rock_set
+                option: Papa Roach
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Papa Roach
+                    media_player: media_player.bathroom
+                  target:
+                    entity_id: input_select.foreign_rock_set
+              - entity_id: input_select.foreign_rock_set
+                option: Pet Shop Boys
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Pet Shop Boys
+                    media_player: media_player.bathroom
+                  target:
+                    entity_id: input_select.foreign_rock_set
+              - entity_id: input_select.foreign_rock_set
+                option: Rage Against The Machine
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Rage Against The Machine
+                    media_player: media_player.bathroom
+                  target:
+                    entity_id: input_select.foreign_rock_set
+              - entity_id: input_select.foreign_rock_set
+                option: Rasmus
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Rasmus
+                    media_player: media_player.bathroom
+                  target:
+                    entity_id: input_select.foreign_rock_set
+              - entity_id: input_select.foreign_rock_set
+                option: Red Hot Chili Peppers
+                tap_action:
+                  action: p
+                  media_player: media_player.bathroomerform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Red Hot Chili Peppers
+                    media_player: media_player.bathroom
+              - entity_id: input_select.foreign_rock_set
+                option: Roxanne
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Roxanne
+                    media_player: media_player.bathroom
+                  target:
+                    entity_id: input_select.foreign_rock_set
+              - entity_id: input_select.foreign_rock_set
+                option: Scorpions
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Scorpions
+                    media_player: media_player.bathroom
+                  target:
+                    entity_id: input_select.foreign_rock_set
+              - entity_id: input_select.foreign_rock_set
+                option: Sting
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Sting
+                    media_player: media_player.bathroom
+                  target:
+                    entity_id: input_select.foreign_rock_set
+              - entity_id: input_select.foreign_rock_set
+                option: The Charlatans
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: The Charlatans
+                    media_player: media_player.bathroom
+                  target:
+                    entity_id: input_select.foreign_rock_set
+              - entity_id: input_select.foreign_rock_set
+                option: the eels
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: the eels
+                    media_player: media_player.bathroom
+                  target:
+                    entity_id: input_select.foreign_rock_set
+              - entity_id: input_select.foreign_rock_set
+                option: The Killers
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: The Killers
+                    media_player: media_player.bathroom
+                  target:
+                    entity_id: input_select.foreign_rock_set
+              - entity_id: input_select.foreign_rock_set
+                option: The Monkees
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: The Monkees
+                    media_player: media_player.bathroom
+                  target:
+                    entity_id: input_select.foreign_rock_set
+              - entity_id: input_select.foreign_rock_set
+                option: The Rasmus
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: The Rasmus
+                    media_player: media_player.bathroom
+                  target:
+                    entity_id: input_select.foreign_rock_set
+              - entity_id: input_select.foreign_rock_set
+                option: The Score
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: The Score
+                    media_player: media_player.bathroom
+                  target:
+                    entity_id: input_select.foreign_rock_set
+              - entity_id: input_select.foreign_rock_set
+                option: Twenty One Pilots
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Twenty One Pilots
+                    media_player: media_player.bathroom
+                  target:
+                    entity_id: input_select.foreign_rock_set
+              - entity_id: input_select.foreign_rock_set
+                option: U2
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: U2
+                    media_player: media_player.bathroom
+                  target:
+                    entity_id: input_select.foreign_rock_set
+              - entity_id: input_select.foreign_rock_set
+                option: Uriah Heep
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Uriah Heep
+                    media_player: media_player.bathroom
+                  target:
+                    entity_id: input_select.foreign_rock_set
+              - entity_id: input_select.foreign_rock_set
+                option: ZZ Top
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: ZZ Top
+                    media_player: media_player.bathroom
+                  target:
+                    entity_id: input_select.foreign_rock_set
+            icon: mdi:account-music
+    feature_height: 32
+    transparent: true
+  - type: heading
+    heading: Душ Виконавці наші
+    heading_style: subtitle
+    icon: mdi:shower-head
+  - type: custom:custom-features-card
+    features:
+      - type: custom:service-call
+        entries:
+          - type: dropdown
+            entity_id: input_select.ua_rock_set
+            options:
+              - entity_id: input_select.ua_rock_set
+                option: "[UA] Rock Set"
+                tap_action:
+                  action: none
+              - entity_id: input_select.ua_rock_set
+                option: Epolets
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Epolets
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_rock_set
+                option: Haydamaky
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Haydamaky
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_rock_set
+                option: Kozak System
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Kozak System
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_rock_set
+                option: Mad Heads XL
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Mad Heads XL
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_rock_set
+                option: The Gitas
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: The Gitas
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_rock_set
+                option: The Gitas, Бумбокс
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: The Gitas, Бумбокс
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_rock_set
+                option: Без Обмежень
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Без Обмежень
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_rock_set
+                option: Воплі Відоплясова
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Воплі Відоплясова
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_rock_set
+                option: Гайдамаки
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Гайдамаки
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_rock_set
+                option: Димна Суміш
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Димна Суміш
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_rock_set
+                option: Жадан і Собаки
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Жадан і Собаки
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_rock_set
+                option: Лінія Маннергейма
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Лінія Маннергейма
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_rock_set
+                option: Мандри
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Мандри
+                    media_player: media_player.bathroom
+              - e"ntity_id: input_select.ua_rock_set"
+                option: Мотор`ролла
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    media_player: media_player.bathroom
+                    option: Мотор`ролла
+              - entity_id: input_select.ua_rock_set
+                option: Перкалаба
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Перкалаба
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_rock_set
+                option: Пирятин
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Пирятин
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_rock_set
+                option: Плач Єремії
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Плач Єремії
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_rock_set
+                option: Роллік'с
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Роллік'с
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_rock_set
+                option: Саша Чемеров
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Саша Чемеров
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_rock_set
+                option: Фіолет
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Фіолет
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_rock_set
+                option: Харцизи
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Харцизи
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_rock_set
+                option: Хорея Козацька
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Хорея Козацька
+                    media_player: media_player.bathroom
+            icon: mdi:account-music
+      - type: custom:service-call
+        entries:
+          - type: dropdown
+            entity_id: input_select.ua_heavy_set
+            options:
+              - entity_id: input_select.ua_heavy_set
+                option: "[UA] Heavy Set"
+                tap_action:
+                  action: none
+              - entity_id: input_select.ua_heavy_set
+                option: Haydamaky
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    media_player: media_player.bathroom
+                    option: Haydamaky
+              - entity_id: input_select.ua_heavy_set
+                option: Merva
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Merva
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_heavy_set
+                option: Motanka
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Motanka
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_heavy_set
+                option: Riffmaster
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Riffmaster
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_heavy_set
+                option: Szokyra Peruna
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Szokyra Peruna
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_heavy_set
+                option: The Unsleeping
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: The Unsleeping
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_heavy_set
+                option: The Unsleeping & паліндром
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: The Unsleeping & паліндром
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_heavy_set
+                option: Брем Стокер
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Брем Стокер
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_heavy_set
+                option: Карна
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Карна
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_heavy_set
+                option: Коловрат
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Коловрат
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_heavy_set
+                option: Мері
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Мері
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_heavy_set
+                option: Мертвий Півень
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Мертвий Півень
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_heavy_set
+                option: Молот
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Молот
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_heavy_set
+                option: Сварог
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Сварог
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_heavy_set
+                option: Сокира Перуна
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Сокира Перуна
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_heavy_set
+                option: Тінь Сонця
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Тінь Сонця
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_heavy_set
+                option: ТОЛ
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: ТОЛ
+                    media_player: media_player.bathroom
+            icon: mdi:account-music
+      - type: custom:service-call
+        entries:
+          - type: dropdown
+            entity_id: input_select.ua_pop_set
+            options:
+              - entity_id: input_select.ua_pop_set
+                option: "[UA] Pop Set"
+                tap_action:
+                  action: none
+              - entity_id: input_select.ua_pop_set
+                option: adm:t
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: adm:t
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_pop_set
+                option: Fahot & ТНМК
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Fahot & ТНМК
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_pop_set
+                option: FliT
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: FliT
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_pop_set
+                option: Jerry Heil
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Jerry Heil
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_pop_set
+                option: Kadnay
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Kadnay
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_pop_set
+                option: Klavdia Petrivna
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Klavdia Petrivna
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_pop_set
+                option: KLER
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: KLER
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_pop_set
+                option: KRUTЬ
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: KRUTЬ
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_pop_set
+                option: Lama
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Lama
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_pop_set
+                option: LATEXFAUNA
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: LATEXFAUNA
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_pop_set
+                option: ONUKA
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: ONUKA
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_pop_set
+                option: The Hardkiss
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: The Hardkiss
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_pop_set
+                option: Антитіла
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Антитіла
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_pop_set
+                option: Бумбокс
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Бумбокс
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_pop_set
+                option: Бумбокс, The Gitas
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Бумбокс, The Gitas
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_pop_set
+                option: ВУЗВ
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: ВУЗВ
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_pop_set
+                option: Друга Ріка
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Друга Ріка
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_pop_set
+                option: Кому Вниз
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Кому Вниз
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_pop_set
+                option: Крихітка
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Крихітка
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_pop_set
+                option: Крихітка Цахес
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Крихітка Цахес
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_pop_set
+                option: Танок на майдані Конґо
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Танок на майдані Конґо
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_pop_set
+                option: Тартак
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Тартак
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_pop_set
+                option: Тартак Та Друзi
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Тартак Та Друзi
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_pop_set
+                option: Тік
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Тік
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_pop_set
+                option: ТНМК
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: ТНМК
+                    media_player: media_player.bathroom
+            icon: mdi:account-music
+      - type: custom:service-call
+        entries:
+          - type: dropdown
+            entity_id: input_select.ua_indie_set
+            options:
+              - entity_id: input_select.ua_indie_set
+                option: "[UA] Indie Set"
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: "[UA] Indie Set"
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_indie_set
+                option: Dakh Daughters
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Dakh Daughters
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_indie_set
+                option: DakhaBrakha
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: DakhaBrakha
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_indie_set
+                option: Go_A
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Go_A
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_indie_set
+                option: Go-A, Katya Chilly
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Go-A, Katya Chilly
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_indie_set
+                option: Leléka
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Leléka
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_indie_set
+                option: OSTRIV
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: OSTRIV
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_indie_set
+                option: Perkalaba
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Perkalaba
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_indie_set
+                option: Pur:Pur
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Pur:Pur
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_indie_set
+                option: SadSvit
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: SadSvit
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_indie_set
+                option: Schmalgauzen
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Schmalgauzen
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_indie_set
+                option: Tember Blanche
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Tember Blanche
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_indie_set
+                option: The Cheburashkas
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: The Cheburashkas
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_indie_set
+                option: Ziferblat
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Ziferblat
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_indie_set
+                option: Zwyntar
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Zwyntar
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_indie_set
+                option: Гурт [О]
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Гурт [О]
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_indie_set
+                option: ДахаБраха
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: ДахаБраха
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_indie_set
+                option: діти інженерів
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: діти інженерів
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_indie_set
+                option: Квітка Цісик
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Квітка Цісик
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_indie_set
+                option: НастяЗникає
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: НастяЗникає
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_indie_set
+                option: Наталка Карпа
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: Наталка Карпа
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_indie_set
+                option: паліндром
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: паліндром
+                    media_player: media_player.bathroom
+              - entity_id: input_select.ua_indie_set
+                option: хейтcпіч
+                tap_action:
+                  action: perform-action
+                  perform_action: script.play_artist
+                  data:
+                    option: хейтcпіч
+                    media_player: media_player.bathroom
+            icon: mdi:account-music
+    feature_height: 32
+    transparent: true
+    media_player: media_player.bathroom
