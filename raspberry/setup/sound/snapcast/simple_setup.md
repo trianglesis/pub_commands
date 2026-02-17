@@ -76,14 +76,18 @@ buffer = 350
 ```
 
 
+
 # Not simple setup
 
  - https://github.com/badaix/snapcast/blob/develop/doc/build.md#raspberry-pi-cross-compile
+
+Optional: update web https://github.com/snapcast/snapweb
 
 
 ```shell
 git clone https://github.com/snapcast/snapcast.git
 # ls ~/Downloads/snapcast/
+
 
 cd snapcast
 mkdir build
