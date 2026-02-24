@@ -99,3 +99,31 @@ O:\sanek\Music\Foreign\<Artist>\<Album> [<Year>]\$Replace(<Folder:5>,<Artist> - 
 
 
 O:\sanek\Music\Foreign\<Artist>\<Album> [<Year>]\$Replace(<Folder:5>,<Artist> - <Year> - <Album>,)\<Track #:2> <Title>$Replace(<Folder:5>,<Artist> - <Year> - <Album>,)
+
+
+# Sync
+
+/Artist/
+$if(<Artist>,$First(<Artist>,1,1),$First(<Album Artist>,1,1))
+- Artist OR Album Artist only the 1st value
+
+/Album/
+$if(<Album>,$Left(<Album>,15),$Left(<Album Type>,15))
+- Album OR Album Type only 15 chars
+
+/2019/
+$if(<Year>,<Year>,<Original Date>)
+- For year if there are two same album names
+
+/02 - Track.flac/
+<Track #:2>-$Left(<Title>,15)
+
+
+\Music\$if(<Artist>,$First(<Artist>,1,1),$First(<Album Artist>,1,1))/$if(<Album>,$Left(<Album>,15),$Left(<Album Type>,15))/$if(<Year>,<Year>,<Original Date>)/<Track #:2>-$Left(<Title>,15)
+
+Ideas: use `$Trim(string)` string with spaces trimmed from the beginning and end of string 
+
+\Music\$Trim($if(<Artist>,$First(<Artist>,1,1),$First(<Album Artist>,1,1)))/$Trim($if(<Album>,$Left(<Album>,15),$Left(<Album Type>,15)))/$if(<Year>,<Year>,<Original Date>)/<Track #:2>-$Trim($Left(<Title>,15))
+
+- Do not separate Album and Year to dirs
+\Music\$Trim($if(<Artist>,$First(<Artist>,1,1),$First(<Album Artist>,1,1)))/$Trim($if(<Album>,$Left(<Album>,15),$Left(<Album Type>,15)))-$if(<Year>,<Year>,<Original Date>)/<Track #:2>-$Trim($Left(<Title>,15))
