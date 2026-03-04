@@ -48,11 +48,14 @@ ACTION!="add", GOTO="alsa_naming_end"
 # DEVPATH=="/devices/platform/axi/1000120000.pcie/1f00300000.usb/xhci-hcd.1/usb3/3-1/3-1:1.0/sound/card?", ATTR{id}="USBCard3"
 
 # Shower
-DEVPATH=="/devices/platform/axi/1000120000.pcie/1f00200000.usb/xhci-hcd.0/usb1/1-1/1-1.2/1-1.2:1.0/sound/card?", ATTR{id}="USBCard1"
+#     /sys/devices/platform/axi/1000120000.pcie/1f00200000.usb/xhci-hcd.0/usb1/1-1/1-1.2/1-1.2:1.0/sound/card3/id
+DEVPATH=="/devices/platform/axi/1000120000.pcie/1f00200000.usb/xhci-hcd.0/usb1/1-1/1-1.2/1-1.2:1.0/sound/card?", ATTR{id}="USBCardShower"
 # Kitchen
-DEVPATH=="/devices/platform/axi/1000120000.pcie/1f00200000.usb/xhci-hcd.0/usb1/1-1/1-1.1/1-1.1:1.0/sound/card?", ATTR{id}="USBCard2"
+#     /sys/devices/platform/axi/1000120000.pcie/1f00200000.usb/xhci-hcd.0/usb1/1-1/1-1.1/1-1.1:1.0/sound/card0/id
+DEVPATH=="/devices/platform/axi/1000120000.pcie/1f00200000.usb/xhci-hcd.0/usb1/1-1/1-1.1/1-1.1:1.0/sound/card?", ATTR{id}="USBCardKitchen"
 # Bedroom
-DEVPATH=="/devices/platform/axi/1000120000.pcie/1f00200000.usb/xhci-hcd.0/usb1/1-1/1-1.3/1-1.3:1.0/sound/card?", ATTR{id}="USBCard3"
+#     /sys/devices/platform/axi/1000120000.pcie/1f00200000.usb/xhci-hcd.0/usb1/1-1/1-1.3/1-1.3:1.0/sound/card4/id
+DEVPATH=="/devices/platform/axi/1000120000.pcie/1f00200000.usb/xhci-hcd.0/usb1/1-1/1-1.3/1-1.3:1.0/sound/card?", ATTR{id}="USBCardBedroom"
 
 LABEL="alsa_naming_end"
 ```
@@ -83,8 +86,8 @@ Change default system device:
 
 ## 1 Bathroom
 
-snapclient --instance=3 --soundcard=7 --hostID=Test
-snapclient --instance=3 --soundcard=11 --hostID=Test
+snapclient --instance=1 --soundcard=7 --hostID=Test
+snapclient --instance=2 --soundcard=11 --hostID=Test
 snapclient --instance=3 --soundcard=39 --hostID=Test
 
 ```
@@ -251,13 +254,13 @@ Bedroom
 Add more
 
 ```shell
-sudo cp /lib/systemd/system/snapclient.service /lib/systemd/system/snapclient_3.service
-sudo cp /etc/default/snapclient /etc/default/snapclient_3
-sudo vi /lib/systemd/system/snapclient_3.service
-sudo vi /etc/default/snapclient_3
+sudo cp /lib/systemd/system/snapclient.service /lib/systemd/system/snapclient_kitchen.service
+sudo cp /etc/default/snapclient /etc/default/snapclient_kitchen
+sudo vi /lib/systemd/system/snapclient_kitchen.service
+sudo vi /etc/default/snapclient_kitchen
 
-sudo systemctl enable snapclient_3
-sudo systemctl restart snapclient_3
+sudo systemctl enable snapclient_kitchen
+sudo systemctl restart snapclient_kitchen
 ```
 
 
@@ -266,19 +269,20 @@ sudo systemctl restart snapclient_3
 ```shell
 snapclient -l
 
-sudo vi /etc/default/snapclient
-sudo vi /etc/default/snapclient_2
-sudo vi /etc/default/snapclient_3
+sudo vi /etc/default/snapclient_bathroom
+sudo vi /etc/default/snapclient_bedroom
+sudo vi /etc/default/snapclient_kitchen
 
 snapclient --instance=3 --soundcard=USBCard1
 snapclient --instance=3 --soundcard=USBCard2
 snapclient --instance=3 --soundcard=USBCard3
 
-
+sudo systemctl enable snapserver
 sudo systemctl start snapserver
-sudo systemctl enable snapserver snapclient snapclient_2 snapclient_3
-sudo systemctl restart snapserver snapclient snapclient_2 snapclient_3
+sudo systemctl restart snapserver
 
 journalctl -n 100 -f | grep snapserver
-journalctl -n 100 -f | grep snapclient
+journalctl -n 100 -f | grep snapclient_kitchen
+journalctl -n 100 -f | grep snapclient_bathroom
+journalctl -n 100 -f | grep snapclient_bedroom
 ```

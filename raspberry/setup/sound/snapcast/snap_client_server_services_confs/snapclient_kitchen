@@ -8,4 +8,4 @@ START_SNAPCLIENT=true
 # For a list of available options, invoke "snapclient --help"
 
 # Kitchen
-SNAPCLIENT_OPTS="--host=192.168.1.15 --port=1704 --instance=2 --soundcard=USBCard2 --hostID=Kitchen"
+SNAPCLIENT_OPTS="--host=192.168.1.11 --port=1704 --instance=2 --soundcard=USBCardKitchen --hostID=Kitchen"

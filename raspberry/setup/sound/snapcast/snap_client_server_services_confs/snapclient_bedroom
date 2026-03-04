@@ -8,4 +8,4 @@ START_SNAPCLIENT=true
 # For a list of available options, invoke "snapclient --help"
 
 # Bedroom
-SNAPCLIENT_OPTS="--host=192.168.1.15 --port=1704 --instance=3 --soundcard=USBCard3 --hostID=Bedroom"
+SNAPCLIENT_OPTS="--host=192.168.1.11 --port=1704 --instance=3 --soundcard=USBCardBedroom --hostID=Bedroom"
