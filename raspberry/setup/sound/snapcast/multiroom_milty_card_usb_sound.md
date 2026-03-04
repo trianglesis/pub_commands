@@ -135,117 +135,41 @@ Re-use
 
 ## Multiple Services
 
-`cat /lib/systemd/system/snapclient.service`
-
-```conf
-[Unit]
-Description=Snapcast client
-Documentation=man:snapclient(1)
-Wants=avahi-daemon.service
-After=network-online.target time-sync.target sound.target avahi-daemon.service
-
-[Service]
-EnvironmentFile=-/etc/default/snapclient
-ExecStart=/usr/bin/snapclient --logsink=system $SNAPCLIENT_OPTS
-User=snapclient
-Group=snapclient
-Restart=on-failure
-
-[Install]
-WantedBy=multi-user.target
+```shell
+sudo vi /etc/default/snapclient_bathroom
+sudo vi /lib/systemd/system/snapclient_bathroom.service
+sudo vi /etc/default/snapclient_kitchen
+sudo vi /lib/systemd/system/snapclient_kitchen.service
+sudo vi /etc/default/snapclient_bedroom
+sudo vi /lib/systemd/system/snapclient_bedroom.service
 ```
 
-`cat /lib/systemd/system/snapclient_2.service`
+See [confs](snap_client_server_services_confs)
 
-```conf
-[Unit]
-Description=Snapcast client 2
-Documentation=man:snapclient(1)
-Wants=avahi-daemon.service
-After=network-online.target time-sync.target sound.target avahi-daemon.service
+- https://manpages.ubuntu.com/manpages/focal/en/man1/snapclient.1.html
 
-[Service]
-EnvironmentFile=-/etc/default/snapclient_2
-ExecStart=/usr/bin/snapclient --logsink=system $SNAPCLIENT_OPTS
-User=snapclient
-Group=snapclient
-Restart=on-failure
 
-[Install]
-WantedBy=multi-user.target
+```text
+       -h, --host arg
+              server hostname or ip address
+
+       -p, --port arg (=1704)
+              server port
 ```
 
-`cat /lib/systemd/system/snapclient_3.service`
-
-```conf
-[Unit]
-Description=Snapcast client 3
-Documentation=man:snapclient(1)
-Wants=avahi-daemon.service
-After=network-online.target time-sync.target sound.target avahi-daemon.service
-
-[Service]
-EnvironmentFile=-/etc/default/snapclient_3
-ExecStart=/usr/bin/snapclient --logsink=system $SNAPCLIENT_OPTS
-User=snapclient
-Group=snapclient
-Restart=on-failure
-
-[Install]
-WantedBy=multi-user.target
-```
 
 ```shell
 ls -lah /lib/systemd/system/ | grep snap
--rw-r--r--  1 root root  383 Feb  7 01:49 snapclient_2.service
--rw-r--r--  1 root root  383 Feb  7 01:49 snapclient_3.service
--rw-r--r--  1 root root  379 Feb  7 01:46 snapclient.service
+-rw-r--r--  1 root root  397 Mar  4 11:53 snapclient_bathroom.service
+-rw-r--r--  1 root root  395 Mar  4 11:54 snapclient_bedroom.service
+-rw-r--r--  1 root root  395 Mar  4 11:53 snapclient_kitchen.service
+-rw-r--r--  1 root root  396 Feb 12  2024 snapserver.service
 ```
 
 
 ## Multiple Confs
 
-`cat /etc/default/snapclient`
-
-```conf
-# Start the client, used only by the init.d script
-START_SNAPCLIENT=true
-
-# Additional command line options that will be passed to snapclient
-# note that user/group should be configured in the init.d script or the systemd unit file
-# For a list of available options, invoke "snapclient --help"
-
-# Bathroom
-SNAPCLIENT_OPTS="--instance=1 --soundcard=USBCard1 --hostID=Bathroom"
-```
-
-`cat /etc/default/snapclient_2`
-
-```conf
-# Start the client, used only by the init.d script
-START_SNAPCLIENT=true
-
-# Additional command line options that will be passed to snapclient
-# note that user/group should be configured in the init.d script or the systemd unit file
-# For a list of available options, invoke "snapclient --help"
-
-# Kitchen
-SNAPCLIENT_OPTS="--instance=2 --soundcard=USBCard2 --hostID=Kitchen"
-```
-
-`cat /etc/default/snapclient_3`
-ls -lah 
-```conf
-# Start the client, used only by the init.d script
-START_SNAPCLIENT=true
-
-# Additional command line options that will be passed to snapclient
-# note that user/group should be configured in the init.d script or the systemd unit file
-# For a list of available options, invoke "snapclient --help"
-
-# Bedroom
-SNAPCLIENT_OPTS="--instance=3 --soundcard=USBCard3 --hostID=Bedroom"
-```
+See [confs](snap_client_server_services_confs)
 
 ```shell
 ls -lah /etc/default/ | grep snap
@@ -295,12 +219,14 @@ SNAPSERVER_OPTS=""
 
 # Start Restart Reload
 
+snapclient_bathroom snapclient_bedroom snapclient_kitchen
+
 ```shell
 sudo systemctl daemon-reload
-sudo systemctl start snapclient snapclient_2 snapclient_3
-sudo systemctl enable snapclient snapclient_2 snapclient_3
-sudo systemctl status snapclient snapclient_2 snapclient_3
-sudo systemctl restart snapclient snapclient_2 snapclient_3
+sudo systemctl start snapclient_bathroom snapclient_bedroom snapclient_kitchen
+sudo systemctl enable snapclient_bathroom snapclient_bedroom snapclient_kitchen
+sudo systemctl status snapclient_bathroom snapclient_bedroom snapclient_kitchen
+sudo systemctl restart snapclient_bathroom snapclient_bedroom snapclient_kitchen
 ```
 
 # Etc

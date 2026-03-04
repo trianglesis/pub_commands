@@ -126,4 +126,6 @@ Ideas: use `$Trim(string)` string with spaces trimmed from the beginning and end
 \Music\$Trim($if(<Artist>,$First(<Artist>,1,1),$First(<Album Artist>,1,1)))/$Trim($if(<Album>,$Left(<Album>,15),$Left(<Album Type>,15)))/$if(<Year>,<Year>,<Original Date>)/<Track #:2>-$Trim($Left(<Title>,15))
 
 - Do not separate Album and Year to dirs
-\Music\$Trim($if(<Artist>,$First(<Artist>,1,1),$First(<Album Artist>,1,1)))/$Trim($if(<Album>,$Left(<Album>,15),$Left(<Album Type>,15)))-$if(<Year>,<Year>,<Original Date>)/<Track #:2>-$Trim($Left(<Title>,15))
+\Music\$Trim($if(<Artist>,$First(<Artist>),$First(<Album Artist>)))/$Trim($if(<Album>,$Left(<Album>,25),$Left(<Album Type>,25)))-$if(<Year>,<Year>,<Original Date>)/<Track #:2>-$Trim($Left(<Title>,35))
+
+\Music\Classical\$Trim($if(<Composer>,$First(<Composer>),$First(<Artist>)))/$Trim($if(<Album>,$Left(<Album>,25),$Left(<Album Type>,25)))-$if(<Year>,<Year>,<Original Date>)/<Track #:2>-$Trim($Left(<Title>,35))

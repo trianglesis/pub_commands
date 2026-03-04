@@ -1,0 +1,11 @@
+# sudo vi /etc/default/snapclient_kitchen
+# sudo vi /lib/systemd/system/snapclient_kitchen.service
+# Start the client, used only by the init.d script
+START_SNAPCLIENT=true
+
+# Additional command line options that will be passed to snapclient
+# note that user/group should be configured in the init.d script or the systemd unit file
+# For a list of available options, invoke "snapclient --help"
+
+# Kitchen
+SNAPCLIENT_OPTS="--host=192.168.1.15 --port=1704 --instance=2 --soundcard=USBCard2 --hostID=Kitchen"
