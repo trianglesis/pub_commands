@@ -226,6 +226,7 @@ snapclient_bathroom snapclient_bedroom snapclient_kitchen
 
 ```shell
 sudo systemctl daemon-reload
+sudo systemctl stop snapserver snapclient_bathroom snapclient_bedroom snapclient_kitchen
 sudo systemctl start snapclient_bathroom snapclient_bedroom snapclient_kitchen
 sudo systemctl enable snapclient_bathroom snapclient_bedroom snapclient_kitchen
 sudo systemctl status snapclient_bathroom snapclient_bedroom snapclient_kitchen

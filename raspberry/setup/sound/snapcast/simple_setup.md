@@ -2,7 +2,6 @@
 
 Install wiht deb to set everything as usual
 
-
 ```shell
 wget https://github.com/snapcast/snapcast/releases/download/v0.34.0/snapclient_0.34.0-1_arm64_trixie.deb
 wget https://github.com/snapcast/snapcast/releases/download/v0.34.0/snapserver_0.34.0-1_arm64_trixie.deb
@@ -17,16 +16,18 @@ sudo chmod 776 /home/snapserver/
 
 ```
 
-Check prereq: 
+
+Check prereq:
+
 - [snapuser](https://github.com/badaix/snapcast/issues/668#issuecomment-692732687)
 
 ## Conf file
 
-- https://github.com/snapcast/snapcast/blob/develop/server/etc/snapserver.conf
+- <https://github.com/snapcast/snapcast/blob/develop/server/etc/snapserver.conf>
 
 `sudo vi /etc/snapserver.conf`
 
-https://github.com/badaix/snapcast/blob/develop/doc/player_setup.md#streams
+<https://github.com/badaix/snapcast/blob/develop/doc/player_setup.md#streams>
 
 Choose test file for setup, delete later.
 
@@ -53,6 +54,8 @@ threads = 4
 pidfile = /var/run/snapserver/pid
 user = snapserver
 group = snapserver
+datadir = /home/snapserver/server.json
+mdns_enabled = true
 
 [http]
 bind_to_address = 0.0.0.0
@@ -75,19 +78,16 @@ chunk_ms = 20
 buffer = 350
 ```
 
+## Not simple setup
 
+ - <https://github.com/badaix/snapcast/blob/develop/doc/build.md#raspberry-pi-cross-compile>
 
-# Not simple setup
-
- - https://github.com/badaix/snapcast/blob/develop/doc/build.md#raspberry-pi-cross-compile
-
-Optional: update web https://github.com/snapcast/snapweb
+Optional: update web <https://github.com/snapcast/snapweb>
 
 
 ```shell
 git clone https://github.com/snapcast/snapcast.git
 # ls ~/Downloads/snapcast/
-
 
 cd snapcast
 mkdir build
@@ -96,6 +96,9 @@ cd build
 # /usr/include/boost
 cmake .. -DBOOST_ROOT=/usr/include/boost
 cmake --build .
+
+# Clean
+make clean && make distclean
 ```
 
 Binaries will be created in <snapcast dir>/bin:
@@ -106,20 +109,20 @@ libcommon.a  snapclient  snapserver
 <snapcast dir>/bin/snapclient
 <snapcast dir>/bin/snapserver
 
-`ls ~/Downloads/snapcast/bin/snapserver`
-`ls ~/Downloads/snapcast/bin/snapclient`
+`ls /home/$USER/Downloads/snapcast/bin/snapserver`
+`ls /home/$USER/Downloads/snapcast/bin/snapclient`
 
 Update conf files to use compiled binaries
 
 ```shell
 # check
-/home/$USER/Snapcast_sources/snapcast/bin/snapserver -V
-/home/$USER/Snapcast_sources/snapcast/bin/snapclient -V
+/home/$USER/Downloads/snapcast/bin/snapserver --version
+/home/$USER/Downloads/snapcast/bin/snapclient --version
 
 # delete installed snapserver, snapclient
 # copy to /usr/bin
-sudo cp Snapcast_sources/snapcast/bin/snapserver /usr/bin/
-sudo cp Snapcast_sources/snapcast/bin/snapclient /usr/bin/
+sudo cp /home/$USER/Downloads/snapcast/bin/snapserver /usr/bin/
+sudo cp /home/$USER/Downloads/snapcast/bin/snapclient /usr/bin/
 
 # Test
 /usr/bin/snapserver --version
@@ -142,24 +145,16 @@ sudo vi /etc/default/snapclient_3
 
 # Conf changed - reload
 sudo systemctl daemon-reload
-sudo systemctl enable snapserver snapclient snapclient_2 snapclient_3
-sudo systemctl restart snapserver snapclient snapclient_2 snapclient_3
-
-# Check
-sudo systemctl restart snapserver
-sudo systemctl status snapserver
-sudo systemctl status snapclient
-sudo systemctl status snapclient_2
-sudo systemctl status snapclient_3
+sudo systemctl stop snapserver snapclient_bathroom snapclient_bedroom snapclient_kitchen
 
 # Debug
 journalctl -xeu snapserver.service
 # Bathroom
-journalctl -xeu snapclient.service
+journalctl -xeu snapclient_bathroom.service
 # Bedroom
-journalctl -xeu snapclient_2.service
+journalctl -xeu snapclient_bedroom.service
 # Kitchen
-journalctl -xeu snapclient_3.service
+journalctl -xeu snapclient_kitchen.service
 
 # Stop
 sudo systemctl stop snapserver snapclient snapclient_2 snapclient_3
