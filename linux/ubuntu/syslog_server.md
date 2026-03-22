@@ -101,6 +101,7 @@ sudo vi "/etc/logrotate.conf"
 sudo vi "/etc/logrotate.d/mikrotik"
 sudo vi "/etc/logrotate.d/local-new"
 sudo vi "/etc/logrotate.d/home-assistant"
+sudo vi "/etc/logrotate.d/truenas"
 # Test
 sudo logrotate -d /etc/logrotate.d/mikrotik
 sudo logrotate -d /etc/logrotate.d/local-new
@@ -109,6 +110,7 @@ sudo logrotate -d /etc/logrotate.d/home-assistant
 sudo logrotate -f /etc/logrotate.d/mikrotik
 sudo logrotate -f /etc/logrotate.d/local-new
 sudo logrotate -f /etc/logrotate.d/home-assistant
+sudo logrotate -f /etc/logrotate.d/truenas
 ```
 
 
@@ -172,6 +174,23 @@ OR
     su nobody nogroup
     create 0776 nobody nogroup
     size 10M
+    dateext
+    dateformat -%d_%m_%Y
+    postrotate
+       chmod -R a+rwx /mnt/share/HA_Share_1Tb/logs/
+    endscript
+}
+
+## Truenas
+/mnt/share/HA_Share_1Tb/logs/TRUE_NAS/*.log {
+    daily
+    missingok
+    notifempty
+    copytruncate
+    rotate 30
+    su nobody nogroup
+    create 0776 nobody nogroup
+    size 2M
     dateext
     dateformat -%d_%m_%Y
     postrotate
