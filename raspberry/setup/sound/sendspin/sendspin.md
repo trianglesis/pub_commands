@@ -128,7 +128,6 @@ sudo /home/sendspin/.local/bin/sendspin daemon --hardware-volume true --static-d
 sudo /home/sendspin/.local/bin/sendspin daemon --hardware-volume true --static-delay-ms -100 --audio-format flac:48000:24:1 --id bedroom --name "Bedroom" --url ws://192.168.1.15:8927/sendspin --audio-device usb_card_bedroom
 ```
 
-
 #### Log
 
 Install
@@ -457,9 +456,7 @@ Logs:    journalctl -u sendspin -f
 
 ```
 
-
 Start
-
 
 ```log
 INFO:sendspin.audio_devices:Using audio device 1: USB Audio Device: - (hw:2,0)
@@ -477,9 +474,7 @@ INFO:aiosendspin.client.client:Connected to server 'Music Assistant' (e6af760739
 INFO:aiosendspin.client.client:Handshake with server complete
 ```
 
-
 Show devices:
-
 
 ```log
 sudo /home/sendspin/.local/bin/sendspin --list-audio-devices
