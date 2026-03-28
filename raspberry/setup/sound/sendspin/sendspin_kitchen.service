@@ -1,0 +1,21 @@
+[Unit]
+Description=Sendspin Kitchen
+After=network-online.target sound.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=sendspin
+Environment=XDG_RUNTIME_DIR=/run/user/997
+ExecStart=/home/sendspin/.local/bin/sendspin daemon --hardware-volume true --static-delay-ms -100 --audio-format flac:48000:24:2 --id kitchen --name "Kitchen" --url ws://192.168.1.15:8927/sendspin --audio-device "usb_card_kitchen"
+Restart=on-failure
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+SupplementaryGroups=audio
+
+[Install]
+WantedBy=multi-user.target
