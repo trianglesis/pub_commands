@@ -24,6 +24,7 @@ Check prereq:
 ## Conf file
 
 - <https://github.com/snapcast/snapcast/blob/develop/server/etc/snapserver.conf>
+- <https://github.com/snapcast/snapcast/blob/develop/doc/configuration.md>
 
 `sudo vi /etc/snapserver.conf`
 

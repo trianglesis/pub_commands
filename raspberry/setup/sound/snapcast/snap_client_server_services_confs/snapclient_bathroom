@@ -8,4 +8,4 @@ START_SNAPCLIENT=true
 # For a list of available options, invoke "snapclient --help"
 
 # Bathroom
-SNAPCLIENT_OPTS="--host=192.168.1.11 --port=1704 --instance=1 --soundcard=USBCardShower --hostID=Bathroom"
+SNAPCLIENT_OPTS="--instance=1 --soundcard=USBCardShower --hostID=Bathroom tcp://192.168.1.11:1704"

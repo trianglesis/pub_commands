@@ -2,6 +2,9 @@
 
 -<https://github.com/Sendspin/sendspin-cli?tab=readme-ov-file#install-as-daemon-systemd-linux>
 
+
+TLDR: It's raw and does not work as fast and sync as Snapcast.
+
 ## See devices
 
 Each USB sound card should have a separate daemon.
@@ -39,6 +42,10 @@ cat /proc/asound/cards
  4 [USBCardBedroom ]: USB-Audio - USB Audio Device
                       C-Media Electronics Inc. USB Audio Device at usb-xhci-hcd.0-1.3, full speed
 
+
+sudo alsamixer
+sudo alsactl store
+sudo alsactl restore
 ```
 
 ### Daemonize
@@ -108,7 +115,14 @@ sudo vi /etc/systemd/system/sendspin_bedroom.service
 sudo systemctl daemon-reload
 
 sudo systemctl start sendspin_kitchen.service sendspin_bathroom.service sendspin_bedroom.service
+sudo systemctl restart sendspin_kitchen.service sendspin_bathroom.service sendspin_bedroom.service
 sudo systemctl status sendspin_kitchen.service sendspin_bathroom.service sendspin_bedroom.service
+sudo systemctl stop sendspin_kitchen.service sendspin_bathroom.service sendspin_bedroom.service
+sudo systemctl disable sendspin_kitchen.service sendspin_bathroom.service sendspin_bedroom.service
+
+journalctl -u sendspin_kitchen -f
+journalctl -u sendspin_bathroom -f
+journalctl -u sendspin_bedroom -f
 
 ```
 
@@ -477,14 +491,15 @@ INFO:aiosendspin.client.client:Handshake with server complete
 Show devices:
 
 ```log
+
 sudo /home/sendspin/.local/bin/sendspin --list-audio-devices
 Available audio output devices:
 
   [0] USB Audio Device: - (hw:0,0)
        Channels: 2, Sample rate: 44100.0 Hz
-  [1] USB Audio Device: - (hw:2,0)
+  [1] USB Audio Device: - (hw:1,0)
        Channels: 2, Sample rate: 44100.0 Hz
-  [2] USB Audio Device: - (hw:4,0)
+  [2] USB Audio Device: - (hw:2,0)
        Channels: 2, Sample rate: 44100.0 Hz
   [3] sysdefault
        Channels: 128, Sample rate: 48000.0 Hz
@@ -520,5 +535,181 @@ Available audio output devices:
        Channels: 128, Sample rate: 48000.0 Hz
   [19] dmix
        Channels: 2, Sample rate: 48000.0 Hz
+
+To select an audio device:
+  sendspin --audio-device 0
+
+ALSA devices (use by name with --audio-device):
+
+  null
+       Discard all samples (playback) or generate zero samples (capture)
+  default
+       Default Audio Device
+  sysdefault
+       Default Audio Device
+  lavrate
+       Rate Converter Plugin Using Libav/FFmpeg Library
+  samplerate
+       Rate Converter Plugin Using Samplerate Library
+  speexrate
+       Rate Converter Plugin Using Speex Resampler
+  jack
+       JACK Audio Connection Kit
+  oss
+       Open Sound System
+  pulse
+       PulseAudio Sound Server
+  speex
+       Plugin using Speex DSP (resample, agc, denoise, echo, dereverb)
+  upmix
+       Plugin for channel upmix (4,6,8)
+  vdownmix
+       Plugin for channel downmix (stereo) with a simple spacialization
+  usb_card_shower
+  usb_card_kitchen
+  usb_card_bedroom
+  hw:CARD=USBCardKitchen,DEV=0
+       USB Audio Device, USB Audio
+  plughw:CARD=USBCardKitchen,DEV=0
+       USB Audio Device, USB Audio
+  default:CARD=USBCardKitchen
+       USB Audio Device, USB Audio
+  sysdefault:CARD=USBCardKitchen
+       USB Audio Device, USB Audio
+  front:CARD=USBCardKitchen,DEV=0
+       USB Audio Device, USB Audio
+  surround21:CARD=USBCardKitchen,DEV=0
+       USB Audio Device, USB Audio
+  surround40:CARD=USBCardKitchen,DEV=0
+       USB Audio Device, USB Audio
+  surround41:CARD=USBCardKitchen,DEV=0
+       USB Audio Device, USB Audio
+  surround50:CARD=USBCardKitchen,DEV=0
+       USB Audio Device, USB Audio
+  surround51:CARD=USBCardKitchen,DEV=0
+       USB Audio Device, USB Audio
+  surround71:CARD=USBCardKitchen,DEV=0
+       USB Audio Device, USB Audio
+  iec958:CARD=USBCardKitchen,DEV=0
+       USB Audio Device, USB Audio
+  dmix:CARD=USBCardKitchen,DEV=0
+       USB Audio Device, USB Audio
+  usbstream:CARD=USBCardKitchen
+       USB Audio Device
+  hw:CARD=USBCardShower,DEV=0
+       USB Audio Device, USB Audio
+  plughw:CARD=USBCardShower,DEV=0
+       USB Audio Device, USB Audio
+  default:CARD=USBCardShower
+       USB Audio Device, USB Audio
+  sysdefault:CARD=USBCardShower
+       USB Audio Device, USB Audio
+  front:CARD=USBCardShower,DEV=0
+       USB Audio Device, USB Audio
+  surround21:CARD=USBCardShower,DEV=0
+       USB Audio Device, USB Audio
+  surround40:CARD=USBCardShower,DEV=0
+       USB Audio Device, USB Audio
+  surround41:CARD=USBCardShower,DEV=0
+       USB Audio Device, USB Audio
+  surround50:CARD=USBCardShower,DEV=0
+       USB Audio Device, USB Audio
+  surround51:CARD=USBCardShower,DEV=0
+       USB Audio Device, USB Audio
+  surround71:CARD=USBCardShower,DEV=0
+       USB Audio Device, USB Audio
+  iec958:CARD=USBCardShower,DEV=0
+       USB Audio Device, USB Audio
+  dmix:CARD=USBCardShower,DEV=0
+       USB Audio Device, USB Audio
+  usbstream:CARD=USBCardShower
+       USB Audio Device
+  hw:CARD=USBCardBedroom,DEV=0
+       USB Audio Device, USB Audio
+  plughw:CARD=USBCardBedroom,DEV=0
+       USB Audio Device, USB Audio
+  default:CARD=USBCardBedroom
+       USB Audio Device, USB Audio
+  sysdefault:CARD=USBCardBedroom
+       USB Audio Device, USB Audio
+  front:CARD=USBCardBedroom,DEV=0
+       USB Audio Device, USB Audio
+  surround21:CARD=USBCardBedroom,DEV=0
+       USB Audio Device, USB Audio
+  surround40:CARD=USBCardBedroom,DEV=0
+       USB Audio Device, USB Audio
+  surround41:CARD=USBCardBedroom,DEV=0
+       USB Audio Device, USB Audio
+  surround50:CARD=USBCardBedroom,DEV=0
+       USB Audio Device, USB Audio
+  surround51:CARD=USBCardBedroom,DEV=0
+       USB Audio Device, USB Audio
+  surround71:CARD=USBCardBedroom,DEV=0
+       USB Audio Device, USB Audio
+  iec958:CARD=USBCardBedroom,DEV=0
+       USB Audio Device, USB Audio
+  dmix:CARD=USBCardBedroom,DEV=0
+       USB Audio Device, USB Audio
+  usbstream:CARD=USBCardBedroom
+       USB Audio Device
+  hw:CARD=vc4hdmi0,DEV=0
+       vc4-hdmi-0, MAI PCM i2s-hifi-0
+  plughw:CARD=vc4hdmi0,DEV=0
+       vc4-hdmi-0, MAI PCM i2s-hifi-0
+  default:CARD=vc4hdmi0
+       vc4-hdmi-0, MAI PCM i2s-hifi-0
+  sysdefault:CARD=vc4hdmi0
+       vc4-hdmi-0, MAI PCM i2s-hifi-0
+  hdmi:CARD=vc4hdmi0,DEV=0
+       vc4-hdmi-0, MAI PCM i2s-hifi-0
+  dmix:CARD=vc4hdmi0,DEV=0
+       vc4-hdmi-0, MAI PCM i2s-hifi-0
+  usbstream:CARD=vc4hdmi0
+       vc4-hdmi-0
+  hw:CARD=vc4hdmi1,DEV=0
+       vc4-hdmi-1, MAI PCM i2s-hifi-0
+  plughw:CARD=vc4hdmi1,DEV=0
+       vc4-hdmi-1, MAI PCM i2s-hifi-0
+  default:CARD=vc4hdmi1
+       vc4-hdmi-1, MAI PCM i2s-hifi-0
+  sysdefault:CARD=vc4hdmi1
+       vc4-hdmi-1, MAI PCM i2s-hifi-0
+  hdmi:CARD=vc4hdmi1,DEV=0
+       vc4-hdmi-1, MAI PCM i2s-hifi-0
+  dmix:CARD=vc4hdmi1,DEV=0
+       vc4-hdmi-1, MAI PCM i2s-hifi-0
+  usbstream:CARD=vc4hdmi1
+       vc4-hdmi-1
+
+```
+
+
+## ERRORS
+
+
+Failed to play
+
+```log
+Mar 29 19:21:48 raspberrypi sendspin[93380]: Expression 'alsa_snd_pcm_prepare( stream->playback.pcm )' failed in 'src/hostapi/alsa/pa_linux_alsa.c', line: 2920
+Mar 29 19:21:48 raspberrypi sendspin[93380]: Expression 'AlsaStart( stream, 0 )' failed in 'src/hostapi/alsa/pa_linux_alsa.c', line: 3246
+Mar 29 19:21:48 raspberrypi sendspin[93380]: Expression 'AlsaRestart( self )' failed in 'src/hostapi/alsa/pa_linux_alsa.c', line: 3313
+Mar 29 19:21:48 raspberrypi sendspin[93380]: Expression 'PaAlsaStream_HandleXrun( self )' failed in 'src/hostapi/alsa/pa_linux_alsa.c', line: 3950
+Mar 29 19:21:48 raspberrypi sendspin[93380]: Expression 'PaAlsaStream_WaitForFrames( stream, &framesAvail, &xrun )' failed in 'src/hostapi/alsa/pa_linux_alsa.c', line: 4285
+Mar 29 19:21:48 raspberrypi sendspin[93380]: Expression 'alsa_snd_pcm_drop( stream->playback.pcm )' failed in 'src/hostapi/alsa/pa_linux_alsa.c', line: 3042
+
+```
+
+
+Alt config for alsa:
+
+
+```log
+Found hardware: "USB-Audio" "USB Mixer" "USB0d8c:0014" "" ""
+Hardware is initialized using a generic method
+Found hardware: "USB-Audio" "USB Mixer" "USB0d8c:0014" "" ""
+Hardware is initialized using a generic method
+Found hardware: "USB-Audio" "USB Mixer" "USB0d8c:0014" "" ""
+Hardware is initialized using a generic method
+
 
 ```

@@ -231,6 +231,10 @@ sudo systemctl start snapclient_bathroom snapclient_bedroom snapclient_kitchen
 sudo systemctl enable snapclient_bathroom snapclient_bedroom snapclient_kitchen
 sudo systemctl status snapclient_bathroom snapclient_bedroom snapclient_kitchen
 sudo systemctl restart snapclient_bathroom snapclient_bedroom snapclient_kitchen
+
+journalctl -u snapclient_bathroom -f
+journalctl -u snapclient_bedroom -f
+journalctl -u snapclient_kitchen -f
 ```
 
 # Etc
@@ -282,6 +286,7 @@ sudo systemctl enable snapserver
 sudo systemctl start snapserver
 sudo systemctl restart snapserver
 
+journalctl -u snapserver -f
 journalctl -n 100 -f | grep snapserver
 journalctl -n 100 -f | grep snapclient_kitchen
 journalctl -n 100 -f | grep snapclient_bathroom

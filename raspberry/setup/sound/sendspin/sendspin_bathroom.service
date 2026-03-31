@@ -1,3 +1,5 @@
+# sudo vi /etc/systemd/system/sendspin_bathroom.service
+# sudo systemctl daemon-reload
 [Unit]
 Description=Sendspin Bathroom
 After=network-online.target sound.target
@@ -7,9 +9,9 @@ Wants=network-online.target
 Type=simple
 User=sendspin
 Environment=XDG_RUNTIME_DIR=/run/user/997
-ExecStart=/home/sendspin/.local/bin/sendspin daemon --hardware-volume true --static-delay-ms -100 --audio-format flac:48000:24:1 --id bathroom --name "Bathroom" --url ws://192.168.1.15:8927/sendspin --audio-device "usb_card_shower"
+ExecStart=/home/sendspin/.local/bin/sendspin daemon --hardware-volume false --static-delay-ms -50 --audio-format flac:48000:24:2 --id bathroom --name "Bathroom" --url ws://192.168.1.15:8927/sendspin --audio-device "usb_card_shower"
 Restart=on-failure
-RestartSec=10
+RestartSec=5
 StandardOutput=journal
 StandardError=journal
 NoNewPrivileges=true
