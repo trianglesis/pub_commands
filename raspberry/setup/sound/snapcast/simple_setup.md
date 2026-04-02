@@ -147,6 +147,7 @@ sudo vi /etc/default/snapclient_3
 # Conf changed - reload
 sudo systemctl daemon-reload
 sudo systemctl stop snapserver snapclient_bathroom snapclient_bedroom snapclient_kitchen
+sudo systemctl restart snapserver snapclient_bathroom snapclient_bedroom snapclient_kitchen
 
 # Debug
 journalctl -xeu snapserver.service
