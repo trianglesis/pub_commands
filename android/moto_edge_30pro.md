@@ -2,6 +2,8 @@
 
 - <https://lineageos.org/>
 - <https://xdaforums.com/f/moto-edge-30-pro.12543/>
+- <https://4pda.to/forum/index.php?showtopic=1053226&view=findpost&p=142630947>
+- <https://xdaforums.com/t/rom-unofficial-lineageos-23-android-16-for-the-motorola-edge-30-pro-motorola-edge-2022-motorola-edge-x30-hiphi-hiphic-hiphid.4784104/>
 
 ## ADB Usage
 
@@ -119,25 +121,28 @@ Finished. Total time: 2.974s
 #  (did not help)
 fastboot flash recovery_b O:\\Install\\Android\\OS\\MotoEdge30Pro\\LineageOS_Unoff\\recovery.img
 fastboot flash recovery_a O:\\Install\\Android\\OS\\MotoEdge30Pro\\LineageOS_Unoff\\recovery.img
-fastboot boot O:\\Install\\Android\\OS\\MotoEdge30Pro\\LineageOS_Unoff\\recovery.img
+# fastboot boot O:\\Install\\Android\\OS\\MotoEdge30Pro\\LineageOS_Unoff\\recovery.img
 
 # Try alt (did not help)
 fastboot flash recovery O:\\Install\\Android\\OS\\MotoEdge30Pro\\recovery\\TWRP\\recovery.img
 fastboot flash recovery_b O:\\Install\\Android\\OS\\MotoEdge30Pro\\recovery\\TWRP\\recovery.img
 fastboot flash recovery_a O:\\Install\\Android\\OS\\MotoEdge30Pro\\recovery\\TWRP\\recovery.img
-fastboot boot O:\\Install\\Android\\OS\\MotoEdge30Pro\\recovery\\TWRP\\recovery.img
+# fastboot boot O:\\Install\\Android\\OS\\MotoEdge30Pro\\recovery\\TWRP\\recovery.img
 
 # Try official recovery  (did not help)
 fastboot flash recovery O:\\Install\\Android\\OS\\MotoEdge30Pro\\Off_14\\recovery.img
+fastboot flash recovery_a O:\\Install\\Android\\OS\\MotoEdge30Pro\\Off_14\\recovery.img
 fastboot flash recovery_b O:\\Install\\Android\\OS\\MotoEdge30Pro\\Off_14\\recovery.img
-fastboot boot O:\\Install\\Android\\OS\\MotoEdge30Pro\\Off_14\\boot.img
-
-# Alt (???)
-fastboot flash vbmeta --disable-verity --disable-verification O:\\Install\\Android\\OS\\MotoEdge30Pro\\LineageOS_Unoff\\vbmeta.img
+fastboot flash boot O:\\Install\\Android\\OS\\MotoEdge30Pro\\Off_14\\boot.img
+fastboot flash boot_a O:\\Install\\Android\\OS\\MotoEdge30Pro\\Off_14\\boot.img
+fastboot flash boot_b O:\\Install\\Android\\OS\\MotoEdge30Pro\\Off_14\\boot.img
 
 # Worked
 fastboot set_active b
+fastboot reboot recovery
 # Now I got back into LineageOS recovery!
+fastboot set_active a
+fastboot reboot recovery
 ```
 
 ### Lineage OS Recovery, ROM, Gapps
@@ -158,7 +163,7 @@ adb.exe devices
 fastboot flash boot O:\\Install\\Android\\OS\\MotoEdge30Pro\\LineageOS_Unoff\\boot.img
 fastboot flash dtbo O:\\Install\\Android\\OS\\MotoEdge30Pro\\LineageOS_Unoff\\dtbo.img
 # ??? no such img in 30 pro
-fastboot flash init_boot init_boot.img
+# fastboot flash init_boot init_boot.img
 fastboot flash vendor_boot O:\\Install\\Android\\OS\\MotoEdge30Pro\\LineageOS_Unoff\\vendor_boot.img
 fastboot flash vbmeta --disable-verity --disable-verification O:\\Install\\Android\\OS\\MotoEdge30Pro\\LineageOS_Unoff\\vbmeta.img
 
@@ -185,4 +190,41 @@ fastboot set_active b
 adb.exe -d sideload O:\\Install\\Android\\OS\\MotoEdge30Pro\\LineageOS_Unoff\\MindTheGapps-16.0.0-arm64-20260216_221300.zip
 adb.exe -d sideload O:\\Install\\Android\\OS\\MotoEdge30Pro\\LineageOS_Unoff\\MindTheGapps-16.0.0-arm64-20250812_214353.zip
 
+```
+
+### Off images back:
+
+```shell
+
+fastboot flash boot "O:\Install\Android\OS\MotoEdge30Pro\Off_14\boot.img"
+fastboot flash dtbo "O:\Install\Android\OS\MotoEdge30Pro\Off_14\dtbo.img"
+fastboot flash vendor_boot "O:\Install\Android\OS\MotoEdge30Pro\Off_14\vendor_boot.img"
+fastboot flash vbmeta "O:\Install\Android\OS\MotoEdge30Pro\Off_14\vbmeta.img"
+fastboot flash recovery "O:\Install\Android\OS\MotoEdge30Pro\Off_14\recovery.img"
+
+fastboot set_active b
+fastboot reboot recovery
+```
+
+
+### Start over
+
+- <https://wiki.lineageos.org/devices/dubai/install/#flashing-additional-partitions>
+
+When recovery is wrong: `Writing 'boot_a'                                   (bootloader) Preflash validation failed`
+
+```shell
+fastboot.exe flash dtbo O:\\Install\\Android\\OS\\MotoEdge30Pro\\LineageOS_Unoff\\dtbo.img
+fastboot.exe flash vendor_boot O:\\Install\\Android\\OS\\MotoEdge30Pro\\LineageOS_Unoff\\vendor_boot.img
+fastboot.exe reboot bootloader
+
+fastboot.exe flash boot O:\\Install\\Android\\OS\\MotoEdge30Pro\\LineageOS_Unoff\\boot.img
+fastboot.exe flash boot_a O:\\Install\\Android\\OS\\MotoEdge30Pro\\LineageOS_Unoff\\boot.img
+fastboot.exe flash boot_b O:\\Install\\Android\\OS\\MotoEdge30Pro\\LineageOS_Unoff\\boot.img
+fastboot set_active b
+fastboot set_active a
+fastboot reboot recovery
+
+# ADB Sideload activated in recovery menu
+adb.exe -d sideload O:\\Install\\Android\\OS\\MotoEdge30Pro\\LineageOS_Unoff\\copy-partitions-20220613-signed.zip
 ```
