@@ -64,6 +64,7 @@ openssl version -a
 
 
 ##### ERROR
+
 - (you may need to install the FindBin module)
 
 `dnf install perl-FindBin`
@@ -72,13 +73,16 @@ openssl version -a
 # Python
 
 ## Select python sources:
+
 - curl -O https://www.python.org/ftp/python/3.13.2/Python-3.13.2.tgz
   
 ### Older:
+
 - curl -O https://www.python.org/ftp/python/3.10.5/Python-3.10.5.tgz
 - curl -O https://www.python.org/ftp/python/3.11.0/Python-3.11.0b4.tgz
 
 ### Best now
+
 - curl -O https://www.python.org/ftp/python/3.11.5/Python-3.11.5.tgz
 
 ##### Install for Oracle Linux 9

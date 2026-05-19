@@ -18,6 +18,14 @@ Log into HA OS
 - https://developers.home-assistant.io/docs/operating-system/debugging/#accessing-the-container-bash
 - https://community.home-assistant.io/t/howto-how-to-access-the-home-assistant-os-host-itself-over-ssh/263352
 
+## Collect info:
+
+```shell
+ha os info
+```
+
+
+
 ```shell
 cat /config/home-assistant.log
 cat /config/home-assistant.log.1

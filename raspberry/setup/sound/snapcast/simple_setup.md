@@ -135,14 +135,14 @@ sudo cp /lib/systemd/system/snapclient_2.service /lib/systemd/system/snapclient_
 sudo cp /lib/systemd/system/snapclient_3.service /lib/systemd/system/snapclient_3.service_backup
 
 sudo vi /lib/systemd/system/snapserver.service
-sudo vi /lib/systemd/system/snapclient.service
-sudo vi /lib/systemd/system/snapclient_2.service
-sudo vi /lib/systemd/system/snapclient_3.service
+sudo vi /lib/systemd/system/snapclient_bathroom.service
+sudo vi /lib/systemd/system/snapclient_bedroom.service
+sudo vi /lib/systemd/system/snapclient_kitchen.service
 
 # Check args, new version arg --soundcard= is lowercase
-sudo vi /etc/default/snapclient
-sudo vi /etc/default/snapclient_2
-sudo vi /etc/default/snapclient_3
+sudo vi /etc/default/snapclient_bathroom
+sudo vi /etc/default/snapclient_bedroom
+sudo vi /etc/default/snapclient_kitchen
 
 # Conf changed - reload
 sudo systemctl daemon-reload

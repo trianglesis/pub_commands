@@ -178,10 +178,10 @@ amixer set Master 80% >> /dev/null
 Work but need a user login
 
 ```shell
-sudo alsactl --file ~/.config/asound.state store
+sudo alsactl --file /home/sanek/asound.state store
 sudo vi ~/.bashrc
 sudo vi /root/.bashrc
-sudo alsactl --file ~/.config/asound.state restore
+sudo alsactl --file /home/sanek/asound.state restore
 ```
 
 

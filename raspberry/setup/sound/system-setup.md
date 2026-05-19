@@ -92,3 +92,49 @@ sudo raspi-config - `No internal audio devices found`
 sudo raspi-config - `There was an error running option S2 Audio`
 
 Re-install pulseaudio
+
+
+
+## Volume
+
+```shell
+pw-cli ls Node
+
+        id 53, type PipeWire:Interface:Node/3
+                object.serial = "53"
+                object.path = "alsa:acp:USBCardShower:2:capture"
+                factory.id = "19"
+                client.id = "41"
+                device.id = "42"
+                priority.session = "2000"
+                priority.driver = "2000"
+                node.description = "Audio Adapter (Unitek Y-247A) Mono"
+                node.name = "alsa_input.usb-C-Media_Electronics_Inc._USB_Audio_Device-00.mono-fallback"
+                node.nick = "USB Audio Device"
+                media.class = "Audio/Source"
+        id 72, type PipeWire:Interface:Node/3
+                object.serial = "72"
+                object.path = "alsa:acp:USBCardKitchen:2:capture"
+                factory.id = "19"
+                client.id = "41"
+                device.id = "46"
+                priority.session = "2000"
+                priority.driver = "2000"
+                node.description = "Audio Adapter (Unitek Y-247A) Mono"
+                node.name = "alsa_input.usb-C-Media_Electronics_Inc._USB_Audio_Device-00.3.mono-fallback"
+                node.nick = "USB Audio Device"
+                media.class = "Audio/Source"
+        id 77, type PipeWire:Interface:Node/3
+                object.serial = "179"
+                object.path = "alsa:acp:USBCardBedroom:2:capture"
+                factory.id = "19"
+                client.id = "41"
+                device.id = "76"
+                priority.session = "2000"
+                priority.driver = "2000"
+                node.description = "Audio Adapter (Unitek Y-247A) Mono"
+                node.name = "alsa_input.usb-C-Media_Electronics_Inc._USB_Audio_Device-00.2.mono-fallback"
+                node.nick = "USB Audio Device"
+                media.class = "Audio/Source"
+
+```
