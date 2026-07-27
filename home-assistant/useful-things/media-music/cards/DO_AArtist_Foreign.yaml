@@ -1,0 +1,107 @@
+type: custom:custom-features-card
+features:
+  - type: custom:service-call
+    entries:
+      - type: button
+        entity_id: ""
+        label: Виконавці Зарубіжні
+        icon: mdi:countertop
+        thumb: transparent
+  - type: custom:service-call
+    entries:
+      - type: dropdown
+        entity_id: input_select.foreign_electro_set
+        options: []
+        icon: mdi:account-music
+        option_type: attribute
+        option_entity: input_select.foreign_electro_set
+        option_attribute: options
+        option_template:
+          entity_id: input_select.foreign_electro_set
+          label: "{{ option }}"
+          tap_action:
+            action: perform-action
+            perform_action: script.play_artist
+            data:
+              option: "{{ option }}"
+              media_player: media_player.bathroom
+            target:
+              entity_id: "{{ config.entity }}"
+        value_attribute: state
+  - type: custom:service-call
+    entries:
+      - type: dropdown
+        entity_id: input_select.foreign_heavy_set
+        options: []
+        icon: mdi:account-music
+        option_type: attribute
+        option_entity: input_select.foreign_heavy_set
+        option_attribute: options
+        option_template:
+          entity_id: input_select.foreign_heavy_set
+          label: "{{ option }}"
+          tap_action:
+            action: perform-action
+            perform_action: script.play_artist
+            data:
+              option: "{{ option }}"
+              media_player: media_player.bathroom
+            target:
+              entity_id: "{{ config.entity }}"
+        value_attribute: state
+  - type: custom:service-call
+    entries:
+      - type: dropdown
+        entity_id: input_select.foreign_lazer_set
+        options: []
+        icon: mdi:account-music
+        option_type: attribute
+        option_entity: input_select.foreign_lazer_set
+        option_attribute: options
+        option_template:
+          entity_id: input_select.foreign_lazer_set
+          label: "{{ option }}"
+          tap_action:
+            action: perform-action
+            perform_action: script.play_artist
+            data:
+              option: "{{ option }}"
+              media_player: media_player.bathroom
+            target:
+              entity_id: "{{ config.entity }}"
+        value_attribute: state
+  - type: custom:service-call
+    entries:
+      - type: dropdown
+        entity_id: input_select.foreign_rock_set
+        options: []
+        icon: mdi:account-music
+        option_type: attribute
+        option_entity: input_select.foreign_rock_set
+        option_attribute: options
+        option_template:
+          entity_id: input_select.foreign_rock_set
+          label: "{{ option }}"
+          tap_action:
+            action: perform-action
+            perform_action: script.play_artist
+            data:
+              option: "{{ option }}"
+              media_player: media_player.bathroom
+            target:
+              entity_id: "{{ config.entity }}"
+        value_attribute: state
+feature_height: 34
+styles: |-
+  :host {
+    flex-basis: 200%;
+    --background: rgba(113, 211, 145, 0.8);
+    --background-opacity: 0.1;
+    --feature-border-radius: 1px;
+    --feature-button-spacing: 5px;
+  }
+card_mod:
+  style: |
+    ha-card {
+      background-color: rgba(87, 159, 179, 0.2);
+    }

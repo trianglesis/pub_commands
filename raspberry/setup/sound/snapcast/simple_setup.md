@@ -37,6 +37,8 @@ source = pipe:///tmp/snapfifo?name=default
 # This is for test, disable once set everything up
 # source = pipe:///tmp/snapfifo?name=Radio&sampleformat=48000:16:2&codec=flac
 # source = file:///home/share/Media/friend-request-14878.wav?name=FileTest
+# source = file:///mnt/share/HA_Share_1Tb/HA_Media/pan-flute-transition-b-6-188143.mp3?name=TestFile-pan-flute-transition-b-6-188143
+# source = file:///mnt/share/HA_Share_1Tb/HA_Media/error-125761.wav?name=TestFile-error-125761.wav
 ```
 
 ### Tweak the source

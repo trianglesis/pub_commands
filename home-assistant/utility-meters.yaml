@@ -1,0 +1,203 @@
+# https://www.home-assistant.io/integrations/integration/
+# packages/utility_meters/etc_meters.yaml
+sensor:
+  # DIN Invertor
+  - platform: integration
+    device_class: power
+    source: sensor.din_invertor_power
+    unique_id: din_invertor_kwh
+    name: "DINInvertorKWh"
+    unit_prefix: k
+    unit_time: h
+    method: left
+
+  # DIN Kitchen Oven
+  - platform: integration
+    device_class: power
+    source: sensor.din_kitchen_oven_power
+    unique_id: din_kitchen_oven_kwh
+    name: "DINKitchenOvenKWh"
+    unit_prefix: k
+    unit_time: h
+    method: left
+
+  # DIN Floor Heaters
+  - platform: integration
+    device_class: power
+    source: sensor.din_floor_heaters_power
+    unique_id: din_floor_heaters_kwh
+    name: "DINFloorHeatersKWh"
+    unit_prefix: k
+    unit_time: h
+    method: left
+
+  # DIN Kitchen Stove
+  - platform: integration
+    device_class: power
+    source: sensor.din_kitchen_stove_power
+    unique_id: din_kitchen_stove_kwh
+    name: "DINKitchenStoveKWh"
+    unit_prefix: k
+    unit_time: h
+    method: left
+
+  # DIN Servers Box
+  - platform: integration
+    device_class: power
+    source: sensor.din_servers_power
+    unique_id: din_server_box_kwh
+    name: "DINServersBoxKWh"
+    unit_prefix: k
+    unit_time: h
+    method: left
+
+  # All other tuya devices
+  # sensor.bravo_coffee_kitchen_power
+  - platform: integration
+    device_class: power
+    source: sensor.bravo_coffee_kitchen_power
+    unique_id: bravo_power_kwh
+    name: "BravoPowerKWh"
+    unit_prefix: k
+    unit_time: h
+    method: left
+
+  # sensor.foxtrot_kitchen_grill_power
+  - platform: integration
+    device_class: power
+    source: sensor.foxtrot_kitchen_grill_power
+    unique_id: foxtrot_power_kwh
+    name: "FoxtrotPowerKWh"
+    unit_prefix: k
+    unit_time: h
+    method: left
+
+  # sensor.lima_power
+  - platform: integration
+    device_class: power
+    source: sensor.lima_power
+    unique_id: lima_power_kwh
+    name: "LimaPowerKWh"
+    unit_prefix: k
+    unit_time: h
+    method: left
+
+  # sensor.oscar_candle_trutone_power
+  - platform: integration
+    device_class: power
+    source: sensor.oscar_candle_trutone_power
+    unique_id: oscar_power_kwh
+    name: "OscarPowerKWh"
+    unit_prefix: k
+    unit_time: h
+    method: left
+
+  # sensor.mike_vacuum_power
+  - platform: integration
+    device_class: power
+    source: sensor.mike_vacuum_power
+    unique_id: mike_power_kwh
+    name: "MikePowerKWh"
+    unit_prefix: k
+    unit_time: h
+    method: left
+
+  # sensor.alpha_boiler_kitchen_power
+  - platform: integration
+    device_class: power
+    source: sensor.alpha_boiler_kitchen_power
+    unique_id: alpha_kitchen_boiler_power_kwh
+    name: "AlphaPowerKWh"
+    unit_prefix: k
+    unit_time: h
+    method: left
+
+  # sensor.charlie_fridge_kitchen_power
+  - platform: integration
+    device_class: power
+    source: sensor.charlie_fridge_kitchen_power
+    unique_id: charlie_fridge_power_kwh
+    name: "CharliePowerKWh"
+    unit_prefix: k
+    unit_time: h
+    method: left
+
+  # sensor.delta_dishwasher_kitchen_power
+  - platform: integration
+    device_class: power
+    source: sensor.delta_dishwasher_kitchen_power
+    unique_id: delta_dishwasher_power_kwh
+    name: "DeltaPowerKWh"
+    unit_prefix: k
+    unit_time: h
+    method: left
+
+  # sensor.echo_work_s_power
+  - platform: integration
+    device_class: power
+    source: sensor.echo_work_s_power
+    unique_id: echo_work_s_power_kwh
+    name: "EchoPowerKWh"
+    unit_prefix: k
+    unit_time: h
+    method: left
+
+  # sensor.golf_microwave_kitchen_power
+  - platform: integration
+    device_class: power
+    source: sensor.golf_microwave_kitchen_power
+    unique_id: golf_microwave_power_kwh
+    name: "GolfPowerKWh"
+    unit_prefix: k
+    unit_time: h
+    method: left
+
+  # sensor.india_washing_machine_power
+  - platform: integration
+    device_class: power
+    source: sensor.india_washing_machine_power
+    unique_id: india_washing_machine_power_kwh
+    name: "IndiaPowerKWh"
+    unit_prefix: k
+    unit_time: h
+    method: left
+
+  # sensor.juliett_dryer_machine_power
+  - platform: integration
+    device_class: power
+    source: sensor.juliett_dryer_machine_power
+    unique_id: juliett_dryer_power_kwh
+    name: "JuliettPowerKWh"
+    unit_prefix: k
+    unit_time: h
+    method: left
+
+  # sensor.kilo_tv_media_power
+  - platform: integration
+    device_class: power
+    source: sensor.kilo_tv_media_power
+    unique_id: kilo_tv_power_kwh
+    name: "KiloPowerKWh"
+    unit_prefix: k
+    unit_time: h
+    method: left
+
+  # sensor.november_boiler_bathroom_power
+  - platform: integration
+    device_class: power
+    source: sensor.november_boiler_bathroom_power
+    unique_id: november_boiler_bathroom_power_kwh
+    name: "NovemberPowerKWh"
+    unit_prefix: k
+    unit_time: h
+    method: left
+
+  # sensor.hotel_work_d_power
+  - platform: integration
+    device_class: power
+    source: sensor.hotel_work_d_power
+    unique_id: hotel_work_d_power_kwh
+    name: "HotelPowerKWh"
+    unit_prefix: k
+    unit_time: h
+    method: left

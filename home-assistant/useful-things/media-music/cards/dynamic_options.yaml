@@ -1,0 +1,22 @@
+type: custom:custom-features-card
+features:
+  - type: custom:service-call
+    entries:
+      - type: dropdown
+        entity_id: input_select.ua_indie_set
+        options: []
+        icon: mdi:account-music
+        option_type: attribute
+        option_entity: input_select.ua_indie_set
+        option_attribute: options
+        option_template:
+          entity_id: input_select.ua_indie_set
+          label: "{{ option }}"
+          tap_action:
+            action: perform-action
+            perform_action: input_select.select_option
+            data:
+              option: "{{ option }}"
+            target:
+              entity_id: "{{ config.entity }}"
+        value_attribute: state

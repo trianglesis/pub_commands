@@ -20,6 +20,13 @@
 # Bedroom
 /sys/devices/platform/axi/1000120000.pcie/1f00200000.usb/xhci-hcd.0/usb1/1-1/1-1.3/1-1.3:1.0/sound/card4/id
 
+
+/sys/devices/platform/axi/1000120000.pcie/1f00200000.usb/xhci-hcd.0/usb1/1-1/1-1.3/1-1.3:1.0/sound/card2/id
+/sys/devices/platform/axi/1000120000.pcie/1f00200000.usb/xhci-hcd.0/usb1/1-1/1-1.1/1-1.1:1.0/sound/card0/id
+/sys/devices/platform/axi/1000120000.pcie/1f00200000.usb/xhci-hcd.0/usb1/1-1/1-1.2/1-1.2:1.0/sound/card1/id
+
+
+
 ```
 
 
@@ -235,6 +242,8 @@ sudo systemctl restart snapclient_bathroom snapclient_bedroom snapclient_kitchen
 journalctl -u snapclient_bathroom -f
 journalctl -u snapclient_bedroom -f
 journalctl -u snapclient_kitchen -f
+
+sudo systemctl disable snapclient_bathroom snapclient_bedroom snapclient_kitchen
 ```
 
 # Etc
