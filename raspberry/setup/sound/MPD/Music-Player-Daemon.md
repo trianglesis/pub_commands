@@ -210,3 +210,43 @@ sudo systemctl restart mpd.service mpd_kitchen.service mpd_bathroom.service mpd_
 # DISABLE
 sudo systemctl disable mpd_kitchen.service mpd_bathroom.service mpd_bedroom.service
 ```
+
+
+#### Modified conf
+
+
+```conf
+# Input #######################################################################
+#
+input {
+        plugin "curl"
+        connection_timeout "15"
+        timeout "30"
+#       proxy "proxy.isp.com:8080"
+#       proxy_user "user"
+#       proxy_password "password"
+}
+
+# Decoder #####################################################################
+#
+
+decoder {
+#       plugin                  "hybrid_dsd"
+        plugin                  "ffmpeg"
+        enabled                 "yes"
+#       gapless                 "no"
+}
+decoder {
+        plugin        "wildmidi"
+        enabled       "no"
+        #config_file "/etc/timidity/timidity.cfg"
+}
+
+resampler {
+        plugin "soxr"
+        quality "medium"
+}
+
+#
+
+```

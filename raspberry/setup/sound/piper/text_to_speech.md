@@ -1,6 +1,7 @@
 ## Piper
 
 - https://github.com/rhasspy/piper
+- https://github.com/OHF-Voice/piper1-gpl
 
 ```shell
 # https://askubuntu.com/a/1306980
