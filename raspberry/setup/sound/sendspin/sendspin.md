@@ -81,9 +81,31 @@ journalctl -u sendspin -f        # View logs
 sudo systemctl disable sendspin
 
 sudo /home/sendspin/.local/bin/sendspin --list-audio-devices
+# Warning: --list-audio-devices is deprecated. Use 'sendspin audio-devices list'.
+sudo /home/sendspin/.local/bin/sendspin audio-devices list
+
 sudo /home/sendspin/.local/bin/sendspin --list-servers
 #  ws://192.168.1.15:8927/sendspin
 ```
+
+```shell
+sudo /home/sendspin/.local/bin/sendspin audio-devices list | grep hw:CARD=USBCard
+  hw:CARD=USBCardKitchen,DEV=0
+  plughw:CARD=USBCardKitchen,DEV=0
+  hw:CARD=USBCardShower,DEV=0
+  plughw:CARD=USBCardShower,DEV=0
+  hw:CARD=USBCardBedroom,DEV=0
+  plughw:CARD=USBCardBedroom,DEV=0
+```
+
+### Use sound dev conf from:
+
+- [Asound](../asound_alt.conf)
+
+- usb_card_shower
+- usb_card_kitchen
+- usb_card_bedroom
+
 
 Do not start it yet, duplicate service config for all sound cards.
 
@@ -102,6 +124,8 @@ sudo cat /home/sendspin/.config/sendspin/settings-daemon.json
 sudo systemctl stop sendspin.service
 sudo systemctl disable sendspin.service
 
+# One for all (if needed)
+sudo nano /etc/systemd/system/sendspin.service
 # Reuse this conf
 sudo cat /etc/systemd/system/sendspin.service
 sudo cp /etc/systemd/system/sendspin.service /etc/systemd/system/sendspin_kitchen.service
@@ -119,6 +143,7 @@ sudo systemctl restart sendspin_kitchen.service sendspin_bathroom.service sendsp
 sudo systemctl status sendspin_kitchen.service sendspin_bathroom.service sendspin_bedroom.service
 sudo systemctl stop sendspin_kitchen.service sendspin_bathroom.service sendspin_bedroom.service
 sudo systemctl disable sendspin_kitchen.service sendspin_bathroom.service sendspin_bedroom.service
+sudo systemctl enable sendspin_kitchen.service sendspin_bathroom.service sendspin_bedroom.service
 
 journalctl -u sendspin_kitchen -f
 journalctl -u sendspin_bathroom -f
@@ -132,14 +157,24 @@ usb_card_bedroom
 usb_card_kitchen
 
 # Modify exec
-/home/sendspin/.local/bin/sendspin daemon --hardware-volume true --static-delay-ms -100 --audio-format flac:48000:24:2 --id kitchen --name "Kitchen" --url ws://192.168.1.15:8927/sendspin --audio-device "usb_card_kitchen"
-/home/sendspin/.local/bin/sendspin daemon --hardware-volume true --static-delay-ms -100 --audio-format flac:48000:24:1 --id bathroom --name "Bathroom" --url ws://192.168.1.15:8927/sendspin --audio-device "usb_card_shower"
-/home/sendspin/.local/bin/sendspin daemon --hardware-volume true --static-delay-ms -100 --audio-format flac:48000:24:1 --id bedroom --name "Bedroom" --url ws://192.168.1.15:8927/sendspin --audio-device "usb_card_bedroom"
+/home/sendspin/.local/bin/sendspin daemon --static-delay-ms="-100" --audio-format="mp3:48000:24:2" --id="kitchen" --name="Kitchen" --url="ws://192.168.1.15:8927/sendspin" --audio-device="usb_card_kitchen"
+/home/sendspin/.local/bin/sendspin daemon --static-delay-ms="-100" --audio-format="mp3:48000:24:1" --id="bathroom" --name="Bathroom" --url="ws://192.168.1.15:8927/sendspin" --audio-device="usb_card_shower"
+/home/sendspin/.local/bin/sendspin daemon --static-delay-ms="-100" --audio-format="mp3:48000:24:1" --id="bedroom" --name="Bedroom" --url="ws://192.168.1.15:8927/sendspin" --audio-device="usb_card_bedroom"
 
 # Test directly
 sudo /home/sendspin/.local/bin/sendspin daemon --hardware-volume true --static-delay-ms -100 --audio-format flac:48000:24:1 --id kitchen --name "Kitchen" --url ws://192.168.1.15:8927/sendspin --audio-device usb_card_kitchen
 sudo /home/sendspin/.local/bin/sendspin daemon --hardware-volume true --static-delay-ms -100 --audio-format flac:48000:24:1 --id bathroom --name "Bathroom" --url ws://192.168.1.15:8927/sendspin --audio-device usb_card_shower
 sudo /home/sendspin/.local/bin/sendspin daemon --hardware-volume true --static-delay-ms -100 --audio-format flac:48000:24:1 --id bedroom --name "Bedroom" --url ws://192.168.1.15:8927/sendspin --audio-device usb_card_bedroom
+
+# All in ONE
+# NOT WORKING
+sudo /home/sendspin/.local/bin/sendspin daemon --id=sky --name="Sky" --url=ws://192.168.1.15:8927/sendspin --log-level=DEBUG --static-delay-ms=30 --audio-device=usb_card_bedroom --audio-device=usb_card_kitchen --audio-device=usb_card_shower
+sudo /home/sendspin/.local/bin/sendspin daemon --id="sky" --name="Sky" --url="ws://192.168.1.15:8927/sendspin" --log-level="DEBUG" --static-delay-ms="30" --audio-device="usb_card_bedroom" --audio-device="usb_card_kitchen" --audio-device="usb_card_shower"
+
+# More
+sudo /home/sendspin/.local/bin/sendspin daemon --static-delay-ms="30" --audio-format="pcm:48000:24:2" --id="kitchen" --name="Kitchen" --url="ws://192.168.1.15:8927/sendspin" --audio-device="usb_card_kitchen"
+sudo /home/sendspin/.local/bin/sendspin daemon --static-delay-ms="30" --audio-format="pcm:48000:24:1" --id="bathroom" --name="Bathroom" --url="ws://192.168.1.15:8927/sendspin" --audio-device="usb_card_shower"
+sudo /home/sendspin/.local/bin/sendspin daemon --static-delay-ms="30" --audio-format="pcm:48000:24:1" --id="bedroom" --name="Bedroom" --url="ws://192.168.1.15:8927/sendspin" --audio-device="usb_card_bedroom"
 ```
 
 #### Log
@@ -710,6 +745,52 @@ Found hardware: "USB-Audio" "USB Mixer" "USB0d8c:0014" "" ""
 Hardware is initialized using a generic method
 Found hardware: "USB-Audio" "USB Mixer" "USB0d8c:0014" "" ""
 Hardware is initialized using a generic method
+```
 
+
+## Info
+
+
+```shell
+$ sudo /home/sendspin/.local/bin/sendspin daemon --help --audio-device
+usage: sendspin daemon [-h] [--url URL] [--port LISTEN_PORT] [--name NAME] [--id ID] [--log-level {DEBUG,INFO,WARNING,ERROR,CRITICAL}] [--static-delay-ms STATIC_DELAY_MS]
+                       [--audio-device AUDIO_DEVICE] [--audio-format AUDIO_FORMAT] [--settings-dir SETTINGS_DIR] [--disable-mpris] [--hardware-volume {true,false}] [--hook-start HOOK_START]
+                       [--hook-set-volume HOOK_SET_VOLUME] [--hook-stop HOOK_STOP] [--manufacturer MANUFACTURER] [--product-name PRODUCT_NAME] [--interface INTERFACE]
+
+Run as a headless audio player. By default, listens for incoming server connections and advertises via mDNS (_sendspin._tcp.local.). Use --url to connect to a specific server instead.
+
+options:
+  -h, --help            show this help message and exit
+  --url URL             WebSocket URL of the Sendspin server to connect to. If omitted, listen for incoming server connections via mDNS.
+  --port LISTEN_PORT    Port to listen on for incoming server connections (default: 8928)
+  --name NAME           Friendly name for this client (defaults to hostname)
+  --id ID               Unique identifier for this client (defaults to sendspin-cli-<hostname>)
+  --log-level {DEBUG,INFO,WARNING,ERROR,CRITICAL}
+                        Logging level to use (default: INFO)
+  --static-delay-ms STATIC_DELAY_MS
+                        Extra playback delay in milliseconds applied after clock sync
+  --audio-device AUDIO_DEVICE
+                        Audio output device by index (e.g., 0, 1, 2), name prefix (e.g., 'MacBook'), or raw ALSA device name (e.g., 'dmixer', 'olohuone') for plugin devices like dmix. On Linux
+                        desktops, 'pulse', 'pipewire', or 'default' route through the sound server. Use 'sendspin audio-devices list' to see available devices.
+  --audio-format AUDIO_FORMAT
+                        Preferred audio format as codec:sample_rate:bit_depth:channels (e.g., flac:48000:24:2). Verified against the audio device on startup.
+  --settings-dir SETTINGS_DIR
+                        Directory to store settings (default: ~/.config/sendspin)
+  --disable-mpris       Disable MPRIS integration
+  --hardware-volume {true,false}
+                        Enable or disable hardware/system volume control (daemon: on, TUI: off)
+  --hook-start HOOK_START
+                        Command to run when audio stream starts (receives SENDSPIN_* env vars)
+  --hook-set-volume HOOK_SET_VOLUME
+                        Script to run for external volume control (receives effective volume 0-100)
+  --hook-stop HOOK_STOP
+                        Command to run when audio stream stops (receives SENDSPIN_* env vars)
+  --manufacturer MANUFACTURER
+                        Manufacturer name reported in the client hello (e.g., 'Acme Corp')
+  --product-name PRODUCT_NAME
+                        Product name reported in the client hello (defaults to auto-detected OS/platform name)
+  --interface INTERFACE
+                        IP address of the network interface to bind to. In server-initiated mode (no --url), restricts the listening server to this interface only. Also restricts mDNS discovery to
+                        this interface. Useful when the system has multiple interfaces (e.g., LAN and WAN).
 
 ```
