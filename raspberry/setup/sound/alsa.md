@@ -44,6 +44,8 @@ sudo systemctl status alsa-restore.service
 sudo systemctl status alsa-state.service 
 sudo systemctl status alsa-utils.service
 
+sudo systemctl restart alsa-restore.service && sudo systemctl restart alsa-state.service && sudo systemctl restart alsa-utils.service
+
 sudo amixer controls
 # numid=3,iface=MIXER,name='Mic Playback Switch'
 # numid=4,iface=MIXER,name='Mic Playback Volume'
@@ -77,7 +79,6 @@ amixer cset numid=3 70%
  Which combines left and right on the left channel (good), but on full volume for each channel (bad). To fix this, and prevent the signal from being sent out at 200%, the simple fix is this: 
 ```
 
-
 `vi cat `
 `sudo vi /etc/asound.conf`
 
@@ -85,70 +86,9 @@ Current setup is probably surviving reboots with volume set
 - no, only for default (one of three) USB device
 - reinstall alsa everything! - does not help
 
+See [conf](asound.conf)
+See [extra conf](asound_alt.conf)
 
-```conf
-# Bathroom
-pcm.usb_card_1 {
-    type hw
-    card USBCard1
-}
-
-# Kitchen
-pcm.usb_card_2 {
-    type hw
-    card USBCard2
-}
-
-# Bedroom
-pcm.usb_card_3 {
-    type hw
-    card USBCard3
-}
-
-
-# slave.pcm "hw:USBCard1"
-pcm.bathroom_mono{
-  slave {
-        pcm "usb_card_1"
-    }
-  slave.channels 2
-  type route
-  ttable {
-    # Copy both input channels to output channel 0 (Left).
-    0.0 0.5
-    1.0 0.5
-    # Send nothing to output channel 1 (Right).
-    0.1 0
-    1.1 0
-  }
-}
-
-# slave.pcm "hw:USBCard3"
-pcm.bedroom_mono{
-  slave {
-        pcm "usb_card_3"
-    }
-  slave.channels 2
-  type route
-  ttable {
-    # Copy both input channels to output channel 0 (Left).
-    0.0 0.5
-    1.0 0.5
-    # Send nothing to output channel 1 (Right).
-    0.1 0
-    1.1 0
-  }
-}
-
-```
-
-```
-defaults.pcm.!card USBCard1
-defaults.ctl.!card USBCard1
-defaults.pcm.!device 0
-defaults.ctl.!device 0
-
-```
 
 ## Settings
 
@@ -181,7 +121,7 @@ Work but need a user login
 sudo alsactl --file /home/sanek/asound.state store
 sudo vi ~/.bashrc
 sudo vi /root/.bashrc
-sudo alsactl --file /home/sanek/asound.state restore
+sudo alsactl --file /home/sanek/asound.state --no-ucm restore
 ```
 
 

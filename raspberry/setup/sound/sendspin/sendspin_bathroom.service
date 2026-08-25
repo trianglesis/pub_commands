@@ -9,7 +9,7 @@ Wants=network-online.target
 Type=simple
 User=sendspin
 Environment=XDG_RUNTIME_DIR=/run/user/997
-ExecStart=/home/sendspin/.local/bin/sendspin daemon --static-delay-ms="30" --audio-format="pcm:48000:24:1" --id="bathroom" --name="Bathroom" --url="ws://192.168.1.15:8927/sendspin" --audio-device="usb_card_shower"
+ExecStart=/home/sendspin/.local/bin/sendspin daemon --static-delay-ms="90" --audio-format="pcm:48000:24:1" --id="bathroom" --name="Bathroom" --url="ws://192.168.1.15:8927/sendspin" --audio-device="usb_card_shower"
 Restart=on-failure
 RestartSec=10
 StandardOutput=journal

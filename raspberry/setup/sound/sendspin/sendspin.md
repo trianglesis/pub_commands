@@ -157,14 +157,14 @@ usb_card_bedroom
 usb_card_kitchen
 
 # Modify exec
-/home/sendspin/.local/bin/sendspin daemon --static-delay-ms="-100" --audio-format="mp3:48000:24:2" --id="kitchen" --name="Kitchen" --url="ws://192.168.1.15:8927/sendspin" --audio-device="usb_card_kitchen"
-/home/sendspin/.local/bin/sendspin daemon --static-delay-ms="-100" --audio-format="mp3:48000:24:1" --id="bathroom" --name="Bathroom" --url="ws://192.168.1.15:8927/sendspin" --audio-device="usb_card_shower"
-/home/sendspin/.local/bin/sendspin daemon --static-delay-ms="-100" --audio-format="mp3:48000:24:1" --id="bedroom" --name="Bedroom" --url="ws://192.168.1.15:8927/sendspin" --audio-device="usb_card_bedroom"
+/home/sendspin/.local/bin/sendspin daemon --static-delay-ms="90" --audio-format="mp3:48000:24:2" --id="kitchen" --name="Kitchen" --url="ws://192.168.1.15:8927/sendspin" --audio-device="usb_card_kitchen"
+/home/sendspin/.local/bin/sendspin daemon --static-delay-ms="90" --audio-format="mp3:48000:24:1" --id="bathroom" --name="Bathroom" --url="ws://192.168.1.15:8927/sendspin" --audio-device="usb_card_shower"
+/home/sendspin/.local/bin/sendspin daemon --static-delay-ms="90" --audio-format="mp3:48000:24:1" --id="bedroom" --name="Bedroom" --url="ws://192.168.1.15:8927/sendspin" --audio-device="usb_card_bedroom"
 
 # Test directly
-sudo /home/sendspin/.local/bin/sendspin daemon --hardware-volume true --static-delay-ms -100 --audio-format flac:48000:24:1 --id kitchen --name "Kitchen" --url ws://192.168.1.15:8927/sendspin --audio-device usb_card_kitchen
-sudo /home/sendspin/.local/bin/sendspin daemon --hardware-volume true --static-delay-ms -100 --audio-format flac:48000:24:1 --id bathroom --name "Bathroom" --url ws://192.168.1.15:8927/sendspin --audio-device usb_card_shower
-sudo /home/sendspin/.local/bin/sendspin daemon --hardware-volume true --static-delay-ms -100 --audio-format flac:48000:24:1 --id bedroom --name "Bedroom" --url ws://192.168.1.15:8927/sendspin --audio-device usb_card_bedroom
+sudo /home/sendspin/.local/bin/sendspin daemon --hardware-volume true --static-delay-ms 90 --audio-format flac:48000:24:1 --id kitchen --name "Kitchen" --url ws://192.168.1.15:8927/sendspin --audio-device usb_card_kitchen
+sudo /home/sendspin/.local/bin/sendspin daemon --hardware-volume true --static-delay-ms 90 --audio-format flac:48000:24:1 --id bathroom --name "Bathroom" --url ws://192.168.1.15:8927/sendspin --audio-device usb_card_shower
+sudo /home/sendspin/.local/bin/sendspin daemon --hardware-volume true --static-delay-ms 90 --audio-format flac:48000:24:1 --id bedroom --name "Bedroom" --url ws://192.168.1.15:8927/sendspin --audio-device usb_card_bedroom
 
 # All in ONE
 # NOT WORKING
@@ -172,9 +172,9 @@ sudo /home/sendspin/.local/bin/sendspin daemon --id=sky --name="Sky" --url=ws://
 sudo /home/sendspin/.local/bin/sendspin daemon --id="sky" --name="Sky" --url="ws://192.168.1.15:8927/sendspin" --log-level="DEBUG" --static-delay-ms="30" --audio-device="usb_card_bedroom" --audio-device="usb_card_kitchen" --audio-device="usb_card_shower"
 
 # More
-sudo /home/sendspin/.local/bin/sendspin daemon --static-delay-ms="30" --audio-format="pcm:48000:24:2" --id="kitchen" --name="Kitchen" --url="ws://192.168.1.15:8927/sendspin" --audio-device="usb_card_kitchen"
-sudo /home/sendspin/.local/bin/sendspin daemon --static-delay-ms="30" --audio-format="pcm:48000:24:1" --id="bathroom" --name="Bathroom" --url="ws://192.168.1.15:8927/sendspin" --audio-device="usb_card_shower"
-sudo /home/sendspin/.local/bin/sendspin daemon --static-delay-ms="30" --audio-format="pcm:48000:24:1" --id="bedroom" --name="Bedroom" --url="ws://192.168.1.15:8927/sendspin" --audio-device="usb_card_bedroom"
+sudo /home/sendspin/.local/bin/sendspin daemon --static-delay-ms="90" --audio-format="pcm:48000:24:2" --id="kitchen" --name="Kitchen" --url="ws://192.168.1.15:8927/sendspin" --audio-device="usb_card_kitchen"
+sudo /home/sendspin/.local/bin/sendspin daemon --static-delay-ms="90" --audio-format="pcm:48000:24:1" --id="bathroom" --name="Bathroom" --url="ws://192.168.1.15:8927/sendspin" --audio-device="usb_card_shower"
+sudo /home/sendspin/.local/bin/sendspin daemon --static-delay-ms="90" --audio-format="pcm:48000:24:1" --id="bedroom" --name="Bedroom" --url="ws://192.168.1.15:8927/sendspin" --audio-device="usb_card_bedroom"
 ```
 
 #### Log

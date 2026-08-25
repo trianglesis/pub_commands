@@ -67,6 +67,9 @@ amixer cset numid=3 1
 
 ```
 
+See [conf](asound.conf)
+See [extra conf](asound_alt.conf)
+
 
 `vi ~/.asoundrc`
 AND
