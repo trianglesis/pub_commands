@@ -207,6 +207,8 @@ sudo systemctl start mpd
 sudo systemctl enable mpd
 sudo systemctl restart mpd.service mpd_kitchen.service mpd_bathroom.service mpd_bedroom.service
 
+journalctl -u mpd -f
+
 # DISABLE
 sudo systemctl disable mpd_kitchen.service mpd_bathroom.service mpd_bedroom.service
 ```
