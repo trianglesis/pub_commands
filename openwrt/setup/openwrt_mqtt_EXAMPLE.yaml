@@ -1,0 +1,146 @@
+# OpenWRT collectd
+mqtt:
+  sensor:
+   -  name: OpenWRT RAM buffered
+      state_topic: collectd/OpenWrt/memory/memory-buffered
+      unit_of_measurement: MB
+      value_template: "{{ value.split(':')[1].split('\x00')[0] | float / 1000000 }}"
+      unique_id: ram_buffered
+   -  name: OpenWRT RAM free
+      state_topic: collectd/OpenWrt/memory/memory-free
+      unit_of_measurement: MB
+      value_template: "{{ value.split(':')[1].split('\x00')[0] | float / 1000000 }}"
+      unique_id: ram_free
+   -  name: OpenWRT RAM cached
+      state_topic: collectd/OpenWrt/memory/memory-cached
+      unit_of_measurement: MB
+      value_template: "{{ value.split(':')[1].split('\x00')[0] | float / 1000000 }}"
+      unique_id: ram_cached
+   -  name: OpenWRT RAM used
+      state_topic: collectd/OpenWrt/memory/memory-used
+      unit_of_measurement: MB
+      value_template: "{{ value.split(':')[1].split('\x00')[0] | float / 1000000 }}"
+      unique_id: ram_used
+
+# load
+   -  name: OpenWRT L1
+      unit_of_measurement: load
+      state_topic: collectd/OpenWrt/load/load
+      value_template: "{{ value.split(':')[1] | float }}"
+      unique_id: L1 
+   -  name: OpenWRT L5
+      unit_of_measurement: load
+      state_topic: collectd/OpenWrt/load/load
+      value_template: "{{ value.split(':')[2] | float }}"
+      unique_id: L5 
+   -  name: OpenWRT L15
+      unit_of_measurement: load
+      state_topic: collectd/OpenWrt/load/load
+      value_template: "{{ value.split(':')[3].split('\x00')[0] | float }}"
+      unique_id: L15
+
+# wan interface
+   -  name: OpenWRT wan errors
+      state_topic: collectd/OpenWrt/interface-wan/if_errors
+      unit_of_measurement: packets
+      value_template: "{{ value.split(':')[1] | int + value.split(':')[2].split('\x00')[0] | int }}"
+      unique_id: br-wan-errors
+   -  name: OpenWRT wan dropped
+      state_topic: collectd/OpenWrt/interface-wan/if_dropped
+      unit_of_measurement: packets
+      value_template: "{{ value.split(':')[1] | int + value.split(':')[2].split('\x00')[0] | int }}"
+      unique_id: br-wan-dropped
+   -  name: OpenWRT wan TX Mbits
+      state_topic: collectd/OpenWrt/interface-wan/if_octets
+      unit_of_measurement: Mbits
+      value_template: "{{ value.split(':')[2].split('\x00')[0] | float * 8 / 1048576 }}"
+      unique_id: br-wan-tx-transfer
+   -  name: OpenWRT wan RX Mbits
+      state_topic: collectd/OpenWrt/interface-wan/if_octets
+      unit_of_measurement: Mbits
+      value_template: "{{ value.split(':')[1] | float * 8 / 1048576 }}"
+      unique_id: br-wan-rx-transfer
+   -  name: OpenWRT wan packets
+      state_topic: collectd/OpenWrt/interface-wan/if_packets
+      unit_of_measurement: packets/s
+      value_template: "{{ value.split(':')[1] | int + value.split(':')[2].split('\x00')[0] | int }}"
+      unique_id: br-wan-packets
+
+# br-lan interface
+   -  name: OpenWRT br-lan errors
+      state_topic: collectd/OpenWrt/interface-br-lan/if_errors
+      unit_of_measurement: packets
+      value_template: "{{ value.split(':')[1] | int + value.split(':')[2].split('\x00')[0] | int }}"
+      unique_id: br-lan-errors    
+   -  name: OpenWRT br-lan dropped
+      state_topic: collectd/OpenWrt/interface-br-lan/if_dropped
+      unit_of_measurement: packets
+      value_template: "{{ value.split(':')[1] | int + value.split(':')[2].split('\x00')[0] | int }}"
+      unique_id: br-lan-dropped
+   -  name: OpenWRT br-lan TX Mbits
+      state_topic: collectd/OpenWrt/interface-br-lan/if_octets
+      unit_of_measurement:  Mbits
+      value_template: "{{ value.split(':')[1] | float * 8 / 1048576 }}"
+      unique_id: br-lan-tx-transfer
+   -  name: OpenWRT br-lan RX Mbits
+      state_topic: collectd/OpenWrt/interface-br-lan/if_octets
+      unit_of_measurement: Mbits
+      value_template: "{{ value.split(':')[2].split('\x00')[0] | float * 8 / 1048576 }}"
+      unique_id: br-lan-rx-transfer
+   -  name: OpenWRT br-lan packets
+      state_topic: collectd/OpenWrt/interface-br-lan/if_packets
+      unit_of_measurement: packets/s
+      value_template: "{{ value.split(':')[1] | int + value.split(':')[2].split('\x00')[0] | int }}"
+
+# uptime
+   -  name: OpenWRT uptime
+      state_topic: collectd/OpenWrt/uptime/uptime
+      unit_of_measurement: days
+      value_template: "{{ value.split(':')[1].split('\x00')[0] | int / 86400 | round(2) }}"
+      unique_id: ap_uptime
+
+# connections
+   -  name: OpenWRT connections
+      state_topic: collectd/OpenWrt/conntrack/conntrack
+      unit_of_measurement: connections
+      value_template: "{{ value.split(':')[1].split('\x00')[0] | int }}"
+      unique_id: connections
+
+# wifi main
+   -  name: OpenWRT 5G clients
+      state_topic: collectd/OpenWrt/iwinfo-wlan0/stations
+      unit_of_measurement: clients
+      value_template: "{{ value.split(':')[1].split('\x00')[0] | int }}"
+      unique_id: ap_clients
+   -  name: OpenWRT 5G TX Mbits
+      state_topic: collectd/OpenWrt/interface-wlan0/if_octets
+      unit_of_measurement: Mbits      
+      value_template: "{{ value.split(':')[1] | float * 8 / 1048576 }}"
+      unique_id: iwinfo-wlan0-tx-transfer_1
+   -  name: OpenWRT 5G RX Mbits
+      state_topic: collectd/OpenWrt/interface-wlan0/if_octets
+      unit_of_measurement: Mbits
+      value_template: "{{ value.split(':')[2].split('\x00')[0] | float * 8 / 1048576 }}"
+      unique_id: iwinfo-wlan0-rx-transfer_1
+   -  name: OpenWRT 2.4G clients
+      state_topic: collectd/OpenWrt/iwinfo-wlan1/stations
+      unit_of_measurement: clients
+      value_template: "{{ value.split(':')[1].split('\x00')[0] | int }}"
+      unique_id: ap_clients_2
+   -  name: OpenWRT 2.4G TX Mbits
+      state_topic: collectd/OpenWrt/interface-wlan1/if_octets
+      unit_of_measurement: Mbits      
+      value_template: "{{ value.split(':')[1] | float * 8 / 1048576 }}"
+      unique_id: iwinfo-wlan1-tx-transfer_2
+   -  name: OpenWRT 2.4G RX Mbits
+      state_topic: collectd/OpenWrt/interface-wlan1/if_octets
+      unit_of_measurement: Mbits      
+      value_template: "{{ value.split(':')[2].split('\x00')[0] | float * 8 / 1048576 }}"
+      unique_id: iwinfo-wlan1-rx-transfer_2
+
+# temperature
+   -  name: OpenWRT temp
+      state_topic: collectd/OpenWrt/thermal-thermal_zone0/temperature
+      unit_of_measurement: °C
+      value_template: "{{ value.split(':')[1].split('\x00')[0] | int }}"
+      unique_id: temp

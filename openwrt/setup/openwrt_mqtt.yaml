@@ -1,0 +1,46 @@
+# OpenWRT collectd
+mqtt:
+  sensor:
+    # DHCP leases from /tmp/dhcp.leases
+    - name: OpenWRT MQTT dhcpleases count
+      state_topic: collectd/OpenWrt/dhcpleases/count
+      unit_of_measurement: leases
+      value_template: "{{ value.split(':')[1].split('\x00')[0] | int }}"
+      unique_id: dhcp_leases
+
+    # wifi main
+    - name: OpenWRT MQTT iwinfo wlan0 stations
+      state_topic: collectd/OpenWrt/iwinfo-wlan0/stations
+      unit_of_measurement: clients
+      value_template: "{{ value.split(':')[1].split('\x00')[0] | int }}"
+      unique_id: iwinfo_wlan0_stations
+    - name: OpenWRT MQTT iwinfo wlan0 bitrate
+      state_topic: collectd/OpenWrt/iwinfo-wlan0/bitrate
+      unit_of_measurement: Mbits/s
+      value_template: "{{ value.split(':')[1].split('\x00')[0] | int }}"
+      unique_id: iwinfo_wlan0_bitrate
+
+    - name: OpenWRT MQTT iwinfo wlan0-1 stations
+      state_topic: collectd/OpenWrt/iwinfo-wlan0-1/stations
+      unit_of_measurement: clients
+      value_template: "{{ value.split(':')[1].split('\x00')[0] | int }}"
+      unique_id: iwinfo_wlan0_1_stations
+    - name: OpenWRT MQTT iwinfo wlan0-1 bitrate
+      state_topic: collectd/OpenWrt/iwinfo-wlan0-1/bitrate
+      unit_of_measurement: Mbits/s
+      value_template: "{{ value.split(':')[1].split('\x00')[0] | int }}"
+      unique_id: iwinfo_wlan0_1_bitrate
+
+    - name: OpenWRT MQTT iwinfo wlan1 stations
+      state_topic: collectd/OpenWrt/iwinfo-wlan1/stations
+      unit_of_measurement: clients
+      value_template: "{{ value.split(':')[1].split('\x00')[0] | int }}"
+      unique_id: iwinfo_wlan1_stations
+    - name: OpenWRT MQTT iwinfo wlan1 bitrate
+      state_topic: collectd/OpenWrt/iwinfo-wlan1/bitrate
+      unit_of_measurement: Mbits/s
+      value_template: "{{ value.split(':')[1].split('\x00')[0] | int }}"
+      unique_id: iwinfo_wlan1_bitrate
+
+    # signal_quality
+    # bitrate
