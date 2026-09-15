@@ -1,6 +1,12 @@
-https://www.libe.net/en/openwrt-hass
-https://openwrt.org/docs/guide-user/perf_and_log/statistic.collectd?s[]=way
-https://community.home-assistant.io/t/collectd-plugin-openwrt-mqtt/445987
+DOCS
+
+- <https://www.libe.net/en/openwrt-hass>
+- <https://openwrt.org/docs/guide-user/perf_and_log/statistic.collectd?s[]=way>
+- <https://community.home-assistant.io/t/collectd-plugin-openwrt-mqtt/445987>
+- <https://forum.openwrt.org/t/collectd-new-temperature-sensor-virtual-devices/230459>
+
+Listen to MQTT in HA:
+- <https://community.home-assistant.io/t/how-to-listen-to-mqtt-topic-under-dev-tools/422762/2?u=trianglesis>
 
 # Setup
 
@@ -75,6 +81,8 @@ logread -f | grep collectd
 ## start over
 
 ```shell
+opkg install luci-app-statistics
+
 collectd-mod-dhcpleases
 # All install
 opkg install collectd collectd-mod-rrdtool collectd-mod-iptables collectd-mod-netlink collectd-mod-rrdtool collectd-mod-iptables collectd-mod-netlink luci-app-statistics collectd-mod-ping collectd-mod-mqtt
@@ -89,4 +97,8 @@ opkg install collectd-mod-wireless --force-maintainer --force-reinstall --force-
 
 # ???
 opkg install collectd-mod-sensors --force-maintainer --force-reinstall --force-overwrite
+
+
+# Remove unused
+opkg remove collectd-mod-ping collectd-mod-processes collectd-mod-thermal
 ```

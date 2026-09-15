@@ -1,4 +1,18 @@
-# Some queries
+# Info
+
+- <https://smarthomescene.com/guides/optimize-your-home-assistant-database/>
+
+## HA entities
+
+```
+{# {% set sorted = states | dictsort(by="value") %} #}
+{% for state in states %}
+  - {{ state.entity_id -}}
+  {% break %}
+{% endfor %}
+```
+
+## Some queries
 
 - <https://www.home-assistant.io/integrations/sql/>
 - <https://www.home-assistant.io/actions/sql.query/>
@@ -24,6 +38,9 @@ Will show with names from related table:
 Now group by each entity and count overall: how many times this entity is saved its state in database:
 
 [With count](queries/all_entities_states_count.sql)
+
+Better version: first count all records, then get entities IDs
+[Reverse - faster!](queries/all_entities_states_count_limit_reverser.sql)
 
 Will see how many records for each:
 
