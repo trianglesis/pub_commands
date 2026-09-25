@@ -99,3 +99,123 @@ Options, if present, are:
 -c | --concurrent: Concurrent download/upload
 ```
 
+## Tests
+
+- <https://openwrt.org/docs/guide-user/network/network_configuration>
+
+install ethtool
+
+```shell
+
+swconfig list
+Found: switch0 - mdio.0
+
+ubus list network.interface.*
+network.interface.WAN_Tethering
+network.interface.guest
+network.interface.lan
+network.interface.loopback
+network.interface.wan
+
+ifstatus lan
+
+ethtool eth0
+ethtool -i eth0.1
+ethtool -i wlan0
+ethtool -i wlan1
+ethtool -i br-lan
+
+hwinfo --network --short
+```
+
+Output
+
+```txt
+Settings for eth0:
+        Supported ports: [ TP    MII ]
+        Supported link modes:   10baseT/Half 10baseT/Full
+                                100baseT/Half 100baseT/Full
+                                1000baseT/Full
+        Supported pause frame use: Symmetric Receive-only
+        Supports auto-negotiation: Yes
+        Supported FEC modes: Not reported
+        Advertised link modes:  10baseT/Half 10baseT/Full
+                                100baseT/Half 100baseT/Full
+                                1000baseT/Full
+        Advertised pause frame use: Symmetric Receive-only
+        Advertised auto-negotiation: Yes
+        Advertised FEC modes: Not reported
+        Speed: 1000Mb/s
+        Duplex: Full
+        Auto-negotiation: on
+        Port: Twisted Pair
+        PHYAD: 0
+        Transceiver: external
+        MDI-X: Unknown
+        Current message level: 0x000000ff (255)
+                               drv probe link timer ifdown ifup rx_err tx_err
+        Link detected: yes
+
+root@OpenWrt:~# ethtool -i eth0.1
+driver: 802.1Q VLAN Support
+version: 1.8
+firmware-version: N/A
+expansion-rom-version:
+bus-info:
+supports-statistics: no
+supports-test: no
+supports-eeprom-access: no
+supports-register-dump: no
+supports-priv-flags: no
+
+root@OpenWrt:~# ethtool -i eth0.2
+driver: 802.1Q VLAN Support
+version: 1.8
+firmware-version: N/A
+expansion-rom-version:
+bus-info:
+supports-statistics: no
+supports-test: no
+supports-eeprom-access: no
+supports-register-dump: no
+supports-priv-flags: no
+
+
+ hwinfo --network --short
+network interface:
+  eth0.2               Ethernet network interface
+  wlan0                WLAN network interface
+  lo                   Loopback network interface
+  wlan0-2              WLAN network interface
+  eth0                 Ethernet network interface
+  wlan1                WLAN network interface
+  eth0.1               Ethernet network interface
+  wlan0-1              WLAN network interface
+  br-guest             Ethernet network interface
+  br-lan               Ethernet network interface
+
+root@OpenWrt:~# ethtool -i wlan0
+driver: ath9k
+version: 5.10.146
+firmware-version: N/A
+expansion-rom-version:
+bus-info: 18100000.wmac
+supports-statistics: yes
+supports-test: no
+supports-eeprom-access: no
+supports-register-dump: no
+supports-priv-flags: no
+
+ethtool -i br-lan
+driver: bridge
+version: 2.3
+firmware-version: N/A
+expansion-rom-version:
+bus-info: N/A
+supports-statistics: no
+supports-test: no
+supports-eeprom-access: no
+supports-register-dump: no
+supports-priv-flags: no
+
+```
