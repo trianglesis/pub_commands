@@ -6,6 +6,15 @@ Passthrough USB from Win host to WSL
 
 - <https://gist.github.com/0xcafed00d/f25d042c33f3cac142b650985c12fd0b>
 
+## Gerenal info!
+
+You can use ESPHome WEB started from WSL at localhost (use Chrome) and it will list all your USB devices!
+
+```shell
+# project path: /home/user/projects/ESPhome
+source /home/user/projects/ESPhome/venv/bin/activate
+esphome dashboard --port=8080 --address=127.0.0.1 my_proj/
+```
 
 ### Config
 
@@ -17,14 +26,26 @@ winget install --interactive --exact dorssel.usbipd-win
 # See output below
 usbipd list
 
-# Pass the device
-usbipd bind --busid 4-4
+# Pass the device ADMIN CMD
+usbipd bind --busid 12-2
 
-# Replace 4-4 with your actual bus ID.
+# Replace 12-2 with your actual bus ID.
 # You only need to do this once per device in most cases. The sharing state is persistent across reboots.
 # You can verify the device is shared:
 
 usbipd list
+
+# Now open a regular, non-admin PowerShell window and run:
+usbipd attach --wsl --busid 12-2
+
+# Check in WSL
+lsusb
+# Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+# Bus 001 Device 002: ID 303a:1001 Espressif USB JTAG/serial debug unit
+# Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+
+# From PowerShell, detach the device:
+usbipd detach --busid 12-2
 ```
 
 ```text
