@@ -57,16 +57,27 @@ Starlink Dish with direct PoE:
 
 `The IP address 206.214.239.194 indicates that Starlink is not connected to our Point of Presence (PoP) and therefore unable to receive its allocated IP address. The default 206.214.239.194 address is expected when Starlink is not connected to the PoP.`
 
+Now it's UP:
+
+![Starlink UP](pics/StarlinkUP.png)
+
+- IP: `100.73.168.108/10`
+- GW: `100.64.0.1`
+- DHCP: `100.64.0.1`
+
+Starlink Debug is UP and accessible from my network:
+
+![Debug Web](pics/Starlink_Debug_Web.png)
+
 Bypass and route:
 
 - <https://forum.mikrotik.com/t/starlink-and-static-routes/164195>
 
 Access Starlink debug data even in bypass mode:
 
-- Dish IP: 192.168.100.1
-- Statistics URL: http://192.168.100.1/statistics
+- Dish IP: `192.168.100.1`
+- Statistics URL: `http://192.168.100.1/statistics`
 - gRPC API: Available for advanced monitoring
-
 
 `
 To add a route to Starlink in bypass mode on a Mikrotik router, you need to create a static route for 192.168.100.1/32 pointing to the interface that faces Starlink, typically using the command /ip route add dst-address=192.168.100.1/32 gateway=eth1. Make sure there are no firewall rules blocking access to that IP from your LAN.
