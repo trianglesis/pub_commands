@@ -160,7 +160,25 @@ Oct 14 19:35 : server_socket: bind to '0.0.0.0:6600' failed (continuing anyway, 
 tail -f -n10 /overlay/MPD/mpd.log
 ```
 
-Copyied from RPI
+Copyied from RPI as reference.
+
+But try using example from `iperf3` - [see](../current_setup.md#default)
+
+```shell
+cat > /etc/init.d/mpd << EOL
+#!/bin/sh /etc/rc.common
+START=99
+STOP=10
+start() {
+    /usr/bin/mpd --systemd /etc/mpd.conf &
+}
+stop() {
+    killall mpd
+}
+EOL
+```
+
+From RPi
 
 `/etc/default/mpd`
 
