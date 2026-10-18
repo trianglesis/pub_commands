@@ -178,6 +178,8 @@ stop() {
 EOL
 ```
 
+#### Refferences
+
 From RPi
 
 `/etc/default/mpd`
