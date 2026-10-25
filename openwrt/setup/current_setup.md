@@ -32,11 +32,9 @@ WEB UI:
 
 ![UI Mounts](openwrt/setup/PICs/UI_Mounts.png)
 
-
 ## Speed test
 
-
-## Defauilt
+### Default
 
 - <https://iperf3serverlist.net/>
 - <https://community.home-assistant.io/t/how-to-setup-iperf-integration/310575/12>
