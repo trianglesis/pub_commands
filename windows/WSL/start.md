@@ -21,9 +21,14 @@ wsl --status
 wsl --version
 ```
 
-
 ## Change WSL versions
 
 ```shell
 wsl --set-version <distribution name> <versionNumber>
+```
+
+## Use different
+
+```shell
+wsl.exe -d kali-linux
 ```
