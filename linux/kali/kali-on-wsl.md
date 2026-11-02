@@ -51,4 +51,11 @@ ifconfig | grep 'inet '
         inet 1.2.3.4  netmask 255.255.0.0  broadcast 172.17.255.255
         inet 127.0.0.1  netmask 255.0.0.0
 DISPLAY=172.19.109.195:0.0 gedit
+
+sudo rm -rf /tmp/.X11-unix /tmp/.X*-lock
+wsl --shutdown
 ```
+
+## Share USB devices with linux on WSL
+
+[See doc](../../windows/WSL/USB_on_WSL.md)

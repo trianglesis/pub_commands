@@ -85,3 +85,24 @@ GUID                                  DEVICE
 4c7eac3d-67c2-460a-a00b-1390e37a4d20  USB Serial Device (COM8), USB JTAG/serial debug unit
 
 ```
+
+## Extra info
+
+
+```shell
+usbipd list
+Connected:
+BUSID  VID:PID    DEVICE                                                        STATE
+2-1    05e3:0749  USB Mass Storage Device                                       Not shared
+2-4    0bda:8153  Realtek USB GbE Family Controller                             Not shared
+4-5    24ae:2002  USB Input Device                                              Not shared
+4-6    046d:c52b  Logitech USB Input Device, USB Input Device                   Not shared
+4-9    174f:1826  Integrated Camera, Integrated IR Camera, Camera DFU Device    Not shared
+4-10   0bda:d923  Realtek Bluetooth Adapter                                     Not shared
+5-2    2357:0604  TP-Link Bluetooth USB Adapter                                 Not shared
+
+Persisted:
+GUID                                  DEVICE
+
+usbipd: warning: USB filter 'USBPcap' is known to be incompatible with this software; 'bind --force' will be required
+```
